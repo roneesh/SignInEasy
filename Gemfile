@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for Active Record in development
+group :development do
+  gem 'sqlite3'
+end
+
+#Using PG for heroku
+group :production do
+  gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,3 +50,20 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Gems added to Application by Roneesh
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara', '1.1.4'
+end
+
+# Authentication
+gem 'clearance'
+
+# Front-end
+gem 'bootstrap-sass', '~> 3.0.0.0rc'
+
+# Services
+gem 'twilio-ruby'
+gem 'mandrill-api'
+
