@@ -67,3 +67,7 @@ gem 'bootstrap-sass', '~> 3.0.0.0rc'
 gem 'twilio-ruby'
 gem 'mandrill-api'
 
+#Heroku
+gem 'rails_12factor'
+
+
