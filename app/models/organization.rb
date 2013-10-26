@@ -1,3 +1,4 @@
 class Organization < ActiveRecord::Base
-  has_and_belongs_to_many :user
+  has_many :organization_users
+  has_many :users, :through => :organization_users
 end

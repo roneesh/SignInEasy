@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
   include Clearance::User
-  has_and_belongs_to_many :organization
+  has_many :organization_users
+  has_many :organizations, :through => :organization_users
 end
