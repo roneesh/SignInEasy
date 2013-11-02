@@ -7,7 +7,7 @@ Admin: <%= User.find_by_id(@organization.admin_id).email %>
 <br/>
 <br/>
 <ul>
-  <% @guests.each do |guest| %> 
+  <% @organization.guests.each do |guest| %> 
     <li><%= guest.name %> 
         <br/>
         <%= guest.email %> 
