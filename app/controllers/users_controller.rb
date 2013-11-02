@@ -6,6 +6,4 @@ class UsersController < Clearance::UsersController
     @member_spaces = @user.organizations
   end
 
-
-
 end

@@ -6,6 +6,8 @@
   <%= f.label :email %>
   <%= f.text_field :email %>
 
+  <%= f.hidden_field :organization_id, value: @organization_id %>
+
   <%= f.submit %>
 
 <% end %>
