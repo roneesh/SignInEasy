@@ -10,7 +10,7 @@
 <h3> spaces you are a member of </h3>
 <ul>
   <% @member_spaces.each do |space| %>
-    <li> <%= space.name %> | <%= link_to "view this space", "#" %>
+    <li> <%= space.name %> | <%= link_to "view this space", organization_path(space.id) %>
   <% end %>
 </ul>
 <hr>

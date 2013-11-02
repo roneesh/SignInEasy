@@ -1,0 +1,3 @@
+Organizations Name: <%= @organization.name %>
+<br/>
+Admin: <%= User.find_by_id(@organization.admin_id).email %>
