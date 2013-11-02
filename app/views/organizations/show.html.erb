@@ -1,3 +1,6 @@
 Organizations Name: <%= @organization.name %>
 <br/>
 Admin: <%= User.find_by_id(@organization.admin_id).email %>
+<br/>
+<br/>
+<%= link_to "Open Guest Sign-In", new_guest_path  %>
