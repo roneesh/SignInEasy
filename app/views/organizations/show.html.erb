@@ -4,3 +4,11 @@ Admin: <%= User.find_by_id(@organization.admin_id).email %>
 <br/>
 <br/>
 <%= link_to "Open Guest Sign-In", new_guest_path  %>
+<br/>
+<br/>
+<ul>
+  <%= @guests.each do |guest| %> 
+    <li> <%= guest.name %> </li><br/>
+    <li> <%= guest.email %> </li><br/>
+  <% end %>
+</ul>
