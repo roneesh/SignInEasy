@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   def member_spaces
     self.organizations
   end
+  
 end
