@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103012830) do
+ActiveRecord::Schema.define(version: 20131103030201) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20131103012830) do
     t.integer  "organization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "allow_email",     default: true
+    t.boolean  "allow_text",      default: true
   end
 
   create_table "guests", force: true do |t|
@@ -29,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131103012830) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "employee_id"
   end
 
   create_table "organization_users", force: true do |t|
