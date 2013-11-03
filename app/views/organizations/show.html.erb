@@ -4,6 +4,7 @@ Admin: <%= User.find_by_id(@organization.admin_id).email %>
 <br/>
 <br/>
 <%= link_to "Open Guest Sign-In", new_organization_guest_path(@organization.id)  %>
+<%= link_to "Open Member Directory", organization_member_directory_path(@organization.id) %>
 <br/>
 <br/>
 
