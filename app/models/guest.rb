@@ -3,11 +3,13 @@ class Guest < ActiveRecord::Base
 
   def run_notification_service
     if email_enabled? && email_allowed?
-      # Notification::Email.new(self)
+      email = Notification::Email.new(self)
+      email.send
     end
     
     if text_enabled? && text_allowed?
-      # Notification::Text.new(self)
+      text = Notification::Text.new(self)
+      text.send
     end
 
   end
