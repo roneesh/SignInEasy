@@ -7,7 +7,4 @@ class MemberDirectory
     @employee_list = Employee.where(organization_id: @organization.id)
   end
 
-  
-
-
 end

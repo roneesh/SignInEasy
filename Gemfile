@@ -65,8 +65,9 @@ gem 'clearance'
 gem 'bootstrap-sass', '~> 3.0.0.0rc'
 
 # Services
-gem 'twilio-ruby'
+# gem 'twilio-ruby'
 gem 'mandrill-api'
+gem 'typhoeus'
 
 #Heroku
 gem 'rails_12factor'

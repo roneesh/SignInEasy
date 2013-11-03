@@ -9,7 +9,7 @@ class Notification
   end
 
   def send
-    send_email if (@services.email_notification?) && email_allowed?
+    # send_email if (@services.email_notification?) && email_allowed?
     send_text if (@services.text_notification?) && text_allowed?
   end
 
@@ -44,9 +44,25 @@ class Notification
   end
 
   def send_text
-    destination_phone = @employee.phone
-    message = "#{destination_phone} your guest #{@guest.name.first} has arrived!"
-    puts message
+    request = Typhoeus::Request.new(
+      "http://developer.alertcaster.com/developer/api/alert-create-simple",
+      method: :post,
+      # body: "this is a request body",
+      body: ({
+        "apikey" => "009d0068cctdLLGt",
+        "name" => "Guest notification",
+        "sms" => "Your guest is here!",
+        "recipient" => [{
+          "name" => "Roneesh Vashisht",
+          "email" => "roneesh@gmail.com",
+          "mobile" => "4693379220"
+        }],
+      })
+    )
+    request.run
+    # destination_phone = @employee.phone
+    # message = "#{destination_phone} your guest #{@guest.name.first} has arrived!"
+    # puts message
   end
 
 end
