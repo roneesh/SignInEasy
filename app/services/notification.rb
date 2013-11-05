@@ -46,30 +46,36 @@ class Notification
 
   def send_text
     trigger_request = Typhoeus::Request.new(
-      get_trigger,
+      trigger_url,
       method: :post
     )
     trigger_request.run
   end
 
-  def get_trigger
-    request = Typhoeus::Request.new(
+  def trigger_url
+    response = text_request.run
+    parsed_response = JSON.parse(response.options[:response_body])
+    parsed_response["trigger"]
+  end
+
+  def text_request
+    guest_first_name = @guest.name.split.first
+    employee_first_name = @employee.name.split.first
+    employee_last_name = @employee.name.split.last
+    Typhoeus::Request.new(
       "http://developer.alertcaster.com/developer/api/alert-create-simple",
       method: :post,
       body: ({
         "apikey" => "009d0068cctdLLGt",
         "name" => "Guest notification",
-        "sms" => "Your guest #{@guest.name} is here!",
+        "sms" => "Your guest #{guest_first_name} is here!",
         "recipient" => [{
-          "name" => "#{@employee.name.first}, #{@employee.name.last}",
-          "email" => @employee.email,
-          "mobile" => @employee.phone
+          "name" => "#{employee_first_name}, #{employee_last_name}",
+          "email" => "sierra@sierra.com",
+          "mobile" => "9032715062"
         }],
       })
     )
-    response = request.run
-    parsed_response = JSON.parse(response.options[:response_body])
-    parsed_response["trigger"]
   end
 
 end
