@@ -1,4 +1,5 @@
 require 'mandrill'
+require 'json'
 
 class Notification
 
@@ -44,25 +45,31 @@ class Notification
   end
 
   def send_text
+    trigger_request = Typhoeus::Request.new(
+      get_trigger,
+      method: :post
+    )
+    trigger_request.run
+  end
+
+  def get_trigger
     request = Typhoeus::Request.new(
       "http://developer.alertcaster.com/developer/api/alert-create-simple",
       method: :post,
-      # body: "this is a request body",
       body: ({
         "apikey" => "009d0068cctdLLGt",
         "name" => "Guest notification",
-        "sms" => "Your guest is here!",
+        "sms" => "Your guest #{@guest.name} is here!",
         "recipient" => [{
-          "name" => "Roneesh Vashisht",
-          "email" => "roneesh@gmail.com",
-          "mobile" => "4693379220"
+          "name" => "#{@employee.name.first}, #{@employee.name.last}",
+          "email" => @employee.email,
+          "mobile" => @employee.phone
         }],
       })
     )
-    request.run
-    # destination_phone = @employee.phone
-    # message = "#{destination_phone} your guest #{@guest.name.first} has arrived!"
-    # puts message
+    response = request.run
+    parsed_response = JSON.parse(response.options[:response_body])
+    parsed_response["trigger"]
   end
 
 end
