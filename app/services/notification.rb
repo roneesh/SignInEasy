@@ -71,8 +71,8 @@ class Notification
         "sms" => "Your guest #{guest_first_name} is here!",
         "recipient" => [{
           "name" => "#{employee_first_name}, #{employee_last_name}",
-          "email" => "sierra@sierra.com",
-          "mobile" => "9032715062"
+          "email" => @employee.email,
+          "mobile" => @employee.phone
         }],
       })
     )
