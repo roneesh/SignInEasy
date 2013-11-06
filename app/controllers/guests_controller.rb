@@ -8,7 +8,7 @@ class GuestsController < ApplicationController
   def create
     guest = Guest.new(guest_params)
     if guest.save
-      guest.run_notification_service
+      guest.run_notification_service if guest.employee_id
       redirect_to new_organization_guest_path(params[:guest][:organization_id])
     else
       redirect_to new_organization_guest_path(params[:guest][:organization_id])
