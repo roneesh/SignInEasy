@@ -12,13 +12,11 @@
       = link_to "Your user page", user_path(current_user.id) 
     -else
       = link_to t('.sign_in'), sign_in_path 
-    -end
 
   #flash
     -flash.each do |key, value|
       =key
       %br
       =value
-    -end 
 
   = yield
