@@ -1,0 +1,18 @@
+= @user.email 
+%hr
+%h3 spaces you are the sole manager of
+%ul
+  -@user.managed_spaces.each do |space| 
+    %li 
+      = space.name  
+      | 
+      = link_to "manage this space", "#"  
+%hr
+%h3 spaces you are a member of
+%ul
+  -@user.member_spaces.each do |space| 
+    %li 
+    = space.name  
+    | 
+    = link_to "view this space", organization_path(space.id)
+%hr

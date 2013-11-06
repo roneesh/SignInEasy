@@ -1,0 +1,11 @@
+= form_for @guest do |f| 
+
+  = f.label :name 
+  = f.text_field :name 
+
+  = f.label :email 
+  = f.text_field :email 
+
+  = f.hidden_field :organization_id, value: @organization_id 
+
+  = f.submit 

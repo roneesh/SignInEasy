@@ -1,0 +1,31 @@
+Organizations Name: 
+= @organization.name 
+%br
+Admin: 
+= User.find_by_id(@organization.admin_id).email 
+%br
+%br
+= link_to "Open Guest Sign-In", new_organization_guest_path(@organization.id)  
+%br
+%br
+
+%h3 Guests Log:
+%ul
+  -@organization.guests.each do |guest|  
+    %li
+      = guest.name  
+      %br
+      = guest.email  
+    %br
+
+%h3 Employees In The Space:
+%ul
+  -@organization.employees.each do |employee| 
+    %li
+      = employee.name  
+      %br
+      = employee.email  
+      | 
+      = employee.phone  
+      %br
+      = employee.company 

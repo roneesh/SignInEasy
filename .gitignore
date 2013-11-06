@@ -15,5 +15,7 @@
 /log/*.log
 /tmp
 
+
 /config/initializers/_app_keys.rb
 /db/schema.rb
+

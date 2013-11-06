@@ -1,5 +1,6 @@
 SignInEasy::Application.routes.draw do
 
+  get "static_pages/splash"
   root :to => "clearance/sessions#new"
 
   get 'profile', to: 'users#show', as: "user"
