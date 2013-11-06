@@ -64,6 +64,7 @@ gem 'clearance'
 # Front-end
 gem 'bootstrap-sass', '~> 3.0.0.0rc'
 gem 'haml'
+gem 'font-awesome-rails'
 
 # Services
 # gem 'twilio-ruby'

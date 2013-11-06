@@ -61,6 +61,8 @@ GEM
     excon (0.27.6)
     execjs (2.0.2)
     ffi (1.9.0)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     haml (4.0.3)
       tilt
     hike (1.2.3)
@@ -172,6 +174,7 @@ DEPENDENCIES
   capybara (= 1.1.4)
   clearance
   coffee-rails (~> 4.0.0)
+  font-awesome-rails
   haml
   jbuilder (~> 1.2)
   jquery-rails
