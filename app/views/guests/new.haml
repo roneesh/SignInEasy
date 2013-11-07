@@ -1,6 +1,9 @@
 
 .row.top-logo-container
   =image_tag("your_business_logo_here_small.png")
+%br
+Welcome to [Organization Name]. What brings you in today?
+%br
 
 .row.btn-grid
   .form-navigation
@@ -19,7 +22,7 @@
     %a(href="/information_form")
       %button(type="submit" class="btn btn-primary btn-lg")
         %i.icon-envelope.icon-white#guest-icon-envelope 
-        More Information
+        Other Reason
     
   .logo-container
     =image_tag("SignInEasyLogo-bottom.png")        
@@ -32,13 +35,15 @@
 
 = simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
   .form-group	
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: John Smith"
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your first and last name", :placeholder => "ex: John Smith (Visitor Name)"
   .form-group
-    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com"
+    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com (Visitor Email Address)"
+  .form-group
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your company name", :placeholder => "ex: 1871 // Visitor's Company Name (Can be blank)"
   .form-group
     = f.hidden_field :organization_id, value: @organization_id 
   .form-group
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith"  
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith // Hosting Member"  
   .form-group  
     = f.submit 'Register', :class => 'btn btn-success btn-lg'
     = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger btn-lg"
