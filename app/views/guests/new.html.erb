@@ -1,3 +1,6 @@
+<%= @guest %>
+<%= @organization_id %>
+
 <%= form_for @guest do |f| %>
 
   <%= f.label :name %>
@@ -5,6 +8,9 @@
 
   <%= f.label :email %>
   <%= f.text_field :email %>
+
+  <%= label_tag :employee_name %>
+  <%= text_field_tag 'guest[employee_name]' %>
 
   <%= f.hidden_field :organization_id, value: @organization_id %>
 

@@ -7,6 +7,7 @@ class GuestsController < ApplicationController
 
   def create
     guest = Guest.new(guest_params)
+    guest.set_id
     if guest.save
       guest.run_notification_service if guest.employee_id
       redirect_to new_organization_guest_path(params[:guest][:organization_id])
@@ -18,7 +19,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :organization_id)
+    params.require(:guest).permit(:name, :email, :organization_id, :employee_name)
   end
 
 
