@@ -1,5 +1,11 @@
 class GuestsController < ApplicationController
 
+  
+  def index
+    @guests = Guest.page(params[:page])
+
+  end
+
   def new
     @guest = Guest.new
     @organization_id = params[:organization_id]
@@ -15,9 +21,13 @@ class GuestsController < ApplicationController
     end
   end
 
-  def show
+  
 
+  def show
+    @guest = Guest.find(params[:id])
   end
+
+
 
   private
 
