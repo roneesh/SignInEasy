@@ -9,6 +9,6 @@ SignInEasy::Application.routes.draw do
     resource :member_directory, only: [:show]
     resources :guests, only: [:new]   
   end
-  resources :guests, only: [:create, :show]
+  resources :guests, only: [:create]
 
 end

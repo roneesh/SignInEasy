@@ -1,10 +1,7 @@
 class GuestsController < ApplicationController
 
   
-  def index
-    @guests = Guest.page(params[:page])
 
-  end
 
   def new
     @guest = Guest.new
@@ -20,8 +17,6 @@ class GuestsController < ApplicationController
       redirect_to new_organization_guest_path(params[:guest][:organization_id])
     end
   end
-
-  
 
   def show
     @guest = Guest.find(params[:id])
