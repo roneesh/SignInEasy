@@ -26,11 +26,13 @@
           
           -if signed_in?
 
-            %li.active
+            %li
+              =# link_to "Dashboard", organization_static_pages_dashboard_path
               %a{:href => "#"} Dashboard
 
             %li
-              = link_to "Start Guest Module", new_organization_guest_path
+              =# link_to "Start Guest Module", new_organization_guest_path
+              %a{:href => "#"} Start Guest Module
 
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -47,7 +49,7 @@
 
           -else
 
-            =# link_to t('.sign_in'), sign_in_path   
+            =# form_tag 'Sign in', :class => 'btn btn-default navbar-btn', sign_in_path   
             %button.btn.btn-default.navbar-btn{:type => "button"} Sign in
 
 
