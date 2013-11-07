@@ -4,10 +4,11 @@
   = javascript_include_tag 'application' 
   = csrf_meta_tag 
   = stylesheet_link_tag 'application' 
-%body
-  #header
 
-    %nav.navbar.navbar-default{:role => "navigation"}
+%body
+  .header
+    .container
+      %nav.navbar.navbar-default{:role => "navigation"}
       / Brand and toggle get grouped for better mobile display
       .navbar-header
         %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
@@ -55,6 +56,8 @@
 
       / /.navbar-collapse
 
+
+.container
       
   #flash
   -flash.each do |key, value|
@@ -62,6 +65,5 @@
     %br
     =value
 
-  %container
-    
-    = yield
+
+  = yield
