@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+Organization.create(name: "1871")
+
 employees = [
   {name: "Roneesh Vashisht", company: "1871", email: "r@e.com", phone: "4693379220", organization_id: 1},
   {name: "Brian Martinek", company: "1871", email: "b@e.com", phone: "4693379410", organization_id: 1},
