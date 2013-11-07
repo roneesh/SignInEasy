@@ -15,6 +15,10 @@ class GuestsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
 
   def guest_params
