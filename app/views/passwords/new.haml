@@ -5,12 +5,9 @@
   %p
     = t '.description'
 
-  = form_for :password, :url => passwords_path do |form| 
-    .text-field
-      = form.label :email 
-      = form.text_field :email, :type => 'email' 
-    
 
-    .submit-field
-      = form.submit 
-
+    = simple_form_for(:password, :url => passwords_path, :html => { :class => 'form form-horizontal' }) do |form|
+      .form-group
+        = form.input :email, :input_html => { :class => 'form-control' }, :placeholder => "Email address", :required => "", :type => "text"
+      .form-group
+        = form.submit "Reset password", :class => 'btn btn-default'

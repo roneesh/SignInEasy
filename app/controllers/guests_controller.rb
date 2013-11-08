@@ -1,7 +1,9 @@
 class GuestsController < ApplicationController
 
   
-
+  def index
+    @guests = Guest.all
+  end
 
   def new
     @guest = Guest.new
@@ -20,7 +22,7 @@ class GuestsController < ApplicationController
   end
 
   def show
-    @guest = Guest.find(params[:id])
+    @guest = Guest.find(params[:organization_id])
   end
 
 
