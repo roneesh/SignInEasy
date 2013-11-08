@@ -33,7 +33,7 @@
                 %a{:href => "#"} Dashboard
 
               %li
-                =# link_to "Start Guest Module", new_organization_guest_path
+                =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
                 %a{:href => "#"} Start Guest Module
 
               %li.dropdown
