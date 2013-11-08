@@ -1,21 +1,19 @@
-Index
 .page-header
-  %h1 
-  =# t '.title', :default => model_class.model_name.human.pluralize
+  %h1
 
-
-
-%table.table-striped
+%table.table.table-striped.table-hover
   %thead
     %tr
-      %th
-      %th
-      %th
-      %th
+      %th Name
+      %th Email
+      %th Another Data Point
+      %th Another Data Point
       %th Visiting Reason
+      %th Date
+      %th Time
       %th 
-      %th 
-      %th 
+      %th Show
+      %th Delete
 
   %tbody
     - @guests.each do |guest|
@@ -32,3 +30,7 @@ Index
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td
+        %td
+        %td
+
+= link_to 'new', new_organization_guest_path, :class => 'btn btn-primary'
