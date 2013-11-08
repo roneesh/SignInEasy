@@ -1,0 +1,36 @@
+%figure.splash-logo
+  = image_tag "SignInEasyLogo-Demo.png"
+
+.splash-main-image.clearfix
+  .text-container
+    %p.main-descriptor Simple, user friendly, guest registration. Your employees get notified their visitor is here, your guest automtically gets an e-mail with wifi information, and you get easy access to all your visitor metrics.
+    .btn.btn-success.btn-large
+      = link_to "Sign In!", sign_in_path, id: "white" 
+      %a#white
+  .image-container
+    = image_tag "signineasy-mac.png"
+
+.splash-features.clearfix
+  %h1.lheading Features
+  %p.subd
+  / .feature-box
+  /   %h3 Your guests SignInEasy
+  /   = image_tag "regform-icon.png"
+  /   %p.subd on a touch screen frinedly page and get automated e-mails with things like your wifi information
+  .feature-box
+    %h3 Email Notifications
+    %br
+    %i.fa.fa-envelope
+    %p.feature-paragraph They get a text or email saying their visitor is here.
+  .feature-box
+    %h3 Guest Metrics
+    %br
+    %i.fa.fa-bar-chart-o
+    %p.feature-paragraph Generate reports of all your visitors and their metrics.
+  .feature-box
+    %h3 Runs On Any Machine
+    %br
+    %i.fa.fa-tablet
+    / %i.icon-laptop
+    %i.fa.fa-desktop 
+    %p.feature-paragraph Have SignInEasy displayed on an iPad, Mac, PC, or anything with a screen and internet access.

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+%html
+%head
+  = javascript_include_tag 'application' 
+  = csrf_meta_tag 
+  = stylesheet_link_tag 'application' 
+
+%body
+  .header
+    
+    %nav.navbar.navbar-default{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} SignInEasy
+      
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+
+        
+          %ul.nav.navbar-nav.navbar-right
+          
+          
+            -if signed_in?
+
+              %li
+                =# link_to "Dashboard", organization_static_pages_dashboard_path
+                %a{:href => "#"} Dashboard
+
+              %li
+                =# link_to "Start Guest Module", new_organization_guest_path
+                %a{:href => "#"} Start Guest Module
+
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  [User's Name]
+                  %b.caret
+                %ul.dropdown-menu
+
+                  %li
+                    = link_to "Settings", user_path(current_user.id) 
+                
+                  %li.divider
+                  %li
+                    = link_to t('.sign_out'), sign_out_path, :method => :delete 
+
+            -else
+
+              =# form_tag 'Sign in', :class => 'btn btn-default navbar-btn', sign_in_path   
+              %button.btn.btn-default.navbar-btn{:type => "button"} Sign in
+
+
+      / /.navbar-collapse
+
+
+.container
+      
+  #flash
+  -flash.each do |key, value|
+    =key
+    %br
+    =value
+
+
+  = yield

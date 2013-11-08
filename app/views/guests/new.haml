@@ -1,0 +1,51 @@
+
+.row.top-logo-container
+  =image_tag("your_business_logo_here_small.png")
+
+.row.btn-grid
+  .form-navigation
+    %a(href="/meeting_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-calendar.icon-white
+        Scheduled Meeting
+    %a(href="/tour_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-map-marker.icon-white
+        Scheduled Tour
+    %a(href="/event_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-group.icon-white 
+        Scheduled Event
+    %a(href="/information_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-envelope.icon-white#guest-icon-envelope 
+        More Information
+    
+  .logo-container
+    =image_tag("SignInEasyLogo-bottom.png")        
+
+/ .form-holder
+/   = render 'form'
+
+
+
+
+= simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
+  .form-group	
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: John Smith"
+  .form-group
+    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com"
+  .form-group
+    = label_tag :employee_name
+    = text_field_tag 'guest[employee_name]'
+  .form-group
+    = f.hidden_field :organization_id, value: @organization_id 
+  .form-group
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith"  
+  .form-group  
+    = f.submit 'Register', :class => 'btn btn-success btn-lg'
+    = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger btn-lg"
+
+%br
+
+

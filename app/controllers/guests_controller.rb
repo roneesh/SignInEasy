@@ -1,5 +1,8 @@
 class GuestsController < ApplicationController
 
+  
+
+
   def new
     @guest = Guest.new
     @organization_id = params[:organization_id]
@@ -15,6 +18,12 @@ class GuestsController < ApplicationController
       redirect_to new_organization_guest_path(params[:guest][:organization_id])
     end
   end
+
+  def show
+    @guest = Guest.find(params[:id])
+  end
+
+
 
   private
 

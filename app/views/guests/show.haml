@@ -1,0 +1,22 @@
+
+/ .top-logo-container
+/   =image_tag("your_business_logo_here_small.png")
+
+  .show-page-text
+    %br
+    %h1 
+      Thanks for Signing In Easy, 
+      = @guest.name
+    %br  
+    %h3 If you are visiting someone, they have been notified you're here.
+    %h3 (You also got a cool e-mail with wifi information and our user policies)
+    %br
+    %p Redirecting back to the registration page in a moment...
+    = link_to "or go now", new_guest_url, id: "link"
+
+
+:javascript
+// redirect to new guest page after 4 seconds
+  window.setTimeout(function() {
+     window.location.href = '/guests/new';
+  }, 4000);
