@@ -2,7 +2,7 @@ class GuestsController < ApplicationController
 
   
   def index
-    @guests = Guest.page(params[:organization_id])
+    @guests = Guest.all
   end
 
   def new

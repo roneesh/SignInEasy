@@ -1,7 +1,7 @@
-<%- model_class = Guest.new.class -%>
+Index
 .page-header
   %h1 
-  = t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  =# t '.title', :default => model_class.model_name.human.pluralize
 
 
 
@@ -9,18 +9,18 @@
   %thead
     %tr
       %th
-      = model_class.human_attribute_name(:name)
+      =# model_class.human_attribute_name(:name)
       %th
-      = model_class.human_attribute_name(:email)
+      =# model_class.human_attribute_name(:email)
       %th
-      = model_class.human_attribute_name(Employee)
+      =# model_class.human_attribute_name(Employee)
       %th
-      = model_class.human_attribute_name(:part_of_tour)
+      =# model_class.human_attribute_name(:part_of_tour)
       %th Visiting Reason
       %th
-      = model_class.human_attribute_name(Date)
+      =# model_class.human_attribute_name(Date)
       %th
-      = model_class.human_attribute_name(Time)
+      =# model_class.human_attribute_name(Time)
       %th
       = t '.actions', :default => t("helpers.actions")
 
@@ -28,14 +28,14 @@
     = @guests.each do |guest|
       %tr
         %td
-        = guest.try(:name)
+        = guest.name
         %td
-        = guest.try(:email)
+        = guest.email
         %td
         %td
-        = guest.convert_part_of_tour_to_yes_and_no
+        =# guest.convert_part_of_tour_to_yes_and_no
         %td
-        = guest.visiting_reason
+        =# guest.visiting_reason
         %td
         = guest.created_at.strftime("%b. %d\, %Y")
         %td
