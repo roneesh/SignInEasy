@@ -1,0 +1,43 @@
+<%- model_class = Guest.new.class -%>
+.page-header
+  %h1 
+  = t '.title', :default => model_class.model_name.human.pluralize %></h1>
+
+
+
+.table.table-striped
+  %thead
+    %tr
+      %th
+      = model_class.human_attribute_name(:name)
+      %th
+      = model_class.human_attribute_name(:email)
+      %th
+      = model_class.human_attribute_name(Employee)
+      %th
+      = model_class.human_attribute_name(:part_of_tour)
+      %th Visiting Reason
+      %th
+      = model_class.human_attribute_name(Date)
+      %th
+      = model_class.human_attribute_name(Time)
+      %th
+      = t '.actions', :default => t("helpers.actions")
+
+  %tbody
+    = @guests.each do |guest|
+      %tr
+        %td
+        = guest.try(:name)
+        %td
+        = guest.try(:email)
+        %td
+        %td
+        = guest.convert_part_of_tour_to_yes_and_no
+        %td
+        = guest.visiting_reason
+        %td
+        = guest.created_at.strftime("%b. %d\, %Y")
+        %td
+        = guest.created_at.in_time_zone.strftime(" %I:%M %p")
+        %td>
