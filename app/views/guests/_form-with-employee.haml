@@ -1,0 +1,20 @@
+= simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
+  .form-group	
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your first and last name", :placeholder => "ex: John Smith (Visitor Name)"
+  .form-group
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your company name", :placeholder => "ex: 1871 // Visitor's Company Name (Can be blank)"
+  .form-group
+    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com (Visitor Email Address)"
+  
+  .form-group
+    = label_tag :employee_name
+    = text_field_tag 'guest[employee_name]'
+  .form-group
+    = f.hidden_field :organization_id, value: @organization_id 
+  .form-group
+    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith // Hosting Member"  
+  .form-group  
+    = f.submit 'Register', :class => 'btn btn-success btn-lg'
+    = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger btn-lg"
+
+%br
