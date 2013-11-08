@@ -43,7 +43,9 @@
                 %ul.dropdown-menu
 
                   %li
-                    = link_to "Settings", user_path(current_user.id) 
+                    %a{:href => "#"} Settings
+                  %li
+                    = link_to "Profile", user_path(current_user.id) 
                 
                   %li.divider
                   %li
