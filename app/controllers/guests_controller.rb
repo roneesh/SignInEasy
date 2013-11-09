@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
 
+  layout "visitor_ui", :only => ["new", "show"]
   
   def index
     @guests = Guest.all
