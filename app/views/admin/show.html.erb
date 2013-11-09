@@ -1,20 +1,28 @@
 <h1>Admin#show</h1>
 <p>Find me in app/views/admin/show.html.erb</p>
-<%= @objects %>
-<%= @organizations %>
+
 <hr>
-<ul>
+<ul class="admin-table"> 
 <% @objects.each do |object| %>
   <li>
-    <%= object.class %>
-    <ul> 
-      <% object.each do |obj| %>
-        <li> 
-          <%= obj.name %>
-        </li>
-      <% end %>
-    </ul>
+    <h3> <%= object.model %> </h3>
+    <table class="table table-striped">
+      <thead>
+        <% object.column_names.each do |column| %>  
+          <th> <%= column %> </th>
+        <% end %>
+      </thead>
+      <tbody>
+        <% object.each do |obj| %>
+          <tr>
+            <% obj.attributes.each do |key, value| %>
+              <td><%= value %> </td>
+            <% end %>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
   </li>
-  <hr>
 <% end %>
 </ul>

@@ -10,10 +10,8 @@ class AdminController < ApplicationController
   end
 
   def all_objects
-    array = []
-    administrated_classes.each_with_object(array) do |klass, array|
-      array << klass.constantize.all
+    administrated_classes.each_with_object([]) do |klass, array|
+      array << (klass.constantize).all
     end
-    array
   end
 end
