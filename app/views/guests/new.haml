@@ -1,30 +1,38 @@
-
-.row
-  .organization-logo-container
-    =image_tag("your_business_logo_here_small.png")
+.form-actions
+  .row
+    .organization-logo-container
+      =image_tag("your_business_logo_here_small.png")
 
 
 .row.btn-grid
   %br
-    Welcome to [Organization Name]. What brings you in today?
+    .h3 Welcome to [Organization Name]. What brings you in today?
   %br
   .form-navigation
     %a(href="/meeting_form")
       %button(type="submit" class="btn btn-primary btn-lg")
         %i.icon-calendar.icon-white
         Scheduled Meeting
+    %a(href="/meeting_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-calendar.icon-white
+        Drop In    
     %a(href="/tour_form")
       %button(type="submit" class="btn btn-primary btn-lg")
         %i.icon-map-marker.icon-white
-        Scheduled Tour
+        Tour
     %a(href="/event_form")
       %button(type="submit" class="btn btn-primary btn-lg")
         %i.icon-group.icon-white 
-        Scheduled Event
-    %a(href="/information_form")
+        Event
+    %a(href="/meeting_form")
       %button(type="submit" class="btn btn-primary btn-lg")
-        %i.icon-envelope.icon-white#guest-icon-envelope 
-        Other Reason
+        %i.icon-calendar.icon-white
+        Scheduled Meeting    
+    %a(href="/meeting_form")
+      %button(type="submit" class="btn btn-primary btn-lg")
+        %i.icon-calendar.icon-white
+        Other 
     
 .row  
   .bottom-logo-container

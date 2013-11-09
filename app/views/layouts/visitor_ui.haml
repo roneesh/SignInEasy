@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Sign In Easy
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %meta(name="viewport" content="width=device-width initial-scale=1.0")
+  %body
+    .container
+      .navbar.navbar-fixed-top
+        .nav-collapse.collapse
+          %ul.nav.pull-right        
+            %li
+              %a(href='/guests')
+                %i.icon-home.icon-black.guest-reg-home-icon
+      -if notice
+        %p.notice
+          = notice
+      = yield
