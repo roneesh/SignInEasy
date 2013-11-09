@@ -12,4 +12,6 @@ SignInEasy::Application.routes.draw do
   end
   resources :guests, only: [:create]
 
+  get "admin_panel", to: "admin#show", as: "admin_panel"
+
 end
