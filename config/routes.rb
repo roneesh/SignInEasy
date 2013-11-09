@@ -1,5 +1,6 @@
 SignInEasy::Application.routes.draw do
 
+  get "admin/show"
   get "static_pages/splash"
   root :to => "clearance/sessions#new"
 
@@ -11,7 +12,5 @@ SignInEasy::Application.routes.draw do
     get "static_pages/dashboard" 
   end
   resources :guests, only: [:create]
-
-  get "admin_panel", to: "admin#show", as: "admin_panel"
 
 end
