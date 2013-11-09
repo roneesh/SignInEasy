@@ -9,4 +9,8 @@ def important_attributes(object)
   object.attributes.delete_if { |key, value| key == "created_at" || key == "updated_at"}
 end
 
+def delete_url(object)
+  "#{object.class.to_s.downcase.pluralize}/#{object.id}"
+end
+
 end
