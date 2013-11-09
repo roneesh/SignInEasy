@@ -18,7 +18,7 @@
                 %td
                   = value
               %td 
-                = link_to "http://localhost:3000/#{asset_url(obj)}", :method => :put do
+                = link_to "http://localhost:3000/#{asset_url(obj)}/edit", :method => :put, remote: true do
                   %i.fa.fa-edit
               %td
                 = link_to "http://localhost:3000/#{asset_url(obj)}", :confirm => "are you sure?", :method => :delete do

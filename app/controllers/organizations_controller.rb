@@ -10,4 +10,11 @@ class OrganizationsController < ApplicationController
     redirect_to admin_show_path
   end
 
+  def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 end
