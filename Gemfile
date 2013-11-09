@@ -67,6 +67,7 @@ gem 'haml'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
+gem 'best_in_place'
 
 # Services
 # gem 'twilio-ruby'
