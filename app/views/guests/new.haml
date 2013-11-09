@@ -39,13 +39,15 @@
         Other
     
     =# button_to('Meeting', organization_guests_new_with_host_path, :class => 'btn btn-primary btn-xxlg')
+	
 
+.form-host
+  .col-lg-6.col-lg-offset-3
+    = render :partial => 'form_with_host'
 
-
-
-.col-lg-6.col-lg-offset-3
-  .form_without.host
-    = render :partial => 'form_without_host'
+  .col-lg-6.col-lg-offset-3
+    .form_without_host
+      = render :partial => 'form_without_host'
 
 .row  
   .bottom-logo-container

@@ -14,20 +14,21 @@
       = msg
   
   .form-group
-    = f.label :name
-    = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your first and last name', :placeholder => 'ex: John Smith'
+    = f.label :name, "Name"
+    = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your first and last name', :placeholder => 'ex: John Smith', :required => ""
 
   .form-group
-    = f.label :name
+    = f.label :name, "Company Name"
     = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your company name (optional)', :placeholder => '1871'
 
   .form-group
-    = f.label :email
+    = f.label :email, "Email Address"
     = f.email_field :email, :class => 'form-control input-lg', :hint => 'Enter your email address', :placeholder => 'johnsmith@gmail.com'
 
   .form-group
     = f.hidden_field :organization_id, value: @organization_id   
 
   .form-group.center-buttons.span-3
-    = f.submit 'Register', :class => 'btn btn-success btn-lg'
+    = f.submit 'Register', :class => 'btn btn-success btn-xlg'
+  .form-group.center-buttons.span-3  
     = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default btn'

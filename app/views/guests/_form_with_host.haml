@@ -1,11 +1,35 @@
-= simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
+
+= form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
+  = if @guest.errors.any?
+    .error_explanation
+      %h2
+      = pluralize(@guest.errors.count, "error")
+
+    %ul
+    = @aha.errors.full_messages.each do |msg|
+      %li
+      = msg
+  
   .form-group
-    = f.input :name, :input_html => { :class => 'form-control input-lg control-label' }, :hint => "Enter your first and last name", :placeholder => "ex: John Smith (Visitor Name)"
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your company name", :placeholder => "ex: 1871 // Visitor's Company Name (Can be blank)"
-    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com (Visitor Email Address)"
-    = f.input :employee_name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith // Hosting Member"  
+    = f.label :name, "Name"
+    = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your first and last name', :placeholder => 'ex: John Smith'
+
+  .form-group
+    = f.label :name, "Company Name"
+    = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your company name (optional)', :placeholder => '1871'
+
+  .form-group
+    = f.label :email, "Email Address"
+    = f.email_field :email, :class => 'form-control input-lg', :hint => 'Enter your email address', :placeholder => 'johnsmith@gmail.com'
+
+  .form-group
+    = f.label :employee_name, "Hosting Member"
+    = f.text_field :employee_name, :class => 'form-control input-lg', :hint => 'Start typing the name of the person you are here to see "Hosting Member"', :placeholder => 'Dave Smith'
+
   .form-group
     = f.hidden_field :organization_id, value: @organization_id   
-  .form-group.center-buttons.span-3 
-    = f.submit 'Register', :class => 'btn btn-success btn-lg'
-    = submit_tag 'Cancel', :type => :reset, :class => "btn btn-default btn-lg"
+
+  .form-group.center-buttons.span-3
+    = f.submit 'Register', :class => 'btn btn-success btn-xlg'
+  .form-group.center-buttons.span-3  
+    = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default btn'
