@@ -1,2 +1,20 @@
 <h1>Admin#show</h1>
 <p>Find me in app/views/admin/show.html.erb</p>
+<%= @objects %>
+<%= @organizations %>
+<hr>
+<ul>
+<% @objects.each do |object| %>
+  <li>
+    <%= object.class %>
+    <ul> 
+      <% object.each do |obj| %>
+        <li> 
+          <%= obj.name %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+  <hr>
+<% end %>
+</ul>
