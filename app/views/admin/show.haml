@@ -18,6 +18,8 @@
                 %td
                   = value
               %td 
-                <a href="http://localhost:3000/#{asset_url(obj)}" method="put"><i class="fa fa-edit"></i></a>
+                = link_to "http://localhost:3000/#{asset_url(obj)}", :method => :put do
+                  %i.fa.fa-edit
               %td
-                <a href="http://localhost:3000/#{asset_url(obj)}" method="delete"><i class="fa fa-times"></i></a>
+                = link_to "http://localhost:3000/#{asset_url(obj)}", :confirm => "are you sure?", :method => :delete do
+                  %i.fa.fa-times
