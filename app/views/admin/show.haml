@@ -18,6 +18,6 @@
                 %td
                   = value
               %td 
-                %i.fa.fa-edit
+                <a href="http://localhost:3000/#{asset_url(obj)}" method="put"><i class="fa fa-edit"></i></a>
               %td
-                <a href="http://localhost:3000/#{delete_url(obj)}" method="delete"><i class="fa fa-times"></i></a>
+                <a href="http://localhost:3000/#{asset_url(obj)}" method="delete"><i class="fa fa-times"></i></a>
