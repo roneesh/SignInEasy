@@ -1,11 +1,13 @@
 
-.row.top-logo-container
-  =image_tag("your_business_logo_here_small.png")
-%br
-Welcome to [Organization Name]. What brings you in today?
-%br
+.row
+  .organization-logo-container
+    =image_tag("your_business_logo_here_small.png")
+
 
 .row.btn-grid
+  %br
+    Welcome to [Organization Name]. What brings you in today?
+  %br
   .form-navigation
     %a(href="/meeting_form")
       %button(type="submit" class="btn btn-primary btn-lg")
@@ -24,7 +26,8 @@ Welcome to [Organization Name]. What brings you in today?
         %i.icon-envelope.icon-white#guest-icon-envelope 
         Other Reason
     
-  .logo-container
+.row  
+  .bottom-logo-container
     =image_tag("SignInEasyLogo-bottom.png")        
 
 / .form-holder
