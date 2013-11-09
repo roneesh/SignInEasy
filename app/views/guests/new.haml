@@ -36,13 +36,14 @@
     %a(href="/meeting_form")
       %button(type="submit" class="btn btn-primary btn-xxlg")
         %i.fa.fa-question-circle.icon-white
-        Other 
+        Other
     
+    = button_to('Meeting', organization_guests_new_with_host_path, :class => 'btn btn-primary btn-xxlg')
+
+
+
 .row  
   .bottom-logo-container
     =image_tag("SignInEasyLogo-bottom.png")        
-
-/ .form-holder
-/   = render 'form'
 
 
