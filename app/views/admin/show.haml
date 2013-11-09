@@ -1,0 +1,21 @@
+%h1 SignInEasy Master Admin Page
+%hr
+%ul.admin-table
+  -@objects.each do |object|
+    %li    
+      %h3= object.model
+      %table.table.table-striped
+        %thead
+          -important_columns(object).each do |column|
+            %th 
+              = column
+          %th Edit
+          %th Destroy
+        %tbody
+          -object.each do |obj|
+            %tr
+              -important_attributes(obj).each do |key, value|
+                %td
+                  = value
+              %td Edit
+              %td Delete
