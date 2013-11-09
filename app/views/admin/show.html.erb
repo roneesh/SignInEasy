@@ -8,16 +8,20 @@
     <h3> <%= object.model %> </h3>
     <table class="table table-striped">
       <thead>
-        <% object.column_names.each do |column| %>  
+        <% important_columns(object).each do |column| %>  
           <th> <%= column %> </th>
         <% end %>
+        <th> Edit </th>
+        <th> Destroy </th>
       </thead>
       <tbody>
         <% object.each do |obj| %>
           <tr>
-            <% obj.attributes.each do |key, value| %>
+            <% important_attributes(obj).each do |key, value| %>
               <td><%= value %> </td>
             <% end %>
+            <td> Edit </td>
+            <td> Delete </td>
           </tr>
         <% end %>
 
