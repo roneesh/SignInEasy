@@ -1,9 +1,7 @@
 = simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
   .form-group	
     = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your first and last name", :placeholder => "ex: John Smith (Visitor Name)"
-  .form-group
     = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your company name", :placeholder => "ex: 1871 // Visitor's Company Name (Can be blank)"
-  .form-group
     = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com (Visitor Email Address)"
   .form-group
     = f.hidden_field :organization_id, value: @organization_id 
