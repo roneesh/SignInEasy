@@ -1,34 +1,36 @@
+%br
+  .h3.center Last step! Please fill out the information below. The person you are here to see will be automatically notified of your arrival.
+%br
 
+.col-lg-6.col-lg-offset-3
 
+  = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
+    = if @guest.errors.any?
+      .error_explanation
+        %h2
+        = pluralize(@guest.errors.count, "error")
 
-
-= form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
-  = if @guest.errors.any?
-    .error_explanation
-      %h2
-      = pluralize(@guest.errors.count, "error")
-
-    %ul
-    = @aha.errors.full_messages.each do |msg|
-      %li
-      = msg
-  
-  .form-group
-    = f.label :name, "Name"
-    = f.text_field :name, :class => 'form-control input-lg', :hint => "Enter your first and last name", :placeholder => 'ex: John Smith', :required => ""
-
-  .form-group
-    = f.label :name, "Company Name"
-    = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your company name (optional)', :placeholder => '1871'
-
-  .form-group
-    = f.label :email, "Email Address"
-    = f.email_field :email, :class => 'form-control input-lg', :hint => 'Enter your email address', :placeholder => 'johnsmith@gmail.com'
-
-  .form-group
-    = f.hidden_field :organization_id, value: @organization_id   
-
-  .form-group.center-buttons.span-3
-    = f.submit 'Register', :class => 'btn btn-success btn-xlg'
-  .form-group.center-buttons.span-3  
-    = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default btn'
+      %ul
+      = @aha.errors.full_messages.each do |msg|
+        %li
+        = msg
+	  
+    .form-group
+      = f.label :name, "Name"
+      = f.text_field :name, :class => 'form-control input-lg', :hint => "Enter your first and last name", :placeholder => 'ex: John Smith', :required => ""
+    
+    .form-group
+      = f.label :name, "Company Name"
+      = f.text_field :name, :class => 'form-control input-lg', :hint => 'Enter your company name (optional)', :placeholder => '1871'
+    
+    .form-group
+      = f.label :email, "Email Address"
+      = f.email_field :email, :class => 'form-control input-lg', :hint => 'Enter your email address', :placeholder => 'johnsmith@gmail.com'
+    
+    .form-group
+      = f.hidden_field :organization_id, value: @organization_id   
+    
+    .form-group.center-buttons.span-3
+      = f.submit 'Register', :class => 'btn btn-success btn-xlg'
+    .form-group.center-buttons.span-3  
+      = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default btn'

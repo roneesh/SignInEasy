@@ -3,12 +3,13 @@
     .organization-logo-container
       =image_tag("your_business_logo_here_small.png")
     .visitor-ui-home-icon
-      
       %i.fa.fa-cog.icon-black
+    .visitor-ui-refresh-icon
+      %i.fa.fa-refresh.icon-black
 
       
 
-.row.btn-grid
+.btn-grid
   %br
     .h3 Welcome to [Organization Name]. What brings you in today?
   %br
@@ -41,13 +42,11 @@
     =# button_to('Meeting', organization_guests_new_with_host_path, :class => 'btn btn-primary btn-xxlg')
 	
 
-.form-host
-  .col-lg-6.col-lg-offset-3.col-md-6.col-med-offset-3
-    = render :partial => 'form_with_host'
+.form-with-host
+  = render :partial => 'form_with_host'
 
-  .col-lg-6.col-lg-offset-3
-    .form_without_host
-      = render :partial => 'form_without_host'
+.form-without-host
+  = render :partial => 'form_without_host'
 
 .row  
   .bottom-logo-container
