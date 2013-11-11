@@ -26,13 +26,15 @@
   position: fixed
   margin-left: -96.5px
   bottom: 25px
-  left: 50%  
+  left: 50%
+  z-index: 1 
 
 .organization-logo-container
   position: fixed
   margin-left: -97.5px
   top: 25px
   left: 50%
+  z-index: 1
 
 .visitor-ui-home-icon
   position: fixed
@@ -85,7 +87,12 @@
   top: 100px  
 
 .center
-  text-align: center  
+  text-align: center
+
+.group:after
+  content: ""
+  display: table
+  clear: both  
 
 #guest-form-input-name, #guest-form-input-email, #employee_autcomplete
   font-size: 24pt
