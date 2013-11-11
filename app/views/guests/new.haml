@@ -1,5 +1,5 @@
 .form-actions
-  .row
+  .row-fluid
     .organization-logo-container
       =image_tag("your_business_logo_here_small.png")
     .visitor-ui-home-icon
@@ -8,36 +8,36 @@
       %i.fa.fa-refresh.icon-black
 
       
-
-.btn-grid
-  %br
-    .h3 Welcome to [Organization Name]. What brings you in today?
-  %br
-  .form-navigation
-    %a(href="/meeting_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-calendar.icon-white
-        Meeting
-    %a(href="/meeting_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-user.icon-white
-        Drop In    
-    %a(href="/tour_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-location-arrow.icon-white
-        Tour
-    %a(href="/event_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-group.icon-white 
-        Event
-    %a(href="/meeting_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-info-circle.icon-white
-        Information    
-    %a(href="/meeting_form")
-      %button(type="submit" class="btn btn-primary btn-xxlg")
-        %i.fa.fa-question-circle.icon-white
-        Other
+.row-fluid
+  .btn-grid
+    %br
+      .h3 Welcome to [Organization Name]. What brings you in today?
+    %br
+    .form-navigation
+      %a(href="/meeting_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-calendar.icon-white
+          Meeting
+      %a(href="/meeting_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-user.icon-white
+          Drop In    
+      %a(href="/tour_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-location-arrow.icon-white
+          Tour
+      %a(href="/event_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-group.icon-white 
+          Event
+      %a(href="/meeting_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-info-circle.icon-white
+          Information    
+      %a(href="/meeting_form")
+        %button(type="submit" class="btn btn-primary btn-xxlg")
+          %i.fa.fa-question-circle.icon-white
+          Other
     
     =# button_to('Meeting', organization_guests_new_with_host_path, :class => 'btn btn-primary btn-xxlg')
 %br
@@ -46,13 +46,13 @@
 %br
 %br	
 
-.form-with-host.group
-  = render :partial => 'form_with_host'
+/* .form-with-host.group
+/*   = render :partial => 'form_with_host'
 
-.form-without-host.group
-  = render :partial => 'form_without_host'
+/* .form-without-host.group
+/*   = render :partial => 'form_without_host'
 
-.row  
+.row-fluid 
   .bottom-logo-container
     =image_tag("SignInEasyLogo-bottom.png")        
 

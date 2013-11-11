@@ -20,4 +20,4 @@ jQuery ->
   #   source: $('#employee_autcomplete').data('autocomplete-source')
 
   $('#form-back-btn').on "click", (event) ->
-    location.reload()
+    location.reload()   
