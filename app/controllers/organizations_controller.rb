@@ -17,4 +17,15 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def update
+    @organization = Organization.find_by_id(params[:id])
+    @organization.update_attributes(organization_params)
+    redirect_to admin_show_path
+  end
+
+private
+  def organization_params
+    params.require(:organization).permit(:name, :admin_id)
+  end
+
 end

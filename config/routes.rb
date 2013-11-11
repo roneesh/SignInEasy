@@ -6,7 +6,7 @@ SignInEasy::Application.routes.draw do
 
   get 'profile', to: 'users#show', as: "user"
 
-  resources :organizations, only: [:destroy, :show ] do
+  resources :organizations, only: [:destroy, :show, :update ] do
     resource :member_directory, only: [:show]
     resources :guests, only: [:new, :index]  
     get "static_pages/dashboard" 

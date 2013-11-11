@@ -16,7 +16,7 @@
             %tr
               -important_attributes(obj).each do |key, value|
                 %td
-                  = value
+                  = best_in_place obj, key
               %td 
                 = link_to "http://localhost:3000/#{asset_url(obj)}/edit", :method => :put, remote: true do
                   %i.fa.fa-edit
