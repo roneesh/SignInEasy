@@ -18,24 +18,24 @@
         %button(type="submit" class="btn btn-primary btn-xxlg meeting-btn")
           %i.fa.fa-calendar.icon-white
           Meeting
-      %a(href="/new_with_host")
-        %button(type="submit" class="btn btn-primary btn-xxlg")
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg drop-in-btn")
           %i.fa.fa-user.icon-white
           Drop In    
-      %a(href="/tour_form")
-        %button(type="submit" class="btn btn-primary btn-xxlg")
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg tour-btn")
           %i.fa.fa-location-arrow.icon-white
           Tour
-      %a(href="/event_form")
-        %button(type="submit" class="btn btn-primary btn-xxlg")
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg event-btn")
           %i.fa.fa-group.icon-white 
           Event
-      %a(href="/meeting_form")
-        %button(type="submit" class="btn btn-primary btn-xxlg")
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg info-btn")
           %i.fa.fa-info-circle.icon-white
           Information    
-      %a(href="/meeting_form")
-        %button(type="submit" class="btn btn-primary btn-xxlg")
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
           %i.fa.fa-question-circle.icon-white
           Other
     
@@ -46,11 +46,11 @@
 %br
 %br	
 
-/* .form-with-host.group
-/*   = render :partial => 'form_with_host'
+.form-with-host.group
+  = render :partial => 'form_with_host'
 
-/* .form-without-host.group
-/*   = render :partial => 'form_without_host'
+.form-without-host.group
+  = render :partial => 'form_without_host'
 
 .row-fluid 
   .bottom-logo-container
