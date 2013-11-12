@@ -3,7 +3,7 @@ jQuery ->
     event.preventDefault()
     $('.form-navigation').fadeOut('slow').delay(800)
     if $(event.target).hasClass('meeting-btn')
-      $('#meeting-radio-btn').attr('checked', 'true')
+
       $('.visiting-reason-display').html('Scheduled Meeting')
     if $(event.target).hasClass('tour-btn')
       $('#tour-radio-btn').attr('checked', 'true')
