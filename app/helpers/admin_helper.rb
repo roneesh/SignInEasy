@@ -2,11 +2,12 @@ module AdminHelper
 
 def important_columns(object)
   column_names = object.column_names
-  column_names - ["created_at", "updated_at"]
+  column_names - ["id", "created_at", "updated_at", "encrypted_password", "confirmation_token", "remember_token"]
 end 
 
 def important_attributes(object)
-  object.attributes.delete_if { |key, value| key == "created_at" || key == "updated_at"}
+  not_important_columns = ["id","created_at", "updated_at", "encrypted_password", "confirmation_token", "remember_token"]
+  object.attributes.delete_if { |key, value| not_important_columns.include?(key)}
 end
 
 def asset_url(object)

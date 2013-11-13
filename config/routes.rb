@@ -13,4 +13,8 @@ SignInEasy::Application.routes.draw do
   end
   resources :guests, only: [:create]
 
+  #To make admin delete links work, one for each class displayed there
+  delete "admin/organizations/:id", to: "organizations#destroy"
+
+
 end

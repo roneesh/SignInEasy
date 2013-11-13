@@ -9,7 +9,6 @@
           -important_columns(object).each do |column|
             %th 
               = column
-          %th Edit
           %th Destroy
         %tbody
           -object.each do |obj|
@@ -17,9 +16,6 @@
               -important_attributes(obj).each do |key, value|
                 %td
                   = best_in_place obj, key
-              %td 
-                = link_to "http://localhost:3000/#{asset_url(obj)}/edit", :method => :put, remote: true do
-                  %i.fa.fa-edit
               %td
-                = link_to "http://localhost:3000/#{asset_url(obj)}", :confirm => "are you sure?", :method => :delete do
+                = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
                   %i.fa.fa-times
