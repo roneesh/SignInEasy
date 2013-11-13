@@ -4,7 +4,7 @@
   -@objects.each do |object|
     %li    
       %h3= object.model
-      %table.table.table-striped
+      %table.table.table-striped.admin-width
         %thead
           -important_columns(object).each do |column|
             %th 
@@ -14,8 +14,12 @@
           -object.each do |obj|
             %tr
               -important_attributes(obj).each do |key, value|
-                %td
+                %td.width-100
                   = best_in_place obj, key
-              %td
+              %td.width-100
                 = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
                   %i.fa.fa-times
+    = link_to new_asset_url(object) do
+      %button.btn.btn-primary{type:"button"}
+        New
+        = object.model

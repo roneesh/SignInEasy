@@ -14,4 +14,8 @@ def asset_url(object)
   "#{object.class.to_s.downcase.pluralize}/#{object.id}"
 end
 
+def new_asset_url(object)
+  "#{object.model.to_s.downcase}/new"
+end
+
 end
