@@ -4,6 +4,13 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find_by_id(params[:id])
   end
 
+  def new
+    @organization = Organization.new
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     organization = Organization.find_by_id(params[:id])
     organization.destroy

@@ -19,7 +19,7 @@
               %td.width-100
                 = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
                   %i.fa.fa-times
-    = link_to new_asset_url(object) do
+    = link_to new_asset_url(object), remote: true do
       %button.btn.btn-primary{type:"button"}
         New
         = object.model

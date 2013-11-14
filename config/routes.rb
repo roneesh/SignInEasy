@@ -15,6 +15,6 @@ SignInEasy::Application.routes.draw do
 
   #To make admin delete links work, one for each class displayed there
   delete "admin/organizations/:id", to: "organizations#destroy"
-
+  get "admin/organization/new", to: "organizations#new"
 
 end
