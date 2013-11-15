@@ -24,4 +24,10 @@ class Guest < ActiveRecord::Base
   end 
 
 
+  # ensures all email addresses are saved in lowercase preventing possible duplicate entries
+  def downcase_email_address
+    self.email = self.email.downcase 
+  end
+
+
 end
