@@ -16,7 +16,7 @@
     
     .form-group
       = f.label :name, "Name"
-      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Enter your first and last name ex: John Smith'
+      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Enter your first and last name ex: John Smith', :required => "true"
 
     .form-group
       = f.label :name, "Company Name"
@@ -28,10 +28,10 @@
 
     .form-group
       = f.label :employee_name, "Other Reason"
-      = f.text_field :employee_name, :class => 'form-control input-lg', :placeholder => "Since one of the options isn't why you are here let us know"
+      = f.text_field :employee_name, :class => 'form-control input-lg', :placeholder => "Since one of the options isn't why you are here let us know", :required => "true"
 
     .form-group
-      = f.hidden_field :organization_id, value: @organization_id   
+      = f.hidden_field :organization_id, value: @organization_id      
 
     .form-group.center-buttons.span-3
       = f.submit 'Register', :class => 'btn btn-success btn-xlg'

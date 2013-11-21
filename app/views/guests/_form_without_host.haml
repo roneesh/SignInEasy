@@ -16,8 +16,9 @@
         = msg
 	  
     .form-group
-      = f.label :name, "Name"
-      = f.text_field :name, :class => 'form-control input-lg', :hint => "Enter your first and last name", :placeholder => 'ex: John Smith', :required => ""
+  
+      
+      = f.text_field :name, :class => 'form-control input-lg', :hint => "Enter your first and last name", :placeholder => 'ex: John Smith', :required => "true"
     
     .form-group
       = f.label :name, "Company Name"
@@ -28,7 +29,8 @@
       = f.email_field :email, :class => 'form-control input-lg', :hint => 'Enter your email address', :placeholder => 'johnsmith@gmail.com'
     
     .form-group
-      = f.hidden_field :organization_id, value: @organization_id   
+      = f.hidden_field :organization_id, value: @organization_id
+
     
     .form-group.center-buttons.span-3
       = f.submit 'Register', :class => 'btn btn-success btn-xlg'
