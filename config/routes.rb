@@ -7,8 +7,9 @@ SignInEasy::Application.routes.draw do
 
   resources :organizations, only: [:show] do
     resource :member_directory, only: [:show]
-    resources :guests, only: [:new, :index]  
-    get "static_pages/dashboard" 
+    resources :guests, only: [:new, :index]
+
+
   end
   resources :guests, only: [:create]
 

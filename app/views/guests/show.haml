@@ -1,6 +1,6 @@
-
-/ .top-logo-container
-/   =image_tag("your_business_logo_here_small.png")
+  .row
+    .organization-logo-container
+      =image_tag("your_business_logo_here_small.png")
 
   .show-page-text
     %br
@@ -8,12 +8,15 @@
       Thanks for Signing In Easy, 
       = @guest.name
     %br  
-    %h3 If you are visiting someone, they have been notified you're here.
-    %h3 (You also got a cool e-mail with wifi information and our user policies)
+    %h2 If you are visiting someone, they have been notified you're here.
+    %h2 (You also got a cool e-mail with wifi information and our user policies)
     %br
     %p Redirecting back to the registration page in a moment...
-    = link_to "or go now", new_guest_url, id: "link"
+    = link_to "or go now", new_guest_path, id: "link"
 
+.row  
+  .bottom-logo-container
+    =image_tag("SignInEasyLogo-bottom.png")    
 
 :javascript
 // redirect to new guest page after 4 seconds

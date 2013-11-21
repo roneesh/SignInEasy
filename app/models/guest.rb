@@ -4,6 +4,15 @@ class Guest < ActiveRecord::Base
 
   attr_accessor :employee_name
 
+
+  validates :name, :presence => true
+
+  before_create :downcase_email_address
+
+
+
+  
+
   def initialize(params = {})
     @employee_name = params[:employee_name] || nil
     super #without call to super guest object doesn't initialize
@@ -22,6 +31,11 @@ class Guest < ActiveRecord::Base
   def employee
     Employee.find_by_name(@employee_name).try(:id)
   end 
+
+  # ensures all email addresses are saved in lowercase preventing possible duplicate entries
+  def downcase_email_address
+    self.email = self.email.downcase 
+  end
 
 
 end

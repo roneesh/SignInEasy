@@ -1,4 +1,5 @@
 #clearance.password-reset
+.col-lg-4.col-lg-offset-4
   %h2
     = t '.title'
 
@@ -6,8 +7,8 @@
     = t '.description'
 
 
-    = simple_form_for(:password, :url => passwords_path, :html => { :class => 'form form-horizontal' }) do |form|
+    = form_for(:password, :url => passwords_path, :html => { :class => 'form-horizontal' }) do |form|
       .form-group
-        = form.input :email, :input_html => { :class => 'form-control' }, :placeholder => "Email address", :required => "", :type => "text"
+        = form.email_field :email, :class => 'form-control', :placeholder => "Email address", :required => "", :type => "text"
       .form-group
         = form.submit "Reset password", :class => 'btn btn-default'

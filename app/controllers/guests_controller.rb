@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
 
+  layout "visitor_ui", :only => ["new", "show"]
   
   def index
     @guests = Guest.all
@@ -8,6 +9,11 @@ class GuestsController < ApplicationController
   def new
     @guest = Guest.new
     @organization_id = params[:organization_id]
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def create

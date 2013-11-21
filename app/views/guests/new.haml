@@ -1,56 +1,60 @@
+.visitor-ui-form
+  .row-fluid
+    .organization-logo-container
+      =image_tag("your_business_logo_here_small.png")
+    .visitor-ui-home-icon
+      %i.fa.fa-cog.icon-black
 
-.row.top-logo-container
-  =image_tag("your_business_logo_here_small.png")
-%br
-Welcome to [Organization Name]. What brings you in today?
-%br
-
-.row.btn-grid
-  .form-navigation
-    %a(href="/meeting_form")
-      %button(type="submit" class="btn btn-primary btn-lg")
-        %i.icon-calendar.icon-white
-        Scheduled Meeting
-    %a(href="/tour_form")
-      %button(type="submit" class="btn btn-primary btn-lg")
-        %i.icon-map-marker.icon-white
-        Scheduled Tour
-    %a(href="/event_form")
-      %button(type="submit" class="btn btn-primary btn-lg")
-        %i.icon-group.icon-white 
-        Scheduled Event
-    %a(href="/information_form")
-      %button(type="submit" class="btn btn-primary btn-lg")
-        %i.icon-envelope.icon-white#guest-icon-envelope 
-        Other Reason
+      
+.row
+  .btn-grid
+    %br
+      .h3 Welcome to [Organization Name]. What brings you in today?
+    %br
+    .form-navigation
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg meeting-btn")
+          %i.fa.fa-calendar.icon-white
+          Meeting
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg drop-in-btn")
+          %i.fa.fa-user.icon-white
+          Drop In    
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg tour-btn")
+          %i.fa.fa-location-arrow.icon-white
+          Tour
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg event-btn")
+          %i.fa.fa-group.icon-white 
+          Event
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg info-btn")
+          %i.fa.fa-info-circle.icon-white
+          Information    
+      %a
+        %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
+          %i.fa.fa-question-circle.icon-white
+          Other
     
-  .logo-container
-    =image_tag("SignInEasyLogo-bottom.png")        
-
-/ .form-holder
-/   = render 'form'
-
-
-
-
-= simple_form_for(@guest, :html => { :class => 'form-horizontal' }) do |f| 
-  .form-group	
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your first and last name", :placeholder => "ex: John Smith (Visitor Name)"
-  .form-group
-    = f.input :email, :input_html => { :class => 'form-control input-lg' }, :hint => "add your article title here", :placeholder => "ex: johnsmith@gmail.com (Visitor Email Address)"
-  .form-group
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Enter your company name", :placeholder => "ex: 1871 // Visitor's Company Name (Can be blank)"
-  .form-group
-    = label_tag :employee_name
-    = text_field_tag 'guest[employee_name]'
-  .form-group
-    = f.hidden_field :organization_id, value: @organization_id 
-  .form-group
-    = f.input :name, :input_html => { :class => 'form-control input-lg' }, :hint => "Who are you hear to see? Start typing their name", :placeholder => "ex: John Smith // Hosting Member"  
-  .form-group  
-    = f.submit 'Register', :class => 'btn btn-success btn-lg'
-    = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger btn-lg"
 
 %br
+%br
+%br
+%br
+%br	
+
+.form-with-host.group
+  = render :partial => 'form_with_host'
+
+.form-without-host.group
+  = render :partial => 'form_without_host'
+
+.form-other.group
+  = render :partial => 'form_other'  
+
+.row-fluid 
+  .bottom-logo-container
+    =image_tag("SignInEasyLogo-bottom.png")        
 
 
