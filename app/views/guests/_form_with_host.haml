@@ -11,7 +11,7 @@
           = pluralize(@guest.errors.count, "error")
 
         %ul
-        = @aha.errors.full_messages.each do |msg|
+        = @guest.errors.full_messages.each do |msg|
           %li
           = msg
       .row.form-group

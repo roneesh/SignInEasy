@@ -31,7 +31,7 @@
                 %a{:href => "#"} Dashboard
               %li
                 =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
-                %a{:href => "#"} Reports             
+                %a{:href => ""} Reports             
               %li
                 =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
                 %a{:href => "#"} Front Desk
@@ -42,7 +42,7 @@
             -if signed_in?
 
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
                   [Organization's Name]
                   %b.caret
                 %ul.dropdown-menu
@@ -56,7 +56,7 @@
 
 
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
                   [User's Name]
                   %b.caret
                 %ul.dropdown-menu
