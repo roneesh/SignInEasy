@@ -1,19 +1,32 @@
 .page-header
-  %h1 Visitor Log
+  %h2 
+    Dashboard - [Organization Name]
+    .btn-group.pull-right
+      %button.btn.btn-default.active{type: "button"} Today
+      %button.btn.btn-default{type: "button"} Week
+      %button.btn.btn-default{type: "button"} Month
+
+.row
+  .col-sm-6.col-md-3
+    
+
+=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+%br
+%h3.panel.panel-default.panel-heading.center Visitor Records
 
 %table.table.table-striped.table-hover
   %thead
     %tr
       %th Name
       %th Email
-      %th Another Data Point
-      %th Another Data Point
-      %th Visiting Reason
+      %th Phone Number
+      %th Hosting Member
+      %th Visit Reason
       %th Date
       %th Time
       %th 
-      %th Show
-      %th Delete
+      %th Actions
 
   %tbody
     - @guests.each do |guest|
@@ -31,7 +44,4 @@
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td
         %td
-        %td
-%hr
-
-= link_to 'new', new_organization_guest_path, :class => 'btn btn-primary'
+%br        
