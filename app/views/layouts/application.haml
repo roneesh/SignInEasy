@@ -29,12 +29,12 @@
               %li
                 =# link_to "Dashboard", organization_static_pages_dashboard_path
                 %a{:href => "#"} Dashboard
-              %li
+              %li.disabled
                 =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
-                %a{:href => ""} Reports             
+                %a Reports             
               %li
-                =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
-                %a{:href => "#"} Front Desk
+                = link_to "Front Desk", new_organization_guest_path
+            
         
           %ul.nav.navbar-nav.navbar-right
           
