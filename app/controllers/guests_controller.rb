@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   layout "visitor_ui", :only => ["new", "show"]
   
   def index
-    @guests = Guest.all
+    @guests = Guest.page(params[:page]).per_page(10).order("created_at DESC")
   end
 
   def new
