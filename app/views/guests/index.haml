@@ -6,19 +6,22 @@
       %button.btn.btn-default{type: "button"} Week
       %button.btn.btn-default{type: "button"} Month
 
+.row
+  .col-sm-6.col-md-3
+    
+
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
 %br
-%h3.center Visitor Records
-%br
+%h3.panel.panel-default.panel-heading.center Visitor Records
 
 %table.table.table-striped.table-hover
   %thead
     %tr
       %th Name
       %th Email
-      %th Another Data Point
-      %th Another Data Point
+      %th Phone Number
+      %th Hosting Member
       %th Visit Reason
       %th Date
       %th Time
