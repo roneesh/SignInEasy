@@ -1,6 +1,8 @@
 .page-header
   %h1 Visitor Log
 
+=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
 %table.table.table-striped.table-hover
   %thead
     %tr
@@ -12,7 +14,6 @@
       %th Date
       %th Time
       %th 
-      %th Show
       %th Delete
 
   %tbody
@@ -29,7 +30,6 @@
           = guest.created_at.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td
         %td
         %td
 %hr

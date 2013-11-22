@@ -67,7 +67,8 @@ gem 'bootstrap-sass', '~> 3.0.0.0rc'
 gem 'haml'
 gem 'font-awesome-rails'
 
-gem 'will_paginate', '~> 3.0'
+#gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 # Services
 # gem 'twilio-ruby'
