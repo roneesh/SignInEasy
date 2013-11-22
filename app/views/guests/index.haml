@@ -5,11 +5,12 @@
       %button.btn.btn-default.active{type: "button"} Today
       %button.btn.btn-default{type: "button"} Week
       %button.btn.btn-default{type: "button"} Month
-      %button.btn.btn-default{type: "button"} Quarter
 
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
-%h4 Visitor Records
+%br
+%h3.center Visitor Records
+%br
 
 %table.table.table-striped.table-hover
   %thead
@@ -40,5 +41,4 @@
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td
         %td
-%br
-%hr
+%br        

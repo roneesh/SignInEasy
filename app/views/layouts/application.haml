@@ -6,7 +6,8 @@
   = stylesheet_link_tag 'application' 
 
 %body
-  .header
+
+  #wrap
     
     %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
       .container
@@ -76,13 +77,20 @@
       / /.navbar-collapse
 
 
-.container
-      
-  #flash
-  -flash.each do |key, value|
-    =key
-    %br
-    =value
+    .container
+          
+      #flash
+      -flash.each do |key, value|
+        =key
+        %br
+        =value
 
 
-  = yield
+      = yield
+
+
+  #footer
+    .container
+      %p.text-muted.credit
+        2013 SignInEasy
+
