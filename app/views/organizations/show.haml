@@ -8,24 +8,58 @@ Admin:
 / visitors information
 
 .page-header
-  %h1 Visitors
+  %h2 
+    Dashboard - [Organization Name]
+    .btn-group.pull-right
+      %button.btn.btn-default.active{type: "button"} Today
+      %button.btn.btn-default{type: "button"} Week
+      %button.btn.btn-default{type: "button"} Month
+
+.row
+  .col-sm-6.col-md-3
+    .jumbotron
+      %h3.center Visitor Count
+      %h1.center 75
+
+  .col-sm-6.col-md-3
+    .jumbotron
+      %h3.center Visitor Count
+      %h1.center 75
+
+  .col-sm-6.col-md-3
+    .jumbotron
+      %h3.center Notifications Sent
+      %h1.center 150
+
+  .col-sm-6.col-md-3
+    .jumbotron
+      %h3.center Minutes Saved
+      %h1.center 75 
+
+.clearfix
+
+%br
+%h3.panel.panel-default.panel-heading.center Today's Visitors
+
+=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+
 
 %table.table.table-striped.table-hover
   %thead
     %tr
       %th Name
       %th Email
-      %th Another Data Point
-      %th Another Data Point
-      %th Visiting Reason
+      %th Phone Number
+      %th Hosting Member
+      %th Visit Reason
       %th Date
       %th Time
       %th 
-      %th Show
-      %th Delete
+      %th Actions
 
   %tbody
-    - @organization.guests.each do |guest|
+    - @guests.each do |guest|
       %tr
         %td 
           = guest.name
@@ -40,81 +74,4 @@ Admin:
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td
         %td
-        %td
-%hr
-
-%br
-
-.page-header
-  %h1 Members
-
-%table.table.table-striped.table-hover
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Phone
-      %th Company
-      %th Data Point 1
-      %th Data Point 2
-      %th Data Point 3
-      %th 
-      %th Show
-      %th Delete
-
-  %tbody
-    - @organization.employees.each do |employee|
-      %tr
-        %td 
-          =#
-        %td 
-          =#
-        %td
-        %td  
-        %td 
-        %td 
-          =# guest.created_at.strftime("%b. %d\, %Y")
-        %td 
-          =# guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td
-        %td
-        %td
-%hr
-
-%br
-
-.page-header
-  %h1 Companies
-
-%table.table.table-striped.table-hover
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Phone
-      %th Company
-      %th Data Point 1
-      %th Data Point 2
-      %th Data Point 3
-      %th 
-      %th Show
-      %th Delete
-
-  %tbody
-    - @organization.employees.each do |employee|
-      %tr
-        %td 
-          =#
-        %td 
-          =#
-        %td
-        %td  
-        %td 
-        %td 
-          =# guest.created_at.strftime("%b. %d\, %Y")
-        %td 
-          =# guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td
-        %td
-        %td
-%hr
+%br 
