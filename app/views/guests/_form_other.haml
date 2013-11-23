@@ -19,19 +19,17 @@
       = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Enter your first and last name ex: John Smith', :required => "true"
 
     .form-group
-      = f.label :name, "Company Name"
-      = f.text_field :name, :class => 'form-control input-lg', :placeholder => '1871'
+      = f.label :company, "Company Name"
+      = f.text_field :company, :class => 'form-control input-lg', :placeholder => '1871'
 
     .form-group
       = f.label :email, "Email Address"
       = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'johnsmith@gmail.com'
 
     .form-group
-      = f.label :employee_name, "Other Reason"
-      = f.text_field :employee_name, :class => 'form-control input-lg', :placeholder => "Since one of the options isn't why you are here let us know", :required => "true"
-
-    .form-group
       = f.hidden_field :organization_id, value: @organization_id
+    .form-group
+      = f.hidden_field :reason, value: "Other" 
 
     .form-group.center-buttons.span-3
       = f.submit 'Register', :class => 'btn btn-success btn-xlg'

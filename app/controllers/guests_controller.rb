@@ -28,7 +28,6 @@ class GuestsController < ApplicationController
   end
 
   def show
-    @guest = Guest.find(params[:organization_id])
   end
 
 

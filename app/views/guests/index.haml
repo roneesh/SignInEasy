@@ -40,6 +40,7 @@
   %thead
     %tr
       %th Name
+      %th Company
       %th Email
       %th Phone Number
       %th Hosting Member
@@ -54,11 +55,14 @@
       %tr
         %td 
           = guest.name
+        %td
+          = guest.company  
         %td 
           = guest.email
         %td
         %td  
-        %td 
+        %td
+          = guest.reason 
         %td 
           = guest.created_at.strftime("%b. %d\, %Y")
         %td 

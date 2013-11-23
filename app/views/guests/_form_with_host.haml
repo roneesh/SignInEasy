@@ -2,8 +2,7 @@
   .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below. The person you are here to see will be automatically notified of your arrival.
 %br
 
-.row
-  .col-lg-10.col-lg-offset-1
+  .col-lg-6.col-lg-offset-3
     = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
       = if @guest.errors.any?
         .error_explanation
@@ -16,25 +15,25 @@
           = msg
       .row.form-group
       
-        = f.label :name, "Name", :class => 'col-lg-2'
-        = f.text_field :name, :class => 'form-control input-lg col-lg-6', :placeholder => 'Enter your first and last name ex: John Smith', :required => "true"
-        = f.label :name, "CLIENT SIDE VALIDATIONS", :class => 'col-lg-2'
+        = f.label :name, "Name"
+        = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Enter your first and last name ex: John Smith', :required => "true"
 
       .form-group
-        = f.label :name, "Company Name"
-        = f.text_field :name, :class => 'form-control input-lg', :placeholder => '1871'
+        = f.label :company, "Company Name"
+        = f.text_field :company, :class => 'form-control input-lg', :placeholder => '1871'
 
       .form-group
         = f.label :email, "Email Address"
         = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'johnsmith@gmail.com'
 
-      .form-group
+      .form-group 
         = f.label :employee_name, "Hosting Member"
         = f.text_field :employee_name, :class => 'form-control input-lg', :placeholder => 'Start typing the name of the person you are here to see', :required => "true"
 
       .form-group
         = f.hidden_field :organization_id, value: @organization_id
-
+      .form-group
+        = f.hidden_field :reason, value: "Meeting"         
 
       .form-group.center-buttons.span-3
         = f.submit 'Register', :class => 'btn btn-success btn-xlg'
