@@ -6,6 +6,7 @@
       %h3= object.model
       %table.table.table-striped.admin-width
         %thead
+          %th ID (Not editable)
           -important_columns(object).each do |column|
             %th 
               = column
@@ -13,13 +14,14 @@
         %tbody
           -object.each do |obj|
             %tr
-              -important_attributes(obj).each do |key, value|
+              %td= obj.id
+              -important_attributes(obj).each do |key, value| 
                 %td.width-100
-                  = best_in_place obj, key
+                  = value
               %td.width-100
                 = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
                   %i.fa.fa-times
-    = link_to new_asset_url(object), remote: true do
-      %button.btn.btn-primary{type:"button"}
+    %div(id="some-div" data-no-turbolink)
+      = button_to new_asset_url(object), method: :get, remote: true, class: "btn btn-primary", id: "new_#{object.model.to_s.downcase}_link" do
         New
         = object.model

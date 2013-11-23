@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   private
 
   def administrated_classes
-    ['Guest','Organization', 'User', 'OrganizationUser', 'Employee', 'ServiceList']
+    ['Organization', 'User', 'OrganizationUser', 'Employee', 'ServiceList']
   end
 
   def all_objects

@@ -1,3 +1,7 @@
+That page refresh bug is back.
+Can't do multiple edits of field on a page.
+Each custom delete/
+
 == README
 
 This README would normally document whatever steps are necessary to get the

@@ -18,4 +18,8 @@ def new_asset_url(object)
   "#{object.model.to_s.downcase}/new"
 end
 
+def edit_asset_url(object)
+  "#{object.model.to_s.downcase}_path"
+end
+
 end
