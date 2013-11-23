@@ -34,12 +34,9 @@ class OrganizationsController < ApplicationController
     
     respond_to do |format|
       if @organization.update_attributes(organization_params)
-        # format.html { redirect_to(admin_show_path, :notice => 'User was successfully updated.') }
-        format.json { }
+        format.html { redirect_to admin_show_path, :notice => 'Organization was successfully updated.' }
       else
-        # format.html { redirect_to admin_show_path }
-        # format.json { @organization, content_type: 'application/json'}
-        format.json
+        format.html { redirect_to admin_show_path, :notice => 'Organization not successfully updated.' }
       end
     end
 
