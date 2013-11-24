@@ -1,0 +1,24 @@
+= form_for @employee, remote: true, authenticity_token: true do |f|
+
+  = f.label :name
+  = f.text_field :name  
+  
+  = f.label :company   
+  = f.text_field :company
+
+  = f.label :email   
+  = f.text_field :email
+  
+  = f.label :phone
+  = f.text_field :phone
+
+  = f.label "Organization ID"
+  = f.text_field :organization_id
+
+  = f.label :allow_email   
+  = f.check_box :allow_email
+
+  = f.label :allow_text
+  = f.check_box :allow_text 
+
+  = f.submit

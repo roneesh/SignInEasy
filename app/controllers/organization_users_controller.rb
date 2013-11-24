@@ -14,7 +14,7 @@ class OrganizationUsersController < ApplicationController
 
     respond_to do |format|
       if @organization_user.save
-        flash[:notice] = "#{@organization_user.user} was added to #{@organization_user.organization}!" 
+        flash[:notice] = "#{@organization_user.user_id} was added to #{@organization_user.organization}!" 
         format.html { redirect_to admin_show_path}
       else
         flash[:notice] = "#{@organization_user.user} was not added to #{@organization_user.organization}!"

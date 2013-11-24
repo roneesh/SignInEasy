@@ -23,4 +23,9 @@ SignInEasy::Application.routes.draw do
   get 'admin/organizationuser/new', to: "organization_users#new"
   post 'organization_user', to: "organization_users#create", as: "organization_users"
   delete 'admin/organizationusers/:id', to: "organization_users#destroy"
+
+  get 'admin/employee/new', to: 'employees#new'
+  post 'employee', to: 'employees#create', as: "employees"
+  delete 'admin/employees/:id', to: 'employees#destroy'
+
 end
