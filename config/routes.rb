@@ -28,4 +28,8 @@ SignInEasy::Application.routes.draw do
   post 'employee', to: 'employees#create', as: "employees"
   delete 'admin/employees/:id', to: 'employees#destroy'
 
+  get 'admin/servicelist/new', to: 'service_lists#new'
+  post 'service_list', to: 'service_lists#create', as: 'service_lists'
+  delete 'admin/servicelists/:id', to: 'service_lists#destroy'
+
 end

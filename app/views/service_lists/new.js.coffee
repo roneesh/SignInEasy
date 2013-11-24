@@ -1,0 +1,1 @@
+$('#new_servicelist_link').hide().after('<%= j render("service_list_form", {:service_list => @service_list}) %>');
