@@ -1,6 +1,5 @@
 class AdminController < ApplicationController
   def show
-    flash.keep
     @objects = all_objects
   end
 
