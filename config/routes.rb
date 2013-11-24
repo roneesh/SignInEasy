@@ -1,6 +1,5 @@
 SignInEasy::Application.routes.draw do
 
-  get "admin/show"
   get "static_pages/splash"
   root :to => "clearance/sessions#new"
 
@@ -15,6 +14,8 @@ SignInEasy::Application.routes.draw do
   resources :guests, only: [:create]
 
   #ADMIN LINKS
+  get "admin/index"
+
   delete "admin/organizations/:id", to: "organizations#destroy"
   get "admin/organization/new", to: "organizations#new"
 

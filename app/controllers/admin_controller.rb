@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  def show
+  def index
     @objects = all_objects
   end
 
