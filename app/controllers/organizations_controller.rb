@@ -12,8 +12,16 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization.create(organization_params)
-    redirect_to admin_show_path
+    @organization = Organization.new(organization_params)
+    respond_to do |format|
+      if @organization.save
+        flash[:notice] = "#{@organization.name} was created!" 
+        format.html { redirect_to admin_show_path}
+      else
+        flash[:notice] =  "#{@organization.name} not created!"
+        format.html { redirect_to admin_show_path}
+      end
+    end
   end
 
   def destroy

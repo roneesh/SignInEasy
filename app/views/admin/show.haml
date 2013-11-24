@@ -1,5 +1,10 @@
 %h1 SignInEasy Master Admin Page
 %hr
+
+%p.notice
+  =flash[:notice]
+  Here
+
 %ul.admin-table
   -@objects.each do |object|
     %li    
@@ -18,6 +23,7 @@
               -important_attributes(obj).each do |key, value| 
                 %td.width-100
                   = value
+                  / = best_in_place key, value
               %td.width-100
                 = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
                   %i.fa.fa-times

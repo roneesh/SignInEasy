@@ -5,4 +5,7 @@ class Organization < ActiveRecord::Base
   has_many :employees
   has_one :service_list
 
+  validates :name, presence: true
+  validates :admin_id, presence: true
+
 end
