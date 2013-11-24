@@ -14,10 +14,10 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.save
         flash[:notice] = "#{@employee.name} was created" 
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       else
         flash[:notice] = "failed to create employee record"
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       end
     end
   end
@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
   def destroy
     employee = Employee.find_by_id(params[:id])
     employee.destroy
-    redirect_to admin_show_path
+    redirect_to admin_index_path
   end
 
 private

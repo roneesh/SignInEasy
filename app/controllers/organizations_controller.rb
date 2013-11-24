@@ -16,10 +16,10 @@ class OrganizationsController < ApplicationController
     respond_to do |format|
       if @organization.save
         flash[:notice] = "#{@organization.name} was created!" 
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       else
         flash[:notice] =  "#{@organization.name} not created!"
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       end
     end
   end
@@ -27,7 +27,7 @@ class OrganizationsController < ApplicationController
   def destroy
     organization = Organization.find_by_id(params[:id])
     organization.destroy
-    redirect_to admin_show_path
+    redirect_to admin_index_path
   end
 
   def edit
@@ -42,9 +42,9 @@ class OrganizationsController < ApplicationController
     
     respond_to do |format|
       if @organization.update_attributes(organization_params)
-        format.html { redirect_to admin_show_path, :notice => 'Organization was successfully updated.' }
+        format.html { redirect_to admin_index_path, :notice => 'Organization was successfully updated.' }
       else
-        format.html { redirect_to admin_show_path, :notice => 'Organization not successfully updated.' }
+        format.html { redirect_to admin_index_path, :notice => 'Organization not successfully updated.' }
       end
     end
 

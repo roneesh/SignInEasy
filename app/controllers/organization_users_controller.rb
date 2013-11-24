@@ -15,10 +15,10 @@ class OrganizationUsersController < ApplicationController
     respond_to do |format|
       if @organization_user.save
         flash[:notice] = "#{@organization_user.user_id} was added to #{@organization_user.organization}!" 
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       else
         flash[:notice] = "#{@organization_user.user} was not added to #{@organization_user.organization}!"
-        format.html { redirect_to admin_show_path}
+        format.html { redirect_to admin_index_path}
       end
     end
 
@@ -27,7 +27,7 @@ class OrganizationUsersController < ApplicationController
   def destroy
     organization_user = OrganizationUser.find_by_id(params[:id])
     organization_user.destroy
-    redirect_to admin_show_path
+    redirect_to admin_index_path
   end
 
 private

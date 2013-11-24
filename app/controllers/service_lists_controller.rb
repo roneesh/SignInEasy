@@ -14,10 +14,10 @@ class ServiceListsController < ApplicationController
     respond_to do |format|
       if @service_list.save 
         flash[:notice] = "#{@service_list.organization.name} permissions updated"
-        format.html {redirect_to admin_show_path}
+        format.html {redirect_to admin_index_path}
       else 
         flash[:notice] = "permissions not updated"
-        format.html {redirect_to admin_show_path}
+        format.html {redirect_to admin_index_path}
       end
     end
 
@@ -26,7 +26,7 @@ class ServiceListsController < ApplicationController
   def destroy
     service_list = ServiceList.find_by_id(params[:id])
     service_list.destroy
-    redirect_to admin_show_path
+    redirect_to admin_index_path
   end
 
 private
