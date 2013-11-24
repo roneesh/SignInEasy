@@ -18,4 +18,5 @@ SignInEasy::Application.routes.draw do
   delete "admin/organizations/:id", to: "organizations#destroy"
   get "admin/organization/new", to: "organizations#new"
 
+  get 'admin/user/new', to: 'users#new'
 end
