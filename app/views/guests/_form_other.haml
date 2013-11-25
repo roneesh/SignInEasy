@@ -15,16 +15,16 @@
         = msg
     
     .form-group
-      = f.label :name, "Name"
-      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Enter your first and last name ex: John Smith', :required => "true"
+      =# f.label :name, "Name"
+      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'First and Last Name', :required => "true"
 
     .form-group
-      = f.label :company, "Company Name"
-      = f.text_field :company, :class => 'form-control input-lg', :placeholder => '1871'
+      =# f.label :company, "Company Name"
+      = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Company'
 
     .form-group
-      = f.label :email, "Email Address"
-      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'johnsmith@gmail.com'
+      =# f.label :email, "Email Address"
+      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Email Address'
 
     .form-group
       = f.hidden_field :organization_id, value: @organization_id

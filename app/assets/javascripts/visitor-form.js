@@ -41,10 +41,10 @@ $('.visitor-ui-form.a').ready(function(){
 
 // Upon sucessful registration this activates the confirmation window
 
-  $('.other-btn').click(function(){
-    $('.btn-grid').fadeOut('fast');
-    $('.form-other').fadeIn('fast');
-  })  
+  // $('.other-btn').click(function(){
+  //   $('.btn-grid').fadeOut('fast');
+  //   $('.form-other').fadeIn('fast');
+  // })  
 
 // refresh page after 4 seconds
   // window.setTimeout(function() {
