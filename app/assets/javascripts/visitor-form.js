@@ -39,4 +39,16 @@ $('.visitor-ui-form.a').ready(function(){
     location.reload();
   })
 
+// Upon sucessful registration this activates the confirmation window
+
+  $('.other-btn').click(function(){
+    $('.btn-grid').fadeOut('fast');
+    $('.form-other').fadeIn('fast');
+  })  
+
+// refresh page after 4 seconds
+  // window.setTimeout(function() {
+  //   location.reload();
+  // }, 4000);
+
 })
