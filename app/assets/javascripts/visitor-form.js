@@ -43,7 +43,7 @@ $('.visitor-ui-form.a').ready(function(){
 
   // $('.other-btn').click(function(){
   //   $('.btn-grid').fadeOut('fast');
-  //   $('.form-other').fadeIn('fast');
+  //   $('.show-page-text').fadeIn('fast');
   // })  
 
 // refresh page after 4 seconds
