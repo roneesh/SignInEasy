@@ -1,0 +1,12 @@
+= form_for @service_list, remote: true, authenticity_token: true do |f|
+
+  = f.label "Organization ID"
+  = f.text_field :organization_id
+
+  = f.label :email_notification   
+  = f.check_box :email_notification
+
+  = f.label :text_notification
+  = f.check_box :text_notification
+
+  = f.submit

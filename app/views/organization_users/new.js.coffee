@@ -1,0 +1,1 @@
+$('#new_organizationuser_link').hide().after('<%= j render("organization_user_form", {:organization_user => @organization_user}) %>');
