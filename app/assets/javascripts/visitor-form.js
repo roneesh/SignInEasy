@@ -42,9 +42,14 @@ $('.visitor-ui-form.a').ready(function(){
 // Upon sucessful registration this activates the confirmation window
 
   // $('.other-btn').click(function(){
-  //   $('.btn-grid').fadeOut('fast');
+  //   $('.form').fadeOut('fast');
   //   $('.show-page-text').fadeIn('fast');
   // })  
+
+// Sucessful AJAX request submission
+
+ // $('#your_form').on 'ajax:success', (event, data, status, xhr) ->
+  // Your success logic
 
 // refresh page after 4 seconds
   // window.setTimeout(function() {

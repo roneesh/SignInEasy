@@ -4,7 +4,7 @@ class Guest < ActiveRecord::Base
 
   attr_accessor :employee_name
 
-  validates :name, :presence => true
+  validates_presence_of :name
   before_create :downcase_email_address
 
 
