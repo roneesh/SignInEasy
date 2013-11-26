@@ -14,7 +14,7 @@
       = @guest.errors.full_messages.each do |msg|
         %li
         = msg
-	  
+        
     .form-group
   
       =# f.label :name, "Name"
@@ -30,7 +30,6 @@
     
     .form-group
       = f.hidden_field :organization_id, value: @organization_id
-    .form-group
       = f.hidden_field :reason, :value => "Tour"      
 
     
