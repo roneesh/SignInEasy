@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
 
-  layout "visitor_ui", :only => ["new", "show"]
+  layout "visitor_ui", :only => ["new"]
   
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
@@ -35,7 +35,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :organization_id, :employee_name)
+    params.require(:guest).permit(:name, :email, :company, :reason, :organization_id, :employee_name)
   end
 
 

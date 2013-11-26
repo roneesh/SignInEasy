@@ -3,30 +3,30 @@ $('.visitor-ui-form.a').ready(function(){
 
   $('.meeting-btn').click(function(){
     $('.btn-grid').fadeOut('fast')
-    $('.form-with-host').fadeIn('fast');
+    $('.form-meeting').fadeIn('fast');
   })
   
 
   $('.drop-in-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-with-host').fadeIn('fast');  
+    $('.form-dropin').fadeIn('fast');  
   })
   
 
   $('.tour-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-tour').fadeIn('fast');
   })
 
 
   $('.event-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-event').fadeIn('fast');
   })
 
   $('.info-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-information').fadeIn('fast');
   })
 
 
@@ -35,7 +35,7 @@ $('.visitor-ui-form.a').ready(function(){
     $('.form-other').fadeIn('fast');
   })
 
-  $('.form-cancel-btn').click(function(){
+  $('.form-cancel').click(function(){
     location.reload();
   })
 

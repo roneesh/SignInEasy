@@ -2,7 +2,6 @@
   .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below.
 
 .col-lg-6.col-lg-offset-3
-
   = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
     = if @guest.errors.any?
       .error_explanation
@@ -13,26 +12,24 @@
       = @guest.errors.full_messages.each do |msg|
         %li
         = msg
-        
-    .form-group
-  
-      =# f.label :name, "Name"
-      = f.text_field :name, :class => 'form-control input-lg', :hint => "", :placeholder => 'First and Last Name', :required => "true"
     
+    .form-group
+      =# f.label :name, "Name"
+      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'First and Last Name', :required => "true"
+
     .form-group
       =# f.label :company, "Company Name"
       = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Company'
-    
+
     .form-group
       =# f.label :email, "Email Address"
       = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Email Address'
-    
+
     .form-group
       = f.hidden_field :organization_id, value: @organization_id
-      = f.hidden_field :reason, :value => 'Tour'    
+      = f.hidden_field :reason, value: 'Tour' 
 
-    
     .form-group.center-buttons.span-3
       = f.submit 'Register', :class => 'btn btn-success btn-xlg'
     .form-group.center-buttons.span-3  
-      = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
+      = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default'

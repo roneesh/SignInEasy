@@ -1,6 +1,6 @@
 %br
   .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below. 
-  .h3.col-lg-10.col-lg-offset-1.center Let us know who you dropped in to see and they will be automatically notified of your arrival.
+  .h3.col-lg-10.col-lg-offset-1.center Let us know who your meeting is with and they will be automatically notified of your arrival.
 
 
   .col-lg-6.col-lg-offset-3
@@ -33,7 +33,7 @@
 
       .form-group
         = f.hidden_field :organization_id, value: @organization_id
-        = f.hidden_field :reason, value: 'Drop in'      
+        = f.hidden_field :reason, value: 'Meeting'      
 
       .form-group.center-buttons.span-3
         = f.submit 'Register', :class => 'btn btn-success btn-xlg'
