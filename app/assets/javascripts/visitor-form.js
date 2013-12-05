@@ -51,9 +51,5 @@ $('.visitor-ui-form.a').ready(function(){
  // $('#your_form').on 'ajax:success', (event, data, status, xhr) ->
   // Your success logic
 
-// refresh page after 4 seconds
-  // window.setTimeout(function() {
-  //   location.reload();
-  // }, 4000);
 
 })
