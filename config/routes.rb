@@ -7,7 +7,7 @@ SignInEasy::Application.routes.draw do
 
   resources :organizations, only: [:destroy, :show, :update, :create ] do
     resource :member_directory, only: [:show]
-    resources :guests, only: [:new, :index]
+    resources :guests, only: [:new, :show, :index]
 
 
   end
