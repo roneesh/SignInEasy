@@ -27,13 +27,11 @@
             -if signed_in?
 
               %li
-                = link_to "Dashboard", organization_guests_path(@organization_id)
-                / %a{:href => "#"} Dashboard
+                = link_to "Dashboard", organization_guests_path(current_user.id)
               %li.disabled
-                =# link_to "Start Guest Module", new_organization_guest_path(@organization.id)  
                 %a Reports             
               %li
-                = link_to "Front Desk", new_organization_guest_path(@organization_id)
+                = link_to "Front Desk", new_organization_guest_path(current_user.id)
             
         
           %ul.nav.navbar-nav.navbar-right
@@ -48,11 +46,13 @@
                 %ul.dropdown-menu
 
                   %li
-                    %a{:href => "#"} Settings
+                    %a{:href => "#"} Visitors
                   %li
-                    = link_to "Employees", user_path(current_user.id)
+                    =# link_to "Employees", user_path(current_user.id)
+                    %a{:href => "#"} Employees
                   %li
-                    = link_to "Visitor Archive", user_path(current_user.id)                    
+                    =# link_to "Visitor Archive", user_path(current_user.id)
+                    %a{:href => "#"} Settings                   
 
 
               %li.dropdown

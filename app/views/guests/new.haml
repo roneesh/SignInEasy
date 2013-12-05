@@ -39,16 +39,25 @@
     
 	
 
-.form-with-host.group
-  = render :partial => 'form_with_host'
+.form-ui.form-meeting.group
+  = render :partial => 'form_meeting'
 
-.form-without-host.group
-  = render :partial => 'form_without_host'
+.form-ui.form-dropin.group
+  = render :partial => 'form_dropin'
 
-.form-other.group
+.form-ui.form-event.group
+  = render :partial => 'form_event'
+
+.form-ui.form-tour.group
+  = render :partial => 'form_tour'    
+
+.form-ui.form-information.group
+  = render :partial => 'form_information'
+
+.form-ui.form-other.group
   = render :partial => 'form_other'
 
-.show-page-text
+.form-ui.show-page-text.group
   = render :partial => 'confirmation'   
 
 .row-fluid 

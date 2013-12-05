@@ -3,30 +3,30 @@ $('.visitor-ui-form.a').ready(function(){
 
   $('.meeting-btn').click(function(){
     $('.btn-grid').fadeOut('fast')
-    $('.form-with-host').fadeIn('fast');
+    $('.form-meeting').fadeIn('fast');
   })
   
 
   $('.drop-in-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-with-host').fadeIn('fast');  
+    $('.form-dropin').fadeIn('fast');  
   })
   
 
   $('.tour-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-tour').fadeIn('fast');
   })
 
 
   $('.event-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-event').fadeIn('fast');
   })
 
   $('.info-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
-    $('.form-without-host').fadeIn('fast');
+    $('.form-information').fadeIn('fast');
   })
 
 
@@ -35,20 +35,21 @@ $('.visitor-ui-form.a').ready(function(){
     $('.form-other').fadeIn('fast');
   })
 
-  $('.form-cancel-btn').click(function(){
+  $('.form-cancel').click(function(){
     location.reload();
   })
 
 // Upon sucessful registration this activates the confirmation window
 
   // $('.other-btn').click(function(){
-  //   $('.btn-grid').fadeOut('fast');
-  //   $('.form-other').fadeIn('fast');
+  //   $('.form').fadeOut('fast');
+  //   $('.show-page-text').fadeIn('fast');
   // })  
 
-// refresh page after 4 seconds
-  // window.setTimeout(function() {
-  //   location.reload();
-  // }, 4000);
+// Sucessful AJAX request submission
+
+ // $('#your_form').on 'ajax:success', (event, data, status, xhr) ->
+  // Your success logic
+
 
 })

@@ -1,6 +1,7 @@
 %br
-  .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below. The person you are here to see will be automatically notified of your arrival.
-%br
+  .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below. 
+  .h3.col-lg-10.col-lg-offset-1.center Let us know who you dropped in to see and they will be automatically notified of your arrival.
+
 
   .col-lg-6.col-lg-offset-3
     = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
@@ -32,9 +33,9 @@
 
       .form-group
         = f.hidden_field :organization_id, value: @organization_id
-        = f.hidden_field :reason, value: "Meeting"         
+        = f.hidden_field :reason, value: 'Drop in'      
 
       .form-group.center-buttons.span-3
         = f.submit 'Register', :class => 'btn btn-success btn-xlg'
       .form-group.center-buttons.span-3  
-        = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel-btn'
+        = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'

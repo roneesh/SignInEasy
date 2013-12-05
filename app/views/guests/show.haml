@@ -9,7 +9,7 @@
       = @guest.name
     %br  
     %h2 If you are visiting someone, they have been notified you're here.
-    %h2 (You also got a cool e-mail with wifi information and our user policies)
+    / %h2 (You also got a cool e-mail with wifi information and our user policies)
     %br
     %p Redirecting back to the registration page in a moment...
     =# link_to "or go now", new_organization_guest_path, id: "link"
@@ -21,5 +21,5 @@
 :javascript
 // redirect to new guest page after 4 seconds
   window.setTimeout(function() {
-     window.location.href = '../guests/new';
+     window.location.href='#{new_organization_guest_path(current_user.id)}'
   }, 4000);
