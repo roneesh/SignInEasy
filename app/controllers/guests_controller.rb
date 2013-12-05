@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
 
-  layout "visitor_ui", :only => ["new"]
+  layout "visitor_ui", :only => ["new, show"]
   
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
@@ -21,9 +21,9 @@ class GuestsController < ApplicationController
     guest.set_id
     if guest.save
       guest.run_notification_service if guest.employee_id
-      redirect_to new_organization_guest_path(params[:guest][:organization_id])
+      redirect_to organization_guest_path(params[:guest][:organization_id])
     else
-      redirect_to new_organization_guest_path(params[:guest][:organization_id])
+      redirect_to organization_guest_path(params[:guest][:organization_id])
     end
   end
 
