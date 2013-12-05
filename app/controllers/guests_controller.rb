@@ -30,9 +30,15 @@ class GuestsController < ApplicationController
   def show
   end
 
+  def destroy
+    @guest = Guest.find(params[:id])
+    @guest.destroy
+  end
 
 
   private
+
+  
 
   def guest_params
     params.require(:guest).permit(:name, :email, :company, :reason, :organization_id, :employee_name)

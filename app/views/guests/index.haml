@@ -57,7 +57,8 @@
         %td 
           = guest.email
         %td
-        %td  
+        %td 
+          = guest.employee 
         %td
           = guest.reason 
         %td 
@@ -65,5 +66,9 @@
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td
-
+          = link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    organization_guest_path(guest),
+                    :method => :delete,
+                    :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                    :class => 'btn btn-mini btn-danger'        
 %br        
