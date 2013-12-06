@@ -31,4 +31,12 @@ class Guest < ActiveRecord::Base
     self.email = self.email.downcase 
   end
 
+  def employee_name
+    employee.try(:name)
+  end
+
+  def employee_name=(name)
+    self.employee = Employee.find_or_create_by_name(name) if name.present?
+  end
+
 end

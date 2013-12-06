@@ -28,6 +28,11 @@ class EmployeesController < ApplicationController
     redirect_to admin_index_path
   end
 
+  def autocomplete
+    @employees = Employee.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @employees.map(&:name)
+  end
+
 private
   def employee_params
     params.require(:employee).permit(:name, :company, :email, :phone, :organization_id, :allow_email, :allow_text)
