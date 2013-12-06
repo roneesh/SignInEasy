@@ -1,11 +1,10 @@
 class GuestsController < ApplicationController
-
-
   
   layout "visitor_ui", :only => ["new", "show"]
   
   before_action :set_organization
 
+  autocomplete :employee, :name, :full => true
 
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")

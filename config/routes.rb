@@ -8,14 +8,14 @@ SignInEasy::Application.routes.draw do
   resources :organizations, only: [:destroy, :show, :update, :create ] do
     resource :member_directory, only: [:show]
     resources :guests, only: [:new, :show, :index]
-
+    get :autocomplete_employee_name, :on => :collection
 
   end
   resources :guests, only: [:create]
 
 
   #autocomplete
-  get '/employee_names_autofill', controller: "employee", action: "autocomplete", as: "employee_autocomplete_names"
+  #get '/employee_names_autofill', controller: "employee", action: "autocomplete", as: "employee_autocomplete_names"
 
   #ADMIN LINKS
   get "admin/index"
