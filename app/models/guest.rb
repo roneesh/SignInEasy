@@ -31,5 +31,4 @@ class Guest < ActiveRecord::Base
     self.email = self.email.downcase 
   end
 
-
 end

@@ -41,7 +41,7 @@
 
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
-                  [Organization's Name]
+                  [Organization Name]
                   %b.caret
                 %ul.dropdown-menu
 
@@ -57,7 +57,7 @@
 
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
-                  [User's Name]
+                  = current_user.name
                   %b.caret
                 %ul.dropdown-menu
 
