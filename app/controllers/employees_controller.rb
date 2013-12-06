@@ -1,5 +1,7 @@
 class EmployeesController < ApplicationController
 
+  autocomplete :employee, :name, :full => true
+
   def new
     @employee = Employee.new
 
@@ -26,6 +28,11 @@ class EmployeesController < ApplicationController
     employee = Employee.find_by_id(params[:id])
     employee.destroy
     redirect_to admin_index_path
+  end
+
+  def autocomplete
+    @employees = Employee.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @employees.map(&:name)
   end
 
 private

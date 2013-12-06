@@ -29,7 +29,7 @@
 
       .form-group 
         =# f.label :employee_name, "Hosting Member"
-        = f.autocomplete_field :employee_name, autocomplete_employee_name_organizations_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Hosting Member', :required => "true"
+        = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Hosting Member', :required => "true"
         %span.help-block Start typing the name of the person you are here to see  
 
       .form-group

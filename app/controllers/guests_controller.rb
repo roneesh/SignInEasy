@@ -1,10 +1,10 @@
 class GuestsController < ApplicationController
   
-  layout "visitor_ui", :only => ["new", "show"]
-  
-  before_action :set_organization
-
   autocomplete :employee, :name, :full => true
+
+  layout "visitor_ui", :only => ["new", "show"]
+
+
 
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
@@ -17,6 +17,7 @@ class GuestsController < ApplicationController
     respond_to do |format|
       format.js
       format.html
+      format.json
     end
   end
 
@@ -42,10 +43,6 @@ class GuestsController < ApplicationController
 
 
   private
-
-  def set_organization
-    @organization = Organization.find_by_id(params[:organization_id])
-  end
 
   def guest_params
     params.require(:guest).permit(:name, :email, :company, :reason, :organization_id, :employee_name)
