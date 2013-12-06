@@ -68,7 +68,8 @@ gem 'bootstrap-sass', '~> 3.0.0.0rc'
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'will_paginate-bootstrap'
-gem 'simple_form'
+# gem 'simple_form'
+gem 'rails3-jquery-autocomplete'
 # gem 'best_in_place', :branch => 'rails-4'
 
 # Services
