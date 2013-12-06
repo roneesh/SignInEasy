@@ -13,6 +13,10 @@ SignInEasy::Application.routes.draw do
   end
   resources :guests, only: [:create]
 
+
+  #autocomplete
+  get '/employee_names_autofill', controller: "employee", action: "autocomplete", as: "employee_autocomplete_names"
+
   #ADMIN LINKS
   get "admin/index"
 
