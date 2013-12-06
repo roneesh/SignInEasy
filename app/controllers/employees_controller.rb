@@ -1,7 +1,5 @@
 class EmployeesController < ApplicationController
 
-  autocomplete :employee, :name, :full => true
-
   def new
     @employee = Employee.new
 
