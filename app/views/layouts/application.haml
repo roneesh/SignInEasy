@@ -48,10 +48,10 @@
 
                   %li
                     %a{:href => "#"} Visitors
-                  %li
+                  %li.disabled
                     =# link_to "Employees", user_path(current_user.id)
                     %a{:href => "#"} Employees
-                  %li
+                  %li.disabled
                     =# link_to "Visitor Archive", user_path(current_user.id)
                     %a{:href => "#"} Settings                   
 
@@ -62,10 +62,9 @@
                   %b.caret
                 %ul.dropdown-menu
 
+                
                   %li
-                    %a{:href => "#"} Settings
-                  %li
-                    = link_to "Profile", user_path(current_user.id) 
+                    = link_to "Settings", user_path(current_user.id) 
                 
                   %li.divider
                   %li

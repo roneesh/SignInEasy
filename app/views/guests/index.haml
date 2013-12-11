@@ -41,7 +41,7 @@
       %th Name
       %th Company
       %th Email
-      %th Phone Number
+      
       %th Hosting Member
       %th Visit Reason
       %th Date
@@ -57,7 +57,7 @@
           = guest.company  
         %td 
           = guest.email
-        %td
+        
         %td 
           = guest.employee
         %td
@@ -66,5 +66,8 @@
           = guest.created_at.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.strftime(" %I:%M %p")
-        %td       
-%br        
+        %td      
+          %btn.btn-sm.btn-danger{:type => "button"} Delete
+%br       
+
+
