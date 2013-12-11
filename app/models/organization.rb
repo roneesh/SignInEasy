@@ -8,4 +8,6 @@ class Organization < ActiveRecord::Base
   validates :name, presence: true
   validates :admin_id, presence: true
 
+  
+
 end
