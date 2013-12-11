@@ -2,14 +2,14 @@
   .organization-logo-container
     =image_tag("your_business_logo_here_small.png")
 
-  .show-page-text
+  .btn-grid.show-page-text
     %br
-    %h1 
-      Thanks for Signing In Easy, 
-      = @guest.name
+    %h2 
+      Thanks for registering, 
+      = @guest.name.split.first
     %br  
     %h2 If you are visiting someone, they have been notified you're here.
-    / %h2 (You also got a cool e-mail with wifi information and our user policies)
+    %h2 Please take a seat in the waiting area.
     %br
     %p Redirecting back to the registration page in a moment...
     =# link_to "or go now", new_organization_guest_path, id: "link"
@@ -21,5 +21,5 @@
 :javascript
 // redirect to new guest page after 4 seconds
   window.setTimeout(function() {
-     window.location.href='#{new_organization_guest_path(current_user.id)}'
+     window.location.href='#{new_organization_guest_path(@guest.organization_id)}'
   }, 5000);

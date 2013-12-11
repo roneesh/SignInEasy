@@ -17,4 +17,5 @@
 //= require autocomplete-rails
 //= require bootstrap
 //= require turbolinks
+//= require browser_timezone_rails/application.js
 //= require_tree .

@@ -28,11 +28,11 @@
             -if signed_in?
 
               %li
-                = link_to "Dashboard", organization_guests_path(current_user.id)
+                = link_to "Dashboard", organization_guests_path(current_user)
               %li.disabled
-                %a Reports             
+                = link_to "Reports"             
               %li
-                = link_to "Front Desk", new_organization_guest_path(current_user.id)
+                = link_to "Front Desk", new_organization_guest_path(current_user)
             
         
           %ul.nav.navbar-nav.navbar-right
@@ -47,13 +47,11 @@
                 %ul.dropdown-menu
 
                   %li
-                    %a{:href => "#"} Visitors
-                  %li
-                    =# link_to "Employees", user_path(current_user.id)
-                    %a{:href => "#"} Employees
-                  %li
-                    =# link_to "Visitor Archive", user_path(current_user.id)
-                    %a{:href => "#"} Settings                   
+                    = link_to "Visitors"
+                  %li.disabled
+                    = link_to "Employees"
+                  %li.disabled
+                    = link_to "Settings"                   
 
 
               %li.dropdown
@@ -62,10 +60,9 @@
                   %b.caret
                 %ul.dropdown-menu
 
+                
                   %li
-                    %a{:href => "#"} Settings
-                  %li
-                    = link_to "Profile", user_path(current_user.id) 
+                    = link_to "Settings"
                 
                   %li.divider
                   %li

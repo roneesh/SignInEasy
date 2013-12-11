@@ -72,6 +72,9 @@ gem 'will_paginate-bootstrap'
 gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
 # gem 'best_in_place', :branch => 'rails-4'
 
+# Time Zone (javascript browser work-around)
+gem 'browser-timezone-rails'
+
 # Services
 # gem 'twilio-ruby'
 gem 'mandrill-api'

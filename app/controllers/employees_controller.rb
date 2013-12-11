@@ -23,8 +23,8 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-    employee = Employee.find_by_id(params[:id])
-    employee.destroy
+    @employee = Employee.find_by_id(params[:id])
+    @employee.destroy
     redirect_to admin_index_path
   end
 
