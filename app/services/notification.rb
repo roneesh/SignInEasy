@@ -69,7 +69,7 @@ class Notification
       body: ({
         "apikey" => "009d0068cctdLLGt",
         "name" => "Guest notification",
-        "sms" => "1871 notification: Your guest #{@guest.name} is here! Please come to the front desk to greet them.",
+        "sms" => "1871 notification: Your guest #{@guest.name} has arrived! Please come to the front desk to greet them.",
         "recipient" => [{
           "name" => "#{employee_first_name}, #{employee_last_name}",
           "email" => @employee.email,
