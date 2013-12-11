@@ -63,9 +63,9 @@
         %td
           = guest.reason 
         %td 
-          =# guest.created_at.strftime("%b. %d\, %Y")
+          = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
         %td 
-          =# guest.created_at.strftime(" %I:%M %p")
+          = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td      
           %btn.btn-sm.btn-danger{:type => "button"} Delete
 %br       
