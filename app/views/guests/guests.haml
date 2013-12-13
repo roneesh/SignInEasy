@@ -1,0 +1,42 @@
+.page-header
+  %h2 
+    Dashboard - [Organization Name]
+
+  %h3.panel.panel-default.panel-heading.center Today's Visitors
+
+  =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Company
+        %th Email
+        
+        %th Hosting Member
+        %th Visit Reason
+        %th Date
+        %th Time
+        %th Actions
+
+    %tbody
+      - @guests.each do |guest|
+        %tr
+          %td 
+            = guest.name
+          %td
+            = guest.company  
+          %td 
+            = guest.email
+          
+          %td 
+            = guest.employee
+          %td
+            = guest.reason 
+          %td 
+            = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
+          %td 
+            = guest.created_at.in_time_zone.strftime(" %I:%M %p")
+          %td      
+            %btn.btn-sm.btn-danger{:type => "button"} Delete
+  %br  

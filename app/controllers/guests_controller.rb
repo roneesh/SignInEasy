@@ -8,6 +8,8 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
+    @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
+   # @todays_notifications = Guest.employee_id.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).count
   end
 
   def new

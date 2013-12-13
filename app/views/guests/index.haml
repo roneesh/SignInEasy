@@ -11,7 +11,8 @@
   .col-sm-6.col-md-3
     .jumbotron
       %h3.center Visitor Count
-      %h1.center 75
+      %h1.center
+        = @todays_guests.count
 
   .col-sm-6.col-md-3
     .jumbotron
@@ -22,6 +23,7 @@
     .jumbotron
       %h3.center Notifications Sent
       %h1.center 150
+
 
   .col-sm-6.col-md-3
     .jumbotron
@@ -49,7 +51,7 @@
       %th Actions
 
   %tbody
-    - @guests.each do |guest|
+    - @todays_guests.each do |guest|
       %tr
         %td 
           = guest.name
@@ -59,7 +61,7 @@
           = guest.email
         
         %td 
-          = guest.employee
+          = Employee.find(guest.employee_id).name
         %td
           = guest.reason 
         %td 
