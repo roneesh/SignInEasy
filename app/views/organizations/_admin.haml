@@ -1,0 +1,26 @@
+%ul.admin-table
+  -@objects.each do |object|
+    %li    
+      %h3= object.model
+      %table.table.table-striped.admin-width
+        %thead
+          %th ID (Not editable)
+          -important_columns(object).each do |column|
+            %th 
+              = column
+          %th Destroy
+        %tbody
+          -object.each do |obj|
+            %tr
+              %td= obj.id
+              -important_attributes(obj).each do |key, value| 
+                %td.width-100
+                  = value
+                  / = best_in_place key, value
+              %td.width-100
+                = link_to asset_url(obj), :confirm => "are you sure?", :method => :delete, :controller => "" do
+                  %i.fa.fa-times
+    %div(id="some-div" data-no-turbolink)
+      = button_to new_asset_url(object), method: :get, remote: true, class: "btn btn-primary", id: "new_#{object.model.to_s.downcase}_link" do
+        New
+        = object.model

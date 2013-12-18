@@ -60,8 +60,11 @@
         %td 
           = guest.email
         
-        %td 
-          = Employee.find(guest.employee_id).name
+        %td
+          - if guest.employee 
+            = Employee.find(guest.employee_id).name
+          - else
+            No employee
         %td
           = guest.reason 
         %td 
