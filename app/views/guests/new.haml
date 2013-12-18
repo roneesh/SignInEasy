@@ -9,7 +9,10 @@
 .row
   .btn-grid
     %br
-      .h3 Welcome to [Organization Name]. What brings you in today?
+      .h3 
+        Welcome to 
+        = current_user.organization.name
+        What brings you in today?
     %br
     .form-navigation
       %a
