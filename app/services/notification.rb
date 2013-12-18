@@ -10,7 +10,7 @@ class Notification
   end
 
   def send
-    #send_email if (@services.email_notification?) && email_allowed?
+    send_email if (@services.email_notification?) && email_allowed?
     send_text if (@services.text_notification?) && text_allowed?
   end
 
