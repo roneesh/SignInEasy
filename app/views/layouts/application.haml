@@ -32,7 +32,7 @@
               %li.disabled
                 = link_to "Reports"             
               %li
-                = link_to "Front Desk", new_organization_guest_path(current_user)
+                = link_to "Check In Guest", new_organization_guest_path(current_user)
             
         
           %ul.nav.navbar-nav.navbar-right
@@ -47,11 +47,15 @@
                 %ul.dropdown-menu
 
                   %li
+                    = link_to "Front Desk", new_organization_guest_path(current_user)
+                  %li.disabled
+                    = link_to "Settings" 
+                  %li.divider
+                  %li
                     = link_to "Visitors"
-                  %li.disabled
-                    = link_to "Employees"
-                  %li.disabled
-                    = link_to "Settings"                   
+                  %li
+                    = link_to "Members"
+                                    
 
 
               %li.dropdown

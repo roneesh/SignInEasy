@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  
+
   autocomplete :employee, :name, :full => true
 
   layout "visitor_ui", :only => ["new", "show"]
