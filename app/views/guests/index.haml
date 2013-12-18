@@ -1,6 +1,7 @@
 .page-header
   %h2 
-    Dashboard - [Organization Name]
+    Dashboard - 
+    = current_user.organization.name
     .btn-group.pull-right
       %button.btn.btn-default.active{type: "button"} Today
       %button.btn.btn-default.disabled{type: "button"} Yesterday

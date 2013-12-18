@@ -24,7 +24,6 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
               
-
             -if signed_in?
 
               %li
@@ -33,16 +32,14 @@
                 = link_to "Reports"             
               %li
                 = link_to "Check In Guest", new_organization_guest_path(current_user.organization.id)
-            
-        
+              
           %ul.nav.navbar-nav.navbar-right
-          
-          
+      
             -if signed_in?
 
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
-                  [Organization Name]
+                  = current_user.organization.name
                   %b.caret
                 %ul.dropdown-menu
 
@@ -55,47 +52,32 @@
                     = link_to "Visitors"
                   %li
                     = link_to "Members"
-                                    
-
-
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
-                  = current_user.name
+                  = current_user.email
                   %b.caret
-                %ul.dropdown-menu
-
-                
+                %ul.dropdown-menu 
                   %li
                     = link_to "Settings"
                 
                   %li.divider
                   %li
                     = link_to t('.sign_out'), sign_out_path, :method => :delete 
-
             -else
-
               =# form_tag 'Sign in', :class => 'btn btn-default navbar-btn', sign_in_path   
               %button.btn.btn-default.navbar-btn{:type => "button"} Sign in
 
 
       / /.navbar-collapse
-
-
     .container
-          
       #flash
       -flash.each do |key, value|
         =key
         %br
         =value
-
-
       = yield
-
 
   #footer
     .container
       %p.text-muted.credit
         &copy; 2013 SignInEasy
-
-
