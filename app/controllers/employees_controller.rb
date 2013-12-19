@@ -8,6 +8,29 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def index
+    @employees = Employee.where(organization_id: params[:organization_id])
+  end
+
+  def edit
+    @organization = current_user.organization
+    @employee = set_employee
+  end
+
+  def update
+    @employee = set_employee
+
+    respond_to do |format|
+      if @employee.update_attributes(employee_params)
+        format.html { redirect_to organization_employees_path(current_user.organization.id), notice: 'Employee was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @employee = Employee.new(employee_params)
 
@@ -36,6 +59,10 @@ class EmployeesController < ApplicationController
 private
   def employee_params
     params.require(:employee).permit(:name, :company, :email, :phone, :organization_id, :allow_email, :allow_text)
+  end
+
+  def set_employee
+    Employee.find(params[:id])
   end
 
 end

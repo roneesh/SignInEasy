@@ -1,0 +1,28 @@
+= form_for [@organization, @employee] do |f|
+
+  .form-group
+    = f.label :name
+    = f.text_field :name  
+  
+  .form-group
+    = f.label :company   
+    = f.text_field :company
+
+  .form-group
+    = f.label :email   
+    = f.text_field :email
+  
+  .form-group  
+    = f.label :phone
+    = f.text_field :phone
+
+  .form-group
+    = f.label :allow_email   
+    = f.check_box :allow_email
+
+  .form-group
+    = f.label :allow_text
+    = f.check_box :allow_text 
+
+  .form-group
+    = f.submit

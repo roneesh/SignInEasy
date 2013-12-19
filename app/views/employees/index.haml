@@ -1,0 +1,32 @@
+
+%h3 
+  Employees at
+  = current_user.organization.name
+
+%hr
+
+%table.table.table-striped
+  %thead
+    %th Name
+    %th Company
+    %th Email
+    %th Phone
+    %th Allow Email
+    %th Allow Text
+    %th Edit
+    %th Destroy
+  %tbody
+    -@employees.each do |employee| 
+      %tr
+        %td= employee.name
+        %td= employee.company    
+        %td= employee.email
+        %td= employee.phone
+        %td= employee.allow_email
+        %td= employee.allow_text
+        %td
+          = link_to edit_organization_employee_path(current_user.organization.id, employee.id) do
+            %i.fa.fa-pencil-square-o
+        %td
+          = link_to "none", :confirm => "are you sure?", :method => :delete do
+            %i.fa.fa-times
