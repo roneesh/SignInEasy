@@ -67,9 +67,9 @@
           = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td 
-          %i.fa.fa-trash     
-          %btn.btn-sm.btn-default{:type => "button"}
+        %td    
+          = link_to 'Delete', :class => 'btn.btn-sm.btn-default i.fa.fa-trash-o', :method => 'delete', :remote => true
+          
 
           
 %br       
