@@ -28,5 +28,7 @@
           = link_to edit_organization_employee_path(current_user.organization.id, employee.id) do
             %i.fa.fa-pencil-square-o
         %td
-          = link_to "none", :confirm => "are you sure?", :method => :delete do
+          = link_to organization_employee_path(current_user.organization.id, employee.id), :confirm => "are you sure?", :method => :delete do
             %i.fa.fa-times
+
+= link_to "Add Employee", new_organization_employee_path(current_user.organization), remote: true, id: "new_employee_link"

@@ -37,10 +37,10 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.save
         flash[:notice] = "#{@employee.name} was created" 
-        format.html { redirect_to admin_index_path}
+        format.html { redirect_to  organization_employees_path(current_user.organization)}
       else
         flash[:notice] = "failed to create employee record"
-        format.html { redirect_to admin_index_path}
+        format.html { redirect_to organization_employees_path(current_user.organization)}
       end
     end
   end
@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find_by_id(params[:id])
     @employee.destroy
-    redirect_to admin_index_path
+    redirect_to organization_employees_path(current_user.organization)
   end
 
   def autocomplete

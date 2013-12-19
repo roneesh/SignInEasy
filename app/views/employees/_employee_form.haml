@@ -1,4 +1,4 @@
-= form_for @employee, remote: true, authenticity_token: true do |f|
+= form_for @employee, authenticity_token: true do |f|
 
   = f.label :name
   = f.text_field :name  
@@ -13,7 +13,7 @@
   = f.text_field :phone
 
   = f.label "Organization ID"
-  = f.text_field :organization_id
+  = f.text_field :organization_id, value: current_user.organization.id
 
   = f.label :allow_email   
   = f.check_box :allow_email
