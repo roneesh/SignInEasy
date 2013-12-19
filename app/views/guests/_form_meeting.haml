@@ -21,11 +21,11 @@
 
       .form-group
         =# f.label :company, "Company Name"
-        = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Guest Company Name'
+        = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Guest Company Name (optional)'
 
       .form-group
         =# f.label :email, "Email Address"
-        = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Email Address'
+        = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Email Address (optional)'
 
       .form-group 
         =# f.label :employee_name, "Hosting Member"
@@ -41,4 +41,4 @@
       .form-group.center-buttons.span-3
         = f.submit 'Register', :class => 'btn btn-success btn-xlg'
       .form-group.center-buttons.span-3  
-        = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
+        =# submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
