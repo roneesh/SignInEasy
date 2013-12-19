@@ -67,8 +67,11 @@
           = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td      
-          %btn.btn-sm.btn-danger{:type => "button"} Delete
+        %td 
+          %i.fa.fa-trash     
+          %btn.btn-sm.btn-default{:type => "button"}
+
+          
 %br       
 
 
