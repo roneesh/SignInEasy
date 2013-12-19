@@ -1,9 +1,9 @@
 %br
 
-  .h3.col-lg-10.col-lg-offset-1.center Let us know who your meeting is with and they will be automatically notified of your arrival.
+  .h3.col-lg-10.col-lg-offset-1.center Let us know who you are meeting with and 
+  .h3.col-lg-10.col-lg-offset-1.center they will be automatically notified of your arrival.
 
-
-  .col-lg-6.col-lg-offset-3
+  .col-lg-6.col-lg-offset-3.form-spacing
     = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
       = if @guest.errors.any?
         .error_explanation
@@ -29,8 +29,8 @@
 
       .form-group 
         =# f.label :employee_name, "Hosting Member"
-        %span.status I'm here to see
-        = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Host full name please. Start typing their name.', :required => "true"
+        %span.status I'm here to see:
+        = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Start typing the first and last name of your host', :required => "true"
         
           
 

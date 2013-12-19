@@ -2,8 +2,7 @@
   .row-fluid
     .organization-logo-container
       =image_tag("1871_plate_logo_2in.jpg", :width => '300')
-    .visitor-ui-home-icon
-      %i.fa.fa-cog.icon-black
+
 
       
 .row
@@ -37,7 +36,9 @@
       /   %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
       /     %i.fa.fa-question-circle.icon-white
       /     Other
-    
+    %br
+    %br
+    %h5 Not finding the option you need? Click Here
 	
 
 .form-ui.form-meeting.group
@@ -63,6 +64,8 @@
 
 .row-fluid 
   .bottom-logo-container
-    =image_tag("SignInEasyLogo-bottom.png")        
+    =image_tag("SignInEasyLogo-bottom.png")
+  .visitor-ui-home-icon
+    = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(current_user.organization.id)        
 
 
