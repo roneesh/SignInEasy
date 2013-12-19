@@ -44,7 +44,7 @@
       %th Visit Reason
       %th Date
       %th Time
-      %th Actions
+      %th Delete
 
   %tbody
     - @todays_guests.each do |guest|
@@ -67,8 +67,9 @@
           = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td    
-          = link_to 'Delete', :class => 'btn.btn-sm.btn-default i.fa.fa-trash-o', :method => 'delete', :remote => true
+        %td   
+          = link_to image_tag('Trash_Can-128.png', :size => '16x16'), organization_guests_path(current_user.organization.id), :method => 'delete', :remote => true
+          
           
 
           
