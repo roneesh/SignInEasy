@@ -2,7 +2,8 @@
   .row-fluid
     .organization-logo-container
       =image_tag("1871_plate_logo_2in.jpg", :width => '300')
-    .visitor-ui-current-time  
+    .visitor-ui-current-time
+      =# Time.zone.now  
 
 
       
@@ -70,5 +71,7 @@
     =image_tag("SignInEasyLogo-bottom.png")
   .visitor-ui-home-icon
     = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(current_user.organization.id)
+  .visitor-ui-refresh
+    = link_to image_tag('reload.png', :size => '25x25'), new_organization_guest_path(current_user.organization.id)
 
 
