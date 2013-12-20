@@ -9,27 +9,22 @@
       %button.btn.btn-default.disabled{type: "button"} Month
 
 .row
-  .col-sm-6.col-md-3
+  .col-sm-6.col-md-4
     .jumbotron
       %h3.center Visitor Count
       %h1.center
         = @todays_guests.count
 
-  .col-sm-6.col-md-3
-    .jumbotron
-      %h3.center Visitor Count
-      %h1.center 75
-
-  .col-sm-6.col-md-3
+  .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
-      %h1.center 150
+      %h1.center X
 
 
-  .col-sm-6.col-md-3
+  .col-sm-6.col-md-4
     .jumbotron
       %h3.center Minutes Saved
-      %h1.center 75 
+      %h1.center X
 
 .clearfix
 
@@ -49,7 +44,7 @@
       %th Visit Reason
       %th Date
       %th Time
-      %th Actions
+      %th Delete
 
   %tbody
     - @todays_guests.each do |guest|
@@ -72,8 +67,12 @@
           = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
-        %td      
-          %btn.btn-sm.btn-danger{:type => "button"} Delete
+        %td   
+          = link_to image_tag('Trash_Can-128.png', :size => '16x16'), organization_guests_path(current_user.organization.id), :method => 'delete', :remote => true
+          
+          
+
+          
 %br       
 
 

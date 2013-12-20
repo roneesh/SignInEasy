@@ -66,7 +66,7 @@ gem 'clearance'
 # Front-end
 gem 'bootstrap-sass', '~> 3.0.0.0rc'
 gem 'haml'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'will_paginate-bootstrap'
 # gem 'simple_form'
 gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'

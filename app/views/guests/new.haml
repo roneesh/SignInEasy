@@ -1,45 +1,48 @@
 .visitor-ui-form
   .row-fluid
     .organization-logo-container
-      =image_tag("your_business_logo_here_small.png")
-    .visitor-ui-home-icon
-      %i.fa.fa-cog.icon-black
+      =image_tag("1871_plate_logo_2in.jpg", :width => '300')
+    .visitor-ui-current-time
+      =# Time.zone.now  
+
 
       
 .row
   .btn-grid
     %br
-      .h3 
-        Welcome to 
-        = current_user.organization.name
+      .h1 
         What brings you in today?
     %br
     .form-navigation
       %a
-        %button(type="submit" class="btn btn-primary btn-xxlg meeting-btn")
-          %i.fa.fa-calendar.icon-white
-          Meeting
+      %button(type="submit" class="btn btn-default btn-xxlg meeting-btn")
+        %i.fa.fa-calendar.icon-white
+        Meeting
+      / %a
+      /   %button(type="submit" class="btn btn-primary btn-xxlg drop-in-btn")
+      /     %i.fa.fa-user.icon-white
+      /     Drop In    
       %a
-        %button(type="submit" class="btn btn-primary btn-xxlg drop-in-btn")
-          %i.fa.fa-user.icon-white
-          Drop In    
+      %button(type="submit" class="btn btn-primary btn-xxlg tour-btn")
+        %i.fa.fa-location-arrow.icon-white
+        Tour
       %a
-        %button(type="submit" class="btn btn-primary btn-xxlg tour-btn")
-          %i.fa.fa-location-arrow.icon-white
-          Tour
-      %a
-        %button(type="submit" class="btn btn-primary btn-xxlg event-btn")
-          %i.fa.fa-group.icon-white 
-          Event
-      %a
-        %button(type="submit" class="btn btn-primary btn-xxlg info-btn")
-          %i.fa.fa-info-circle.icon-white
-          Information    
-      %a
-        %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
-          %i.fa.fa-question-circle.icon-white
-          Other
-    
+      %button(type="submit" class="btn btn-success btn-xxlg event-btn")
+        %i.fa.fa-group.icon-white
+        Event
+      / %a
+      /   %button(type="submit" class="btn btn-primary btn-xxlg info-btn")
+      /     %i.fa.fa-info-circle.icon-white
+      /     Information    
+      / %a
+      /   %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
+      /     %i.fa.fa-question-circle.icon-white
+      /     Other
+    %br
+    %br
+    %br
+      %p Not finding the option you need? 
+      = link_to 'Click Here', :type=> 'button', :class=> 'btn btn-primary other-btn'
 	
 
 .form-ui.form-meeting.group
@@ -65,6 +68,10 @@
 
 .row-fluid 
   .bottom-logo-container
-    =image_tag("SignInEasyLogo-bottom.png")        
+    =image_tag("SignInEasyLogo-bottom.png")
+  .visitor-ui-home-icon
+    = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(current_user.organization.id)
+  .visitor-ui-refresh
+    = link_to image_tag('arrow_left.png', :size => '25x25'), new_organization_guest_path(current_user.organization.id)
 
 

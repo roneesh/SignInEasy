@@ -1,9 +1,9 @@
 %br
-  .h3.col-lg-10.col-lg-offset-1.center Last step! Please fill out the information below. 
-  .h3.col-lg-10.col-lg-offset-1.center Let us know who your meeting is with and they will be automatically notified of your arrival.
 
+  .h3.col-lg-10.col-lg-offset-1.center Let us know who you are meeting with and 
+  .h3.col-lg-10.col-lg-offset-1.center they will be automatically notified of your arrival.
 
-  .col-lg-6.col-lg-offset-3
+  .col-lg-6.col-lg-offset-3.form-spacing
     = form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
       = if @guest.errors.any?
         .error_explanation
@@ -17,20 +17,21 @@
       .form-group
       
         =# f.label :name, "Name"
-        = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'First and Last Name', :required => "true"
+        = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Guest First and Last Name', :required => "true"
 
       .form-group
         =# f.label :company, "Company Name"
-        = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Company'
+        = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Guest Company Name (optional)'
 
       .form-group
         =# f.label :email, "Email Address"
-        = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Email Address'
+        = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Guest Email Address (optional)'
 
       .form-group 
         =# f.label :employee_name, "Hosting Member"
-        = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Hosting Member', :required => "true"
-        %span.status Start typing the name of the person you are here to see
+        %span.status I'm here to see:
+        = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Start typing the first and last name of your host', :required => "true"
+        
           
 
       .form-group
@@ -40,4 +41,4 @@
       .form-group.center-buttons.span-3
         = f.submit 'Register', :class => 'btn btn-success btn-xlg'
       .form-group.center-buttons.span-3  
-        = submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
+        =# submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
