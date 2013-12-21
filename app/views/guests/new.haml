@@ -15,7 +15,7 @@
     %br
     .form-navigation
       %a
-      %button(type="submit" class="btn btn-default btn-xxlg meeting-btn")
+      %button(type="submit" class="btn btn-custom btn-xxlg meeting-btn")
         %i.fa.fa-calendar.icon-white
         Meeting
       / %a
@@ -23,11 +23,11 @@
       /     %i.fa.fa-user.icon-white
       /     Drop In    
       %a
-      %button(type="submit" class="btn btn-primary btn-xxlg tour-btn")
+      %button(type="submit" class="btn btn-default btn-xxlg tour-btn")
         %i.fa.fa-location-arrow.icon-white
         Tour
       %a
-      %button(type="submit" class="btn btn-success btn-xxlg event-btn")
+      %button(type="submit" class="btn btn-primary btn-xxlg event-btn")
         %i.fa.fa-group.icon-white
         Event
       / %a
@@ -68,7 +68,7 @@
 
 .row-fluid 
   .bottom-logo-container
-    =image_tag("SignInEasyLogo-bottom.png")
+    =#image_tag("SignInEasyLogo-bottom.png")
   .visitor-ui-home-icon
     = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(current_user.organization.id)
   .visitor-ui-refresh
