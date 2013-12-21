@@ -6,7 +6,9 @@ SignInEasy::Application.routes.draw do
   get 'profile', to: 'guests#index'#, as: "user"
 
   resources :organizations, only: [:destroy, :show, :update, :create ] do
-    resources :employees
+    resources :employees do 
+      collection { get :import}
+    end
     resource :member_directory, only: [:show]
     resources :guests, only: [:new, :show, :index] do
       get :autocomplete_employee_name, :on => :collection

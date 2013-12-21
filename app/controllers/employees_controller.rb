@@ -56,6 +56,12 @@ class EmployeesController < ApplicationController
     render json: @employees.map(&:name)
   end
 
+  def import
+    respond_to do |format|
+      format.js 
+    end
+  end
+
 private
   def employee_params
     params.require(:employee).permit(:name, :company, :email, :phone, :organization_id, :allow_email, :allow_text)

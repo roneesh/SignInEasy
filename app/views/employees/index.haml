@@ -31,4 +31,6 @@
           = link_to organization_employee_path(current_user.organization.id, employee.id), :confirm => "are you sure?", :method => :delete do
             %i.fa.fa-times
 
-= link_to "Add Employee", new_organization_employee_path(current_user.organization), remote: true, id: "new_employee_link"
+%p= link_to "Add Employee", new_organization_employee_path(current_user.organization), remote: true, id: "new_employee_link"
+
+%p= link_to "Upload Employees via CSV", import_organization_employees_path(current_user.organization), remote: true, id: "import_link"
