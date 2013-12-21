@@ -1,0 +1,32 @@
+= form_for [@organization, @employee], :html => { :class => 'form-horizontal form-signin employee-crud-form' } do |f|
+
+  .form-group
+    = f.label :name, class: "col-sm-3 control-label"
+    .col-sm-9
+      = f.text_field :name, :class => 'form-control'
+  
+  .form-group
+    = f.label :company, class: "col-sm-3 control-label"
+    .col-sm-9
+      = f.text_field :company, :class => 'form-control'
+
+  .form-group
+    = f.label :email, class: "col-sm-3 control-label"
+    .col-sm-9
+      = f.text_field :email, :class => 'form-control'
+  
+  .form-group
+    = f.label :phone, class: "col-sm-3 control-label"
+    .col-sm-9
+      = f.text_field :phone, :class => 'form-control'
+
+  .form-group
+    .col-sm-3
+    .col-sm-9
+      = f.label :allow_email, class: "checkbox-inline"
+      = f.check_box :allow_email, :type => "checkbox"
+      = f.label :allow_text, class: "checkbox-inline"
+      = f.check_box :allow_text, :type => "checkbox" 
+
+  .form-group
+    = f.submit :class => 'btn btn-lg btn-primary btn-block'

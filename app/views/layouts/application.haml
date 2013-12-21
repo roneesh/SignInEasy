@@ -51,7 +51,7 @@
                   %li
                     = link_to "Visitors"
                   %li
-                    = link_to "Members"
+                    = link_to "Manage Members", organization_employees_path(current_user.organization.id)
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
                   = current_user.name
