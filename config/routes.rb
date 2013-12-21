@@ -7,7 +7,7 @@ SignInEasy::Application.routes.draw do
 
   resources :organizations, only: [:destroy, :show, :update, :create ] do
     resources :employees do 
-      collection { get :import}
+      collection { get :import_form; post :import}
     end
     resource :member_directory, only: [:show]
     resources :guests, only: [:new, :show, :index] do

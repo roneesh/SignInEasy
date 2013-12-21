@@ -56,10 +56,30 @@ class EmployeesController < ApplicationController
     render json: @employees.map(&:name)
   end
 
-  def import
+  def import_form
     respond_to do |format|
-      format.js 
+      format.js { render layout: false}
     end
+  end
+
+  def import
+
+    CSV.foreach(params[:file].path, headers: true) do |row|
+      employee = Employee.find_by_name(row["name"]) || Employee.new
+      employee.attributes = (row.to_hash).merge(organization_id: current_user.organization.id)
+      puts employee.inspect
+      employee.save
+    end
+
+    redirect_to organization_employees_path(current_user.organization)
+
+    # respond_to do |format|
+    #   if Employee.import(params[:file])
+    #     redirect_to organization_employees_path(current_user.organization), notice: "Employees imported."
+    #   else
+    #     redirect_to organization_employees_path(current_user.organization), notice: "Employees failed to import."
+    #   end
+    # end
   end
 
 private
