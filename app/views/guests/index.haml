@@ -57,7 +57,7 @@
           = guest.email
         
         %td
-          - if guest.employee 
+          - if guest.employee_id
             = Employee.find(guest.employee_id).name
           - else
             No employee
