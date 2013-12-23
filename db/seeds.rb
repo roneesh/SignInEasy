@@ -6,13 +6,33 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+puts "Destroying all..."
 User.destroy_all
 Employee.destroy_all
 Organization.destroy_all
+OrganizationUser.destroy_all
+ServiceList.destroy_all
+Guest.destroy_all
+puts "Destroyed!"
 
+puts "Creating Users..."
 u = User.create(email: "r@e.com", password: "1", name: "Roneesh Vashisht")
+u2 = User.create(email: "brian@brianmartinek.com", password: "1", name: "Brian Martinek")
+puts "Created Users:"
+puts u
+puts u2
 
-o = Organization.create(name: "1871", admin_id: User.find_by_email("r@e.com"))
+puts "Creating Organization"
+o = Organization.create(name: "1871", admin_id: u.id)
+puts "Created Organization:"
+puts o
+
+puts "Creating OrganizationUser table entries..."
+ou1 = OrganizationUser.create(user_id: u.id, organization_id: o.id)
+ou2 = OrganizationUser.create(user_id: u2.id, organization_id: o.id)
+puts "Created OrganizationUsers"
+puts ou1
+puts ou2
 
 employees = [
   {name: "Roneesh Vashisht", company: "1871", email: "r@e.com", phone: "4693379220", organization_id: o.id},
@@ -24,6 +44,7 @@ employees = [
 ]
 
 employees.each do |employee|
-  Employee.create(employee)
+  e = Employee.create(employee)
+  puts "Creating employee: #{e}" 
 end
 
