@@ -1,0 +1,1 @@
+ENV['MANDRILL_APIKEY'] = '5rxRXpqAREA4kuf_BEdo-Q'
