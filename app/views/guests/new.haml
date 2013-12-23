@@ -23,11 +23,11 @@
       /     %i.fa.fa-user.icon-white
       /     Drop In    
       %a
-      %button(type="submit" class="btn btn-default btn-xxlg tour-btn")
+      %button(type="submit" class="btn btn-custom-2 btn-xxlg tour-btn")
         %i.fa.fa-location-arrow.icon-white
         Tour
       %a
-      %button(type="submit" class="btn btn-primary btn-xxlg event-btn")
+      %button(type="submit" class="btn btn-default btn-xxlg event-btn")
         %i.fa.fa-group.icon-white
         Event
       / %a
@@ -36,13 +36,15 @@
       /     Information    
       / %a
       /   %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
-      /     %i.fa.fa-question-circle.icon-white
-      /     Other
+      /  
+      /    
     %br
     %br
     %br
       %p Not finding the option you need? 
-      = link_to 'Click Here', :type=> 'button', :class=> 'btn btn-primary other-btn'
+      %a
+      %button(type="submit" class="btn btn-default btn-xs other-btn")
+        Click Here
 	
 
 .form-ui.form-meeting.group
