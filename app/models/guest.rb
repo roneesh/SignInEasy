@@ -18,7 +18,8 @@ class Guest < ActiveRecord::Base
     notification.send
     self.email_notification_status = notification.email_status
     self.text_notification_status = notification.text_status
-    puts "status: '#{email_notification_status}' was saved from guest.rb" if save
+    # puts "status: '#{email_notification_status}' was saved from guest.rb" if save
+    save
   end
 
   def set_id

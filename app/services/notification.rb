@@ -17,9 +17,9 @@ class Notification
     #send_email if (@services.email_notification?) && email_allowed?
     #send_text if (@services.text_notification?) && text_allowed?
     send_email if email_allowed?
-    puts "between send_email and send_text"
+    # puts "between send_email and send_text"
     send_text if text_allowed?
-    puts "after send_text"
+    # puts "after send_text"
   end
 
   private
@@ -49,9 +49,9 @@ class Notification
       :from_email=>"donotreply@signineasy.co"  
     }  
     sending = m.messages.send message  
-    puts sending
-    @email_status = sending[0]["status"]
-    puts @email_status
+    # puts sending
+    # @email_status = sending[0]["status"]
+    # puts @email_status
   end
 
   def send_text
@@ -60,12 +60,12 @@ class Notification
       method: :post
     )
     output = trigger_request.run
-    puts "Send text output is:"
-    puts output.inspect
-    puts "output.options"
-    puts output.options
-    puts "Output.options['response_code']"
-    puts output.options[:response_code]
+    # puts "Send text output is:"
+    # puts output.inspect
+    # puts "output.options"
+    # puts output.options
+    # puts "Output.options['response_code']"
+    # puts output.options[:response_code]
     @text_status = "sent" if output.options[:response_code] == 200
   end
 
@@ -73,8 +73,8 @@ class Notification
     puts text_request
     response = text_request.run
     parsed_response = JSON.parse(response.options[:response_body])
-    puts "Parsed Response is:"
-    puts parsed_response
+    # puts "Parsed Response is:"
+    # puts parsed_response
     parsed_response["trigger"]
   end
 
@@ -83,7 +83,7 @@ class Notification
     employee_first_name = @employee.name.split.first
     employee_last_name = @employee.name.split.last
 
-    puts "from text_request, employee phone is: #{@employee.phone}"
+    # puts "from text_request, employee phone is: #{@employee.phone}"
 
     Typhoeus::Request.new(
       "http://developer.alertcaster.com/developer/api/alert-create-simple",
