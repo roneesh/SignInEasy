@@ -64,7 +64,7 @@ class EmployeesController < ApplicationController
 
   def import
 
-    CSV.foreach(params[:file].path, headers: true) do |row|
+    CSV.foreach(params[:file].path, headers: true, skip_blanks: true) do |row|
       employee = Employee.find_by_name(row["name"]) || Employee.new
       employee.attributes = (row.to_hash).merge(organization_id: current_user.organization.id)
       puts employee.inspect
