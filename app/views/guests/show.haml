@@ -8,16 +8,24 @@
       Thanks for registering, 
       = @guest.name.split.first
     %br  
-    - if @employee
-      %h2 
-        =@employee.name.titleize
-        has been notified
-        - if @employee.allow_text && @employee.allow_email
-          via text and email.
-        - elsif @employee.allow_text && !@employee.allow_email
-          via text.
-        - elsif !@employee.allow_text && @employee.allow_email
-          via email.
+    - if @employee && (@guest.email_notification_status || @guest.text_notification_status)
+      - if @guest.email_notification_status == "sent" && @guest.text_notification_status == "sent"
+        %h2 
+          =@employee.name.titleize
+          has been notified by e-mail and text.
+      - elsif @guest.email_notification_status == "sent"
+        %h2 
+          =@employee.name.titleize
+          has been notified by e-mail.      
+      - elsif @guest.text_notification_status == "sent"
+        %h2 
+          =@employee.name.titleize
+          has been notified by text.
+      - else
+        %h2 
+          Please have the front-desk notify
+          =@employee.name.titleize
+          that you're here.
     %h2 Please take a seat in the waiting area.
     %br
     =# link_to "or go now", new_organization_guest_path, id: "link"
