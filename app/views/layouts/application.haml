@@ -7,9 +7,7 @@
   = stylesheet_link_tag 'application' 
 
 %body
-
   #wrap
-    
     %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
       .container
         .navbar-header
@@ -20,12 +18,11 @@
             %span.icon-bar
           %a.navbar-brand SignInEasy
           =# link_to image_tag 'SignInEasyLogo.jpg'
-      
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        
           %ul.nav.navbar-nav
               
             -if signed_in?
-
               %li
                 = link_to "Dashboard", organization_guests_path(current_user.organization.id)
               %li.disabled
@@ -36,7 +33,6 @@
           %ul.nav.navbar-nav.navbar-right
       
             -if signed_in?
-
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
                   = current_user.organization.name
