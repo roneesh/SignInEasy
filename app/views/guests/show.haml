@@ -8,7 +8,16 @@
       Thanks for registering, 
       = @guest.name.split.first
     %br  
-    %h2 If you are visiting someone, they have been notified you're here.
+    - if @employee
+      %h2 
+        =@employee.name.titleize
+        has been notified
+        - if @employee.allow_text && @employee.allow_email
+          via text and email.
+        - elsif @employee.allow_text && !@employee.allow_email
+          via text.
+        - elsif !@employee.allow_text && @employee.allow_email
+          via email.
     %h2 Please take a seat in the waiting area.
     %br
     =# link_to "or go now", new_organization_guest_path, id: "link"

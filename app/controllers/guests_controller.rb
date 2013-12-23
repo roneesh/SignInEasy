@@ -36,6 +36,7 @@ class GuestsController < ApplicationController
 
   def show
     @guest = Guest.find(params[:id])
+    @employee = Employee.find_by_id(@guest.employee_id) if @guest.employee_id
   end
 
   def destroy
