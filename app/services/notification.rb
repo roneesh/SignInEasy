@@ -3,17 +3,22 @@ require 'json'
 
 class Notification
 
+  attr_accessor :email_status, :text_status
+
   def initialize(guest)
     @guest = guest
     @employee = Employee.find_by_id(@guest.employee_id)
     @services = ServiceList.find_by_organization_id(@guest.organization_id)
+    @email_status = "unsent"
+    @text_status = "unsent"
   end
 
   def send
     #send_email if (@services.email_notification?) && email_allowed?
     #send_text if (@services.text_notification?) && text_allowed?
     send_email if email_allowed?
-    send_text if text_allowed?
+    puts "between send_email and send_text"
+    # send_text if text_allowed?
   end
 
   private
@@ -44,6 +49,8 @@ class Notification
     }  
     sending = m.messages.send message  
     puts sending
+    @email_status = sending[0]["status"]
+    puts @email_status
   end
 
   def send_text
