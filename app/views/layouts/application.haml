@@ -44,8 +44,8 @@
                   %li.disabled
                     = link_to "Settings" 
                   %li.divider
-                  %li
-                    = link_to "Visitors"
+                  %li.disabled
+                    = link_to "Guest Records"
                   %li
                     = link_to "Manage Members", organization_employees_path(current_user.organization.id)
               %li.dropdown
@@ -53,7 +53,7 @@
                   = current_user.name
                   %b.caret
                 %ul.dropdown-menu 
-                  %li
+                  %li.disabled
                     = link_to "Settings"
                 
                   %li.divider
