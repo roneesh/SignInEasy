@@ -50,7 +50,7 @@ class Notification
     }  
     sending = m.messages.send message  
     # puts sending
-    # @email_status = sending[0]["status"]
+    @email_status = sending[0]["status"]
     # puts @email_status
   end
 
