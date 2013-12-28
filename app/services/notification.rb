@@ -34,7 +34,7 @@ class Notification
 
   def send_email
     m = Mandrill::API.new
-    message_body = "Your guest #{@guest.name} has arrived!"
+    message_body = "Your guest #{@guest.name} has arrived! Please come to the front desk to greet them."
 
     message = {  
       :subject=> "1871 Notification: Your guest #{@guest.name} has arrived!",  
