@@ -20,7 +20,7 @@ SignInEasy::Application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: 'signineasy',
+    user_name: 'signineasy@gmail.com',
     password: "ENV['SIE_GMAIL_PASS']"
   }
 
