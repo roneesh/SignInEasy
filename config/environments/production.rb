@@ -14,6 +14,15 @@ SignInEasy::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
   config.action_mailer.default_url_options = {host: "#{ENV['HEROKU_MAILER_DOMAIN']}.herokuapp.com}"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: 'signineasy',
+    password: "ENV['SIE_GMAIL_PASS']"
+  }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
