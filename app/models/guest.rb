@@ -43,4 +43,13 @@ class Guest < ActiveRecord::Base
     self.employee = Employee.find_or_create_by_name(name) if name.present?
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |guest|
+        csv << guest.attributes.values_at(*column_names)
+      end
+    end
+  end
+
 end

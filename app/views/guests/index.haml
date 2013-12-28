@@ -1,6 +1,6 @@
 %br
 .col-lg-10.col-lg-offset-1.center
-  %button.btn.btn-default{:type => "button", "data-target" => "#myModal", "data-toggle" => "modal"} 
+  %button.btn.btn-success{:type => "button", "data-target" => "#myModal", "data-toggle" => "modal"} 
     %i.fa.fa-user
     Manual Guest Check In
 %br    
@@ -82,8 +82,11 @@
         %td   
           = link_to image_tag('Trash_Can-128.png', :size => '16x16'), organization_guests_path(current_user.organization.id), :method => 'delete', :remote => true
           
-         
-
+  
+= link_to '<i class="fa fa-cloud-download"></i> Download all guest records (.csv)'.html_safe, url_for(:format => "csv"), :class => 'btn btn-default'           
+%br
+%br
+%br 
 
 
 
