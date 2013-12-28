@@ -16,12 +16,13 @@ SignInEasy::Application.configure do
   config.action_mailer.default_url_options = {host: "#{ENV['HEROKU_MAILER_DOMAIN']}.herokuapp.com}"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: 'signineasy@gmail.com',
-    password: "ENV['SIE_GMAIL_PASS']"
+    :address   => "smtp.mandrillapp.com",
+    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => "roneesh@gmail.com",
+    :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => "#{ENV['HEROKU_MAILER_DOMAIN']}.herokuapp.com}", # your domain to identify your server when connecting
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
