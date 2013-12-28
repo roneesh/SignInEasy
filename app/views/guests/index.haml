@@ -2,6 +2,7 @@
   %h2 
     Dashboard - 
     = current_user.organization.name
+    .button.btn.btn-custom-2.center{:type => "button", "data-target" => "#myModal", "data-toggle" => "modal"} Manual Guest Check In
     .btn-group.pull-right
       %button.btn.btn-default.active{type: "button"} Today
       %button.btn.btn-default.disabled{type: "button"} Yesterday
@@ -71,7 +72,50 @@
           = link_to image_tag('Trash_Can-128.png', :size => '16x16'), organization_guests_path(current_user.organization.id), :method => 'delete', :remote => true
           
           
+/ Modal
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Manual Visitor Registration
+      .modal-body
+        
+        // Begin Form
 
+        %form.form-horizontal{role: "form"}
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Name
+            .col-sm-10
+              %input.form-control{placeholder: "Guest First and Last Name"}/
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Company
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Company"}/
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Email
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Email Address", type: "email"}/   
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Mobile
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Mobile Phone Number", type: "phone"}/   
+          .form-group
+            %label.col-sm-2.control-label{for: "inputPassword3"} Hosting Member
+            .col-sm-10
+              %input.form-control{placeholder: "Hosting Member"}/   
+            %br
+            %br
+            %br       
+        =# render :partial => 'form_model'
+
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+        %button.btn.btn-success{type: "button"} Register Guest
+    / /.modal-content
+  / /.modal-dialog
+/ /.modal
           
 %br       
 
