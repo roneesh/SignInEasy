@@ -45,7 +45,7 @@ class Notification
           :email=> @employee.email,  
           :name=> @employee.name 
       }],  
-      :html=>"<html><h1>#{message_body}</h1></html>",  
+      :html=>"<html><p>#{message_body}</p></html>",  
       :from_email=>"donotreply@signineasy.co"  
     }  
     sending = m.messages.send message  

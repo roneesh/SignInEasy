@@ -39,5 +39,16 @@ $('.visitor-ui-form.a').ready(function(){
     location.reload();
   })
 
+// submit button 
+
+  if($('#employee_autocomplete').val() ==  "") 
+     $('#registerButton').prop('disabled', true);
+
+  $('#employee_autocomplete').keyup(function(){
+      if($('#employee_autocomplete').val() !=  "") 
+           $('#registerButton').prop('disabled', false);    
+      else
+           $('#registerButton').prop('disabled', true);   
+  });
 
 })
