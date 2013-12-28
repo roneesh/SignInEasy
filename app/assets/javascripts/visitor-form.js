@@ -42,13 +42,13 @@ $('.visitor-ui-form.a').ready(function(){
 // submit button 
 
   if($('#employee_autocomplete').val() ==  "") 
-     $('#registerButton').attr('disabled', true);
+     $('#registerButton').prop('disabled', true);
 
   $('#employee_autocomplete').keyup(function(){
       if($('#employee_autocomplete').val() !=  "") 
-           $('#registerButton').attr('disabled', false);    
+           $('#registerButton').prop('disabled', false);    
       else
-           $('#registerButton').attr('disabled', true);   
+           $('#registerButton').prop('disabled', true);   
   });
 
 })
