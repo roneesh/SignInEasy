@@ -26,7 +26,7 @@
       %h3.center Visitor Count
       %h1.center
         = @todays_guests.count
-        = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        = @yesterdays_guests.count
 
   .col-sm-6.col-md-4
     .jumbotron

@@ -9,7 +9,9 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
-
+    @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now - 1.day).beginning_of_day, Time.now.beginning_of_day).order("created_at DESC")
+    @weeks_guests 
+    @months_guests
 
     respond_to do |format|
       format.html
