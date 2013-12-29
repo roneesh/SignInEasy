@@ -10,10 +10,10 @@
     Dashboard - 
     = current_user.organization.name
     .btn-group.pull-right
-      %button.btn.btn-default.active{type: "button"} Today
-      %button.btn.btn-default.disabled{type: "button"} Yesterday
-      %button.btn.btn-default.disabled{type: "button"} Week
-      %button.btn.btn-default.disabled{type: "button"} Month
+      %button.btn.btn-default.active{type: "button", id: "todays_guests"} Today
+      %button.btn.btn-default{type: "button", id: "yesterdays_guests"} Yesterday
+      %button.btn.btn-default{type: "button", id: "weeks_guests"} Week
+      %button.btn.btn-default{type: "button", id: "months_guests"} Month
 
 
 // Start Javascript View based on button options
@@ -25,15 +25,27 @@
     .jumbotron
       %h3.center Visitor Count
       %h1.center
+        .todays_guests
         = @todays_guests.count
+        .yesterdays_guests
         = @yesterdays_guests.count
+        .weeks_guests
         = @weeks_guests.count
+        .months_guests
         = @months_guests.count
 
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
-      %h1.center= @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+      %h1.center
+        .todays_guests
+        = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .yesterdays_guests
+        = @yesterdays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .weeks_guests
+        = @weeks_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .months_guests
+        = @months_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count     
 
 
   .col-sm-6.col-md-4
@@ -43,8 +55,11 @@
 
 .clearfix
 
-%br
-%h3.panel.panel-default.panel-heading.center Today's Visitors
+%p
+%h3.panel.panel-default.panel-heading.center.todays_guests Today's Visitors
+%h3.panel.panel-default.panel-heading.center.yesterdays_guests Yesterday's Visitors
+%h3.panel.panel-default.panel-heading.center.weeks_guests This Week's Visitors
+%h3.panel.panel-default.panel-heading.center.months_guests This Month's Visitors
 
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 

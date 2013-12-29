@@ -1,4 +1,6 @@
 
+// Guests new form/button UI
+
 $('.visitor-ui-form.a').ready(function(){
 
   $('.meeting-btn').click(function(){
@@ -39,7 +41,7 @@ $('.visitor-ui-form.a').ready(function(){
     location.reload();
   })
 
-// submit button 
+// submit button disable/enable
 
   if($('#employee_autocomplete').val() ==  "") 
      $('#registerButton').prop('disabled', true);
@@ -50,5 +52,7 @@ $('.visitor-ui-form.a').ready(function(){
       else
            $('#registerButton').prop('disabled', true);   
   });
+
+// Dashboard show/hide based on date
 
 })
