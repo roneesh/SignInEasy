@@ -7,6 +7,10 @@ class Guest < ActiveRecord::Base
   validates_presence_of :name
   before_create :downcase_email_address
 
+  after_create do 
+    self.hosting_member = Employee.find(self.employee_id).name
+    save
+  end
 
   def initialize(params = {})
     @employee_name = params[:employee_name] || nil

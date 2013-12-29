@@ -70,10 +70,7 @@
         %td
           =# guest.mobile_number
         %td
-          - if guest.employee_id
-            = Employee.find(guest.employee_id).name
-          - else
-            No employee
+          = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
           = guest.reason 
         %td 

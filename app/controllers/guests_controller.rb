@@ -31,6 +31,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     @guest.set_id
+    @guest.employee_name = params[:employee_name]
     if @guest.save
       @guest.run_notification_service if @guest.employee_id
       redirect_to organization_guest_path(@guest.organization_id, @guest.id)
