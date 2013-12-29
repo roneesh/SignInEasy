@@ -1,4 +1,11 @@
+%br
+.col-lg-10.col-lg-offset-1.center
+  %button.btn.btn-success{:type => "button", "data-target" => "#myModal", "data-toggle" => "modal"} 
+    %i.fa.fa-user
+    Manual Guest Check In
+%br    
 .page-header
+
   %h2 
     Dashboard - 
     = current_user.organization.name
@@ -7,6 +14,11 @@
       %button.btn.btn-default.disabled{type: "button"} Yesterday
       %button.btn.btn-default.disabled{type: "button"} Week
       %button.btn.btn-default.disabled{type: "button"} Month
+
+
+// Start Javascript View based on button options
+
+// Today's Visitor View
 
 .row
   .col-sm-6.col-md-4
@@ -39,7 +51,7 @@
       %th Name
       %th Company
       %th Email
-      
+      %th Mobile
       %th Hosting Member
       %th Visit Reason
       %th Date
@@ -55,7 +67,8 @@
           = guest.company  
         %td 
           = guest.email
-        
+        %td
+          =# guest.mobile_number
         %td
           - if guest.employee_id
             = Employee.find(guest.employee_id).name
@@ -68,11 +81,74 @@
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td   
-          = link_to image_tag('Trash_Can-128.png', :size => '16x16'), organization_guests_path(current_user.organization.id), :method => 'delete', :remote => true
+          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "are you sure?", :method => :delete do
+            %i.fa.fa-times
           
-          
+  
+= link_to '<i class="fa fa-cloud-download"></i> Download all guest records (.csv)'.html_safe, url_for(:format => "csv"), :class => 'btn btn-default'    
+%br
+%br
+%br 
 
-          
+
+
+// Visitor Check In Modal
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Manual Visitor Registration
+      .modal-body
+        
+        // Begin Form
+
+        %form.form-horizontal{role: "form"}
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Name
+            .col-sm-10
+              %input.form-control{placeholder: "Guest First and Last Name"}/
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Company
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Company"}/
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Email
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Email Address", type: "email"}/   
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Mobile
+            .col-sm-10
+              %input.form-control{placeholder: "Guest Mobile Phone Number", type: "phone"}/   
+
+              // Add collection_select for choosing the reason they are here
+
+          .form-group
+            %label.col-sm-2.control-label{for: "inputEmail3"} Reason
+            .col-sm-10
+              %select
+                %option{value: "1"} Meeting
+                %option{value: "2"} Tour
+                %option{value: "3"} Event
+                %option{value: "4"} Other  
+              // Auto complete form would go active if it's for a meeting
+          .form-group
+            %label.col-sm-2.control-label{for: "inputPassword3"} Host
+            .col-sm-10
+              %input.form-control{placeholder: "Hosting Member"}/   
+            %br
+            %br
+            %br       
+        =# render :partial => 'form_model'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+        %button.btn.btn-success{type: "button"} Register Guest
+    / /.modal-content
+  / /.modal-dialog
+/ /.modal
+      
+
+
 %br       
 
 
