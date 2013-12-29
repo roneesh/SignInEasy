@@ -10,8 +10,8 @@ class GuestsController < ApplicationController
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
     @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now - 1.day).beginning_of_day, Time.now.beginning_of_day).order("created_at DESC")
-    @weeks_guests 
-    @months_guests
+    @weeks_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_week, Time.now.end_of_day).order("created_at DESC")
+    @months_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_month, Time.now.end_of_day).order("created_at DESC")
 
     respond_to do |format|
       format.html
