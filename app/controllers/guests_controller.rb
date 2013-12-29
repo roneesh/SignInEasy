@@ -10,6 +10,7 @@ class GuestsController < ApplicationController
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
 
+
     respond_to do |format|
       format.html
       format.csv { send_data @guests.to_csv }
@@ -54,7 +55,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :company, :reason, :organization_id, :employee_name)
+    params.require(:guest).permit(:name, :email, :mobile_number, :company, :reason, :organization_id, :employee_name)
   end
 
 

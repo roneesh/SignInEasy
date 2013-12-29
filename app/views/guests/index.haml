@@ -68,7 +68,7 @@
         %td 
           = guest.email
         %td
-          =# guest.mobile_number
+          = number_to_phone(guest.mobile_number, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
