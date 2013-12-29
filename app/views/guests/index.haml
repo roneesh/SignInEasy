@@ -30,13 +30,13 @@
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
-      %h1.center X
+      %h1.center= @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
 
 
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Visitors Per Hour
-      %h1.center X
+      %h1.center= (@todays_guests.count)/24
 
 .clearfix
 
