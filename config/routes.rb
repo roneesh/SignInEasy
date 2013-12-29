@@ -10,7 +10,7 @@ SignInEasy::Application.routes.draw do
       collection { get :import_form; post :import}
     end
     resource :member_directory, only: [:show]
-    resources :guests, only: [:new, :show, :index] do
+    resources :guests, only: [:new, :show, :index, :destroy] do
       get :autocomplete_employee_name, :on => :collection
     end
   end

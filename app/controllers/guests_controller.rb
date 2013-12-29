@@ -47,8 +47,9 @@ class GuestsController < ApplicationController
   end
 
   def destroy
-    @guest = Guest.find(params[:id])
+    @guest = Guest.find_by_id(params[:id])
     @guest.destroy
+    redirect_to organization_guests_path(current_user.organization)
   end
 
 
