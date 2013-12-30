@@ -61,10 +61,17 @@
 
 %p
 %h3.panel.panel-default.panel-heading.center
-  .todays_guests.box Today's Visitors
-  .yesterdays_guests.box Yesterday's Visitors
-  .weeks_guests.box This Week's Visitors
-  .months_guests.box This Month's Visitors
+  .todays_guests.box 
+    Today's Visitors
+  .yesterdays_guests.box 
+    Yesterday's Visitors
+  .weeks_guests.box 
+    This Week's Visitors (since last 
+    = Date::DAYNAMES[1.week.ago.wday]
+    )
+  .months_guests.box 
+    = Date::MONTHNAMES[Time.now.mon]
+    Visitors
 
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
