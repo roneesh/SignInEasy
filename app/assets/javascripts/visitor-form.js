@@ -51,4 +51,25 @@ $('.visitor-ui-form.a').ready(function(){
            $('#registerButton').prop('disabled', true);   
   });
 
+  // model form
+
+  $('.model-button-group').click(function(){
+    if($("value")=="meeting"){
+        $(".box").hide();
+        $(".todays_guests").show();
+    }
+    if($("value")=="tour"){
+        $(".box").hide();
+        $(".yesterdays_guests").show();
+    }
+    if($(this).attr("value")=="event"){
+        $(".box").hide();
+        $(".weeks_guests").show();
+    }
+    if($(this).attr("value")=="other"){
+        $(".box").hide();
+        $(".months_guests").show();
+    }
+});
+
 })
