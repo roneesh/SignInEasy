@@ -73,9 +73,12 @@
     = Date::MONTHNAMES[Time.now.in_time_zone.mon]
     Visitors
 
-=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+=#will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
 // Todays Table
+
+
 
 %table.table.table-striped.table-hover.box.todays_guests
   %thead
