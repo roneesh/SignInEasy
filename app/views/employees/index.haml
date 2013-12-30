@@ -1,6 +1,6 @@
 
 %h3 
-  Employees at
+  Members at
   = current_user.organization.name
 
 %hr
@@ -21,7 +21,7 @@
         %td= employee.name
         %td= employee.company    
         %td= employee.email
-        %td= employee.phone
+        %td= number_to_phone(employee.phone, raise: true, delimiter: ".")
         %td= employee.allow_email
         %td= employee.allow_text
         %td
