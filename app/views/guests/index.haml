@@ -9,15 +9,15 @@
   %h2 
     Dashboard - 
     = current_user.organization.name
-    .btn-group.pull-right{"data-toggle" => "buttons"}
-      %label.btn.btn-default.active
-        %input#todays_guests{type: "radio", id: "#todays_guests"} Today
-      %label.btn.btn-default
-        %input#yesterdays_guests{type: "radio", id: "#yesterdays_guests"} Yesterday
-      %label.btn.btn-default
-        %input#weeks_guests{type: "radio", id: "#weeks_guests"} Week
-      %label.btn.btn-default
-        %input#months_guests{type: "radio", id: "#months_guests"} Month
+    .btn-group.btn-dashboard-nav.pull-right{"data-toggle" => "buttons"}
+      %label.btn.btn-default.nav-button-group.active#todays_guests
+        %input{type: "radio", value: "todays_guests"} Today
+      %label.btn.btn-default.nav-button-group#yesterdays_guests
+        %input{type: "radio", value: "yesterdays_guests"} Yesterday
+      %label.btn.btn-default.nav-button-group#weeks_guests
+        %input{type: "radio", value: "weeks_guests"} Week
+      %label.btn.btn-default.nav-button-group#months_guests
+        %input{type: "radio", value: "months_guests"} Month
 
 
 // Start Javascript View based on button options
@@ -29,26 +29,26 @@
     .jumbotron
       %h3.center Visitor Count
       %h1.center
-        #todays_guests
+        .todays_guests.box
           = @todays_guests.count
-        #yesterdays_guests
+        .yesterdays_guests.box
           = @yesterdays_guests.count
-        #weeks_guests
+        .weeks_guests.box
           = @weeks_guests.count
-        #months_guests
+        .months_guests.box
           = @months_guests.count
 
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
       %h1.center
-        #todays_guests
+        .todays_guests.box
           = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
-        #yesterdays_guests
+        .yesterdays_guests.box
           = @yesterdays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
-        #weeks_guests
+        .weeks_guests.box
           = @weeks_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
-        #months_guests
+        .months_guests.box
           = @months_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count     
 
 
@@ -61,16 +61,16 @@
 
 %p
 %h3.panel.panel-default.panel-heading.center
-  #todays_guests Today's Visitors
-  #yesterdays_guests Yesterday's Visitors
-  #weeks_guests This Week's Visitors
-  #months_guests This Month's Visitors
+  .todays_guests.box Today's Visitors
+  .yesterdays_guests.box Yesterday's Visitors
+  .weeks_guests.box This Week's Visitors
+  .months_guests.box This Month's Visitors
 
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
 // Todays Table
 
-%table.table.table-striped.table-hover#todays_guests
+%table.table.table-striped.table-hover.box.todays_guests
   %thead
     %tr
       %th Name
@@ -108,7 +108,7 @@
           
 // Yesterdays Table
 
-%table.table.table-striped.table-hover#yesterdays_guests
+%table.table.table-striped.table-hover.yesterdays_guests.box
   %thead
     %tr
       %th Name
@@ -146,7 +146,7 @@
 
 // Weeks Table
 
-%table.table.table-striped.table-hover#weeks_guests
+%table.table.table-striped.table-hover.weeks_guests.box
   %thead
     %tr
       %th Name
@@ -184,7 +184,7 @@
 
 // Months Table
 
-%table.table.table-striped.table-hover#months_guests
+%table.table.table-striped.table-hover.months_guests.box
   %thead
     %tr
       %th Name

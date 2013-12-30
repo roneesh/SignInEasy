@@ -55,4 +55,49 @@ $('.visitor-ui-form.a').ready(function(){
 
 // Dashboard show/hide based on date
 
+
+  $('#todays_guests').click(function(){
+    $('.box').hide();
+    $('.todays_guests').show();
+  })
+
+  $('#yesterdays_guests').click(function(){
+    $('.box').hide();
+    $('.yesterdays_guests').show();
+  })
+
+  $('#weeks_guests').click(function(){
+    $('.box').hide();
+    $('.weeks_guests').show();
+  })
+
+  $('#months_guests').click(function(){
+    $('.box').hide();
+    $('.months_guests').show();
+  })
+
+  $('.nav-button-group').click(function(){
+      if($("value")=="todays_guests"){
+          $(".box").hide();
+          $(".todays_guests").show();
+      }
+      if($("value")=="yesterdays_guests"){
+          $(".box").hide();
+          $(".yesterdays_guests").show();
+      }
+      if($(this).attr("value")=="weeks_guests"){
+          $(".box").hide();
+          $(".weeks_guests").show();
+      }
+      if($(this).attr("value")=="months_guests"){
+          $(".box").hide();
+          $(".months_guests").show();
+      }
+  });
+
 })
+
+
+
+
+
