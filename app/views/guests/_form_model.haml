@@ -18,29 +18,29 @@
 
     .form-group
       =# f.label :email, "Mobile Number"
+      %span.status Reason why mobile 
       = f.text_field :mobile_number, :class => 'form-control', :placeholder => 'Guest Mobile Phone Number (optional)'      
 
-    Visit Reason  
-    .btn-group.center
-      %button.btn.btn-default.active{type: "button"} Today
-      %button.btn.btn-default{type: "button"} Yesterday
-      %button.btn.btn-default{type: "button"} Week
-      %button.btn.btn-default{type: "button"} Month 
+    .form-group
+      %span.status Visit Reason
+      %br
+      .btn-group  
+        %button.btn.btn-default.active{type: "button"} Meeting
+        %button.btn.btn-default{type: "button"} Tour
+        %button.btn.btn-default{type: "button"} Event
+        %button.btn.btn-default{type: "button"} Other 
 
     %p  
     .form-group 
       =# f.label :employee_name, "Hosting Member"
       %span.status Hosting Member:
-      = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control', :placeholder => 'Hosting Member Autocomplete', :required => "true"
+      = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control', :placeholder => 'Start Typing The Hosting Member Name (Autocomplete)', :required => "true"
       
       = f.hidden_field :reason, value: 'Meeting'  
 
- 
-
     %p
     %p
     %p
-
     %br
     %br
     %br
