@@ -10,7 +10,7 @@
     Dashboard - 
     = current_user.organization.name
     .btn-group.pull-right{"data-toggle" => "buttons"}
-      %label.btn.btn-default
+      %label.btn.btn-default.active
         %input#todays_guests{type: "radio", id: "#todays_guests"} Today
       %label.btn.btn-default
         %input#yesterdays_guests{type: "radio", id: "#yesterdays_guests"} Yesterday
@@ -30,26 +30,26 @@
       %h3.center Visitor Count
       %h1.center
         #todays_guests
-        = @todays_guests.count
+          = @todays_guests.count
         #yesterdays_guests
-        = @yesterdays_guests.count
+          = @yesterdays_guests.count
         #weeks_guests
-        = @weeks_guests.count
+          = @weeks_guests.count
         #months_guests
-        = @months_guests.count
+          = @months_guests.count
 
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
       %h1.center
         #todays_guests
-        = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+          = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
         #yesterdays_guests
-        = @yesterdays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+          = @yesterdays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
         #weeks_guests
-        = @weeks_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+          = @weeks_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
         #months_guests
-        = @months_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count     
+          = @months_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count     
 
 
   .col-sm-6.col-md-4
