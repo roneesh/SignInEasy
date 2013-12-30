@@ -4,14 +4,15 @@ class GuestsController < ApplicationController
 
   layout "visitor_ui", :only => ["new", "show"]
 
-  before_filter :belongs_to_organization, :only => [:new, :show]
+  before_filter :must_belong_to_organization, :only => [:new, :show]
 
   def index
-    @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
-    @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
-    @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now.in_time_zone - 1.day).beginning_of_day, Time.now.in_time_zone.beginning_of_day).order("created_at DESC")
-    @weeks_guests = Guest.where("created_at > ? AND created_at < ?", 7.days.ago.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
-    @months_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_month, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @organization_guests = Guest.where(organization_id: params[:organization_id])
+    @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
+    @todays_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @yesterdays_guests = @organization_guests.where("created_at > ? AND created_at < ?", (Time.now.in_time_zone - 1.day).beginning_of_day, Time.now.in_time_zone.beginning_of_day).order("created_at DESC")
+    @weeks_guests = @organization_guests.where("created_at > ? AND created_at < ?", 7.days.ago.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @months_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_month, Time.now.in_time_zone.end_of_day).order("created_at DESC")
 
     respond_to do |format|
       format.html
