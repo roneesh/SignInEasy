@@ -5,6 +5,8 @@
 
 %hr
 
+=will_paginate @employees, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
 %table.table.table-striped
   %thead
     %th Name

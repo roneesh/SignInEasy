@@ -6,14 +6,17 @@
     .form-group
     
       =# f.label :name, "Name"
+      %span.status Name
       = f.text_field :name, :class => 'form-control', :placeholder => 'Guest First and Last Name', :required => "true"
 
     .form-group
       =# f.label :company, "Company Name"
+      %span.status Company
       = f.text_field :company, :class => 'form-control', :placeholder => 'Guest Company Name (optional)'
 
     .form-group
       =# f.label :email, "Email Address"
+      %span.status Email
       = f.email_field :email, :class => 'form-control', :placeholder => 'Guest Email Address (optional)'
 
     .form-group
