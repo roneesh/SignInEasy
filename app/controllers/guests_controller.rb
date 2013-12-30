@@ -35,11 +35,16 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.set_id
     @guest.employee_name = params[:employee_name]
-    if @guest.save
-      @guest.run_notification_service if @guest.employee_id
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
-    else
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
+    
+    respond_to do |format|
+      if @guest.save
+        @guest.run_notification_service if @guest.employee_id
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {head :no_content}
+      else
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {render json: @task.errors, status: :unprocessable_entity}
+      end
     end
   end
 
