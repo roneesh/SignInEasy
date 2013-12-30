@@ -38,6 +38,7 @@ class GuestsController < ApplicationController
     else
       redirect_to organization_guest_path(@guest.organization_id, @guest.id)
     end
+
   end
 
   def show

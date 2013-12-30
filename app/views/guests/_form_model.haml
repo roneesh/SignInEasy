@@ -1,38 +1,57 @@
-= form_for(@guest, :html => { :class => 'form-horizontal'}) do |f|
-  = if @guest.errors.any?
-    .error_explanation
-      %h2
-      = pluralize(@guest.errors.count, "error")
 
-    %ul
-    = @guest.errors.full_messages.each do |msg|
-      %li
-      = msg
-  .form-group
-  
-    =# f.label :name, "Name"
-    = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Guest First and Last Name', :required => "true"
+#manual-guest-registration-model{ :class => 'model' }
+  = form_for(Guest.new, :remote => 'true', :html => { "data-type" => :json}) do |f|
+    %ul.errors
 
-  .form-group
-    =# f.label :company, "Company Name"
-    = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Guest Company Name (optional)'
-
-  .form-group
-    =# f.label :email, "Email Address"
-    = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Guest Email Address (optional)'
-
-  .form-group 
-    =# f.label :employee_name, "Hosting Member"
-    %span.status I'm here to see:
-    = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Start typing the first and last name of your host', :required => "true"
+    .form-group
     
+      =# f.label :name, "Name"
+      = f.text_field :name, :class => 'form-control', :placeholder => 'Guest First and Last Name', :required => "true"
+
+    .form-group
+      =# f.label :company, "Company Name"
+      = f.text_field :company, :class => 'form-control', :placeholder => 'Guest Company Name (optional)'
+
+    .form-group
+      =# f.label :email, "Email Address"
+      = f.email_field :email, :class => 'form-control', :placeholder => 'Guest Email Address (optional)'
+
+    .form-group
+      =# f.label :email, "Mobile Number"
+      = f.text_field :mobile_number, :class => 'form-control', :placeholder => 'Guest Mobile Phone Number (optional)'      
+
+    Visit Reason  
+    .btn-group.center
+      %button.btn.btn-default.active{type: "button"} Today
+      %button.btn.btn-default{type: "button"} Yesterday
+      %button.btn.btn-default{type: "button"} Week
+      %button.btn.btn-default{type: "button"} Month 
+
+    %p  
+    .form-group 
+      =# f.label :employee_name, "Hosting Member"
+      %span.status Hosting Member:
+      = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control', :placeholder => 'Hosting Member Autocomplete', :required => "true"
       
+      = f.hidden_field :reason, value: 'Meeting'  
 
-  .form-group
-    = f.hidden_field :organization_id, value: @organization_id
-    = f.hidden_field :reason, value: 'Meeting'      
+ 
 
-  .form-group.center-buttons.span-3
-    = f.submit 'Register', :class => 'btn btn-success btn-xlg', :id => 'registerButton'
-  .form-group.center-buttons.span-3  
-    =# submit_tag 'Cancel', :type => :reset, :class => 'btn btn-default form-cancel'
+    %p
+    %p
+    %p
+
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br    
+
+    .form-group
+      = f.hidden_field :organization_id, value: @organization_id
+           
+    .modal-footer  
+      %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+      = f.submit 'Register Guest', :class => 'btn btn-success', :id => 'registerButton' 
+     
