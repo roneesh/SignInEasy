@@ -67,10 +67,10 @@
     Yesterday's Visitors
   .weeks_guests.box 
     This Week's Visitors (since last 
-    = Date::DAYNAMES[1.week.ago.wday]
+    = Date::DAYNAMES[1.week.ago.in_time_zone.wday]
     )
   .months_guests.box 
-    = Date::MONTHNAMES[Time.now.mon]
+    = Date::MONTHNAMES[Time.now.in_time_zone.mon]
     Visitors
 
 =will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails

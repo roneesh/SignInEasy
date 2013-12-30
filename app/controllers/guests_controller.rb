@@ -8,10 +8,10 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
-    @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
-    @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now - 1.day).beginning_of_day, Time.now.beginning_of_day).order("created_at DESC")
-    @weeks_guests = Guest.where("created_at > ? AND created_at < ?", 7.days.ago.beginning_of_day, Time.now.end_of_day).order("created_at DESC")
-    @months_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.beginning_of_month, Time.now.end_of_day).order("created_at DESC")
+    @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now.in_time_zone - 1.day).beginning_of_day, Time.now.in_time_zone.beginning_of_day).order("created_at DESC")
+    @weeks_guests = Guest.where("created_at > ? AND created_at < ?", 7.days.ago.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @months_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_month, Time.now.in_time_zone.end_of_day).order("created_at DESC")
 
     respond_to do |format|
       format.html
