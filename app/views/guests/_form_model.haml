@@ -27,11 +27,20 @@
     .form-group
       %span.status Visit Reason
       %br
-      .btn-group  
-        %button.btn.btn-default.active{type: "button"} Meeting
-        %button.btn.btn-default{type: "button"} Tour
-        %button.btn.btn-default{type: "button"} Event
-        %button.btn.btn-default{type: "button"} Other 
+      .btn-group{"data-toggle" => "buttons"}
+        %label.btn.btn-default
+          %input#option1{name: "options", type: "radio"}/
+          Meeting
+        %label.btn.btn-default
+          %input#option2{name: "options", type: "radio"}/
+          Tour
+        %label.btn.btn-default
+          %input#option3{name: "options", type: "radio"}/
+          Event  
+        %label.btn.btn-default
+          %input#option3{name: "options", type: "radio"}/
+          Other
+
 
     %p  
     .form-group 
