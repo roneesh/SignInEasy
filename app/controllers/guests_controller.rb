@@ -4,16 +4,10 @@ class GuestsController < ApplicationController
 
   layout "visitor_ui", :only => ["new", "show"]
 
-  before_filter :must_be_signed_in
-  before_filter :must_be_part_of_organization 
-
-  def must_be_part_of_organization
-    redirect_to organization_guests_path(current_user.organization) unless OrganizationUser.where(organization_id: params[:organization_id], user_id: current_user.id)
-  end
-
+  before_filter :must_be_signed_in, :must_be_part_of_organization 
 
   def index
-    @organization = Organization.find_by_id(current_user.organization.id)
+    @organization = Organization.find_by_id(params[:organization_id]) || Organization.find(current_user.organization.id)
     @organization_guests = Guest.where(organization_id: params[:organization_id])
     @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")

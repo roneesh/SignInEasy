@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
 
+  before_filter :must_be_signed_in, :must_be_part_of_organization
 
   def new
     @employee = Employee.new
