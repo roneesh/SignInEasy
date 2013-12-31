@@ -4,9 +4,18 @@ class GuestsController < ApplicationController
 
   layout "visitor_ui", :only => ["new", "show"]
 
-  before_filter :must_belong_to_organization, :only => [:new, :show]
+  before_filter :must_be_signed_in
+  before_filter :must_be_part_of_organization 
+
+  def must_be_part_of_organization
+    if params[:organization_id] == 99
+      redirect_to organization_guests_path(current_user.organization.id), notice: "You are not authorized to see that!"
+    end
+  end
+
 
   def index
+    @organization = Organization.find_by_id(params[:organization_id])
     @organization_guests = Guest.where(organization_id: params[:organization_id])
     @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")

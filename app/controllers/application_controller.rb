@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
 
-  def must_belong_to_organization
-    if signed_in? && (params[:organization_id] == current_user.organization.id)
-      flash[:notice] = "hi from must_belong_to_organization"
+  def must_be_signed_in
+    unless signed_in?
+      redirect_to root_url, notice: "Please sign in."
     end
   end
 

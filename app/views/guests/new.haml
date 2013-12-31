@@ -72,8 +72,8 @@
   .bottom-logo-container
     =#image_tag("SignInEasyLogo-bottom.png")
   .visitor-ui-home-icon
-    = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(current_user.organization.id)
+    = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(@organization_id)
   .visitor-ui-refresh
-    = link_to image_tag('arrow_left.png', :size => '25x25'), new_organization_guest_path(current_user.organization.id)
+    = link_to image_tag('arrow_left.png', :size => '25x25'), new_organization_guest_path(@organization_id)
 
 

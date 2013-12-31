@@ -3,7 +3,7 @@ SignInEasy::Application.routes.draw do
   get "static_pages/splash"
   root :to => "clearance/sessions#new"
 
-  get 'profile', to: 'guests#index'#, as: "user"
+  get 'profile', to: 'guests#index', as: "profile"
 
   resources :organizations, only: [:destroy, :show, :update, :create ] do
     resources :employees do 
