@@ -5,8 +5,8 @@
   .btn-grid.show-page-text
     %br
     %h2 
-      Thanks for registering, 
-      = @guest.name.split.first
+      Thanks for registering
+      = @guest.name.split.first.capitalize + '!'
     %br  
     - if @employee && (@guest.email_notification_status || @guest.text_notification_status)
       - if @guest.email_notification_status == "sent" && @guest.text_notification_status == "sent"
