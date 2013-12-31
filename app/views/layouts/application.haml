@@ -66,11 +66,9 @@
 
       / /.navbar-collapse
     .container
-      #flash
+      #flash  
       -flash.each do |key, value|
-        =key
-        %br
-        =value
+        .alert.alert-danger= value
       = yield
 
   #footer
