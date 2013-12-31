@@ -8,14 +8,12 @@ class GuestsController < ApplicationController
   before_filter :must_be_part_of_organization 
 
   def must_be_part_of_organization
-    if params[:organization_id] == 99
-      redirect_to organization_guests_path(current_user.organization.id), notice: "You are not authorized to see that!"
-    end
+    redirect_to organization_guests_path(current_user.organization) unless OrganizationUser.where(organization_id: params[:organization_id], user_id: current_user.id)
   end
 
 
   def index
-    @organization = Organization.find_by_id(params[:organization_id])
+    @organization = Organization.find_by_id(current_user.organization.id)
     @organization_guests = Guest.where(organization_id: params[:organization_id])
     @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
     @todays_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
@@ -44,7 +42,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     @guest.set_id
-    @guest.employee_name = params[:employee_name]
+    @guest.semployee_name = params[:employee_name]
     if @guest.save
       @guest.run_notification_service if @guest.employee_id
       redirect_to organization_guest_path(@guest.organization_id, @guest.id)

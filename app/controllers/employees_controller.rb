@@ -11,6 +11,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.where(organization_id: params[:organization_id])
+    @organization = Organization.find(params[:organization_id])
   end
 
   def edit

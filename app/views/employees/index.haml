@@ -1,7 +1,7 @@
 
 %h3 
   Members at
-  = current_user.organization.name
+  = @organization.name
 
 %hr
 
@@ -31,6 +31,6 @@
           = link_to organization_employee_path(current_user.organization.id, employee.id), :confirm => "are you sure?", :method => :delete do
             %i.fa.fa-times
 
-%p= link_to "<i class='fa fa-user'></i> Add Employee".html_safe, new_organization_employee_path(current_user.organization), :class => 'btn btn-default', remote: true, id: "new_employee_link"
+%p= link_to "<i class='fa fa-user'></i> Add Employee".html_safe, new_organization_employee_path(@organization.id), :class => 'btn btn-default', remote: true, id: "new_employee_link"
 
-%p= link_to "<i class='fa fa-cloud-upload'></i> Upload Employees via CSV".html_safe, import_form_organization_employees_path(current_user.organization), :class => 'btn btn-default', remote: true, id: "import_link"
+%p= link_to "<i class='fa fa-cloud-upload'></i> Upload Employees via CSV".html_safe, import_form_organization_employees_path(@organization.id), :class => 'btn btn-default', remote: true, id: "import_link"
