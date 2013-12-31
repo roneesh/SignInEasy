@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def must_be_part_of_organization
-    if params[:organization_id].to_i != current_user.organization.id
+    if params[:organization_id] && (params[:organization_id].to_i != current_user.organization.id)
       redirect_to organization_guests_path(current_user.organization.id), notice: "You can't go there!"
     end
   end

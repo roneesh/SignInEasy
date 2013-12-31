@@ -56,6 +56,10 @@ class GuestsController < ApplicationController
     redirect_to organization_guests_path(current_user.organization)
   end
 
+  def login_redirect
+    redirect_to organization_guests_path(current_user.organization.id)
+  end
+
 
   private
 
