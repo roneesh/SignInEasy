@@ -8,8 +8,10 @@ class Guest < ActiveRecord::Base
   before_create :downcase_email_address
 
   after_create do 
-    self.hosting_member = Employee.find(self.employee_id).name
-    save
+    if self.employee_id
+      self.hosting_member = Employee.find(self.employee_id).name
+      save
+    end
   end
 
   def initialize(params = {})
