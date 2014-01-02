@@ -9,11 +9,15 @@
   %h2 
     Dashboard - 
     = current_user.organization.name
-    .btn-group.pull-right
-      %button.btn.btn-default.active{type: "button"} Today
-      %button.btn.btn-default.disabled{type: "button"} Yesterday
-      %button.btn.btn-default.disabled{type: "button"} Week
-      %button.btn.btn-default.disabled{type: "button"} Month
+    .btn-group.btn-dashboard-nav.pull-right{"data-toggle" => "buttons"}
+      %label.btn.btn-default.nav-button-group.active#todays_guests
+        %input{type: "radio", value: "todays_guests"} Today
+      %label.btn.btn-default.nav-button-group#yesterdays_guests
+        %input{type: "radio", value: "yesterdays_guests"} Yesterday
+      %label.btn.btn-default.nav-button-group#weeks_guests
+        %input{type: "radio", value: "weeks_guests"} Week
+      %label.btn.btn-default.nav-button-group#months_guests
+        %input{type: "radio", value: "months_guests"} Month
 
 
 // Start Javascript View based on button options
@@ -25,12 +29,27 @@
     .jumbotron
       %h3.center Visitor Count
       %h1.center
-        = @todays_guests.count
+        .todays_guests.box
+          = @todays_guests.count
+        .yesterdays_guests.box
+          = @yesterdays_guests.count
+        .weeks_guests.box
+          = @weeks_guests.count
+        .months_guests.box
+          = @months_guests.count
 
   .col-sm-6.col-md-4
     .jumbotron
       %h3.center Notifications Sent
-      %h1.center= @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+      %h1.center
+        .todays_guests.box
+          = @todays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .yesterdays_guests.box
+          = @yesterdays_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .weeks_guests.box
+          = @weeks_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count
+        .months_guests.box
+          = @months_guests.where("email_notification_status = 'sent' OR text_notification_status = 'sent'").count     
 
 
   .col-sm-6.col-md-4
@@ -40,12 +59,28 @@
 
 .clearfix
 
-%br
-%h3.panel.panel-default.panel-heading.center Today's Visitors
+%p
+%h3.panel.panel-default.panel-heading.center
+  .todays_guests.box 
+    Today's Visitors
+  .yesterdays_guests.box 
+    Yesterday's Visitors
+  .weeks_guests.box 
+    This Week's Visitors (since last 
+    = Date::DAYNAMES[1.week.ago.in_time_zone.wday]
+    )
+  .months_guests.box 
+    = Date::MONTHNAMES[Time.now.in_time_zone.mon]
+    Visitors
 
-=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
-%table.table.table-striped.table-hover
+=#will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+// Todays Table
+
+
+
+%table.table.table-striped.table-hover.box.todays_guests
   %thead
     %tr
       %th Name
@@ -68,7 +103,7 @@
         %td 
           = guest.email
         %td
-          =# guest.mobile_number
+          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
@@ -78,9 +113,122 @@
         %td 
           = guest.created_at.in_time_zone.strftime(" %I:%M %p")
         %td   
-          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "are you sure?", :method => :delete do
+          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "Are you sure? Guest records shouldn't be deleted. Removing them is perminant and can not be undone.", :method => :delete do
             %i.fa.fa-times
           
+// Yesterdays Table
+
+%table.table.table-striped.table-hover.yesterdays_guests.box
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Email
+      %th Mobile
+      %th Hosting Member
+      %th Visit Reason
+      %th Date
+      %th Time
+      %th Delete
+
+  %tbody
+    - @yesterdays_guests.each do |guest|
+      %tr
+        %td 
+          = guest.name
+        %td
+          = guest.company  
+        %td 
+          = guest.email
+        %td
+          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+        %td
+          = guest.hosting_member ? guest.hosting_member : "No Employee"
+        %td
+          = guest.reason 
+        %td 
+          = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
+        %td 
+          = guest.created_at.in_time_zone.strftime(" %I:%M %p")
+        %td   
+          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "Are you sure? Guest records shouldn't be deleted. Removing them is perminant and can not be undone.", :method => :delete do
+            %i.fa.fa-times    
+
+// Weeks Table
+
+%table.table.table-striped.table-hover.weeks_guests.box
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Email
+      %th Mobile
+      %th Hosting Member
+      %th Visit Reason
+      %th Date
+      %th Time
+      %th Delete
+
+  %tbody
+    - @weeks_guests.each do |guest|
+      %tr
+        %td 
+          = guest.name
+        %td
+          = guest.company  
+        %td 
+          = guest.email
+        %td
+          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+        %td
+          = guest.hosting_member ? guest.hosting_member : "No Employee"
+        %td
+          = guest.reason 
+        %td 
+          = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
+        %td 
+          = guest.created_at.in_time_zone.strftime(" %I:%M %p")
+        %td   
+          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "Are you sure? Guest records shouldn't be deleted. Removing them is perminant and can not be undone.", :method => :delete do
+            %i.fa.fa-times
+
+// Months Table
+
+%table.table.table-striped.table-hover.months_guests.box
+  %thead
+    %tr
+      %th Name
+      %th Company
+      %th Email
+      %th Mobile
+      %th Hosting Member
+      %th Visit Reason
+      %th Date
+      %th Time
+      %th Delete
+
+  %tbody
+    - @months_guests.each do |guest|
+      %tr
+        %td 
+          = guest.name
+        %td
+          = guest.company  
+        %td 
+          = guest.email
+        %td
+          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+        %td
+          = guest.hosting_member ? guest.hosting_member : "No Employee"
+        %td
+          = guest.reason 
+        %td 
+          = guest.created_at.in_time_zone.strftime("%b. %d\, %Y")
+        %td 
+          = guest.created_at.in_time_zone.strftime(" %I:%M %p")
+        %td   
+          = link_to organization_guest_path(current_user.organization.id, guest.id), :confirm => "Are you sure? Guest records shouldn't be deleted. Removing them is perminant and can not be undone.", :method => :delete do
+            %i.fa.fa-times                              
   
 = link_to '<i class="fa fa-cloud-download"></i> Download all guest records (.csv)'.html_safe, url_for(:format => "csv"), :class => 'btn btn-default'    
 %br

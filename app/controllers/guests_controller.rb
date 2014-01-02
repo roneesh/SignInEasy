@@ -7,8 +7,15 @@ class GuestsController < ApplicationController
 
 
   def index
-    @guests = Guest.page(params[:page]).per_page(100).order("created_at DESC")
+
+    #page(params[:page]).per_page(100).order("created_at DESC") pagination code
+
+    @guests = Guest.all
     @todays_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @yesterdays_guests = Guest.where("created_at > ? AND created_at < ?", (Time.now.in_time_zone - 1.day).beginning_of_day, Time.now.in_time_zone.beginning_of_day).order("created_at DESC")
+    @weeks_guests = Guest.where("created_at > ? AND created_at < ?", 7.days.ago.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+    @months_guests = Guest.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_month, Time.now.in_time_zone.end_of_day).order("created_at DESC")
+
 
     respond_to do |format|
       format.html
@@ -32,11 +39,16 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.set_id
     @guest.employee_name = params[:employee_name]
-    if @guest.save
-      @guest.run_notification_service if @guest.employee_id
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
-    else
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
+    
+    respond_to do |format|
+      if @guest.save
+        @guest.run_notification_service if @guest.employee_id
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {head :no_content}
+      else
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {render json: @task.errors, status: :unprocessable_entity}
+      end
     end
 
   end
@@ -47,15 +59,16 @@ class GuestsController < ApplicationController
   end
 
   def destroy
-    @guest = Guest.find(params[:id])
+    @guest = Guest.find_by_id(params[:id])
     @guest.destroy
+    redirect_to organization_guests_path(current_user.organization)
   end
 
 
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :company, :reason, :organization_id, :employee_name)
+    params.require(:guest).permit(:name, :email, :mobile_number, :company, :reason, :organization_id, :employee_name)
   end
 
 
