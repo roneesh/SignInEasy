@@ -11,8 +11,10 @@ class EmployeesController < ApplicationController
   end
 
   def index
-    @employees = Employee.where(organization_id: params[:organization_id])
+
+    @employees = Employee.where(organization_id: params[:organization_id]).page(params[:page]).per_page(100).order("created_at DESC")
     @organization = Organization.find(params[:organization_id])
+
   end
 
   def edit

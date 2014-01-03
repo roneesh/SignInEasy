@@ -1,6 +1,6 @@
 %br
 .col-lg-10.col-lg-offset-1.center
-  %button.btn.btn-success{:type => "button", "data-target" => "#myModal", "data-toggle" => "modal"} 
+  %button.btn.btn-success{:type => "button", "data-target" => "#manual-guest-registration-model", "data-toggle" => "modal"} 
     %i.fa.fa-user
     Manual Guest Check In
 %br    
@@ -73,9 +73,12 @@
     = Date::MONTHNAMES[Time.now.in_time_zone.mon]
     Visitors
 
-=will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
+
+=#will_paginate @guests, previous_label: h("Back"), next_label: h("Forward"), renderer: BootstrapPagination::Rails
 
 // Todays Table
+
+
 
 %table.table.table-striped.table-hover.box.todays_guests
   %thead
@@ -232,62 +235,66 @@
 %br
 %br 
 
+  // Visitor Check In Modal
+  #manual-guest-registration-model.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "manual-guest-registration-model-label", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#manual-guest-registration-model-label.modal-title Manual Visitor Registration
+        .modal-body
+          
+          // Form For
+
+          = render :partial => 'form_model'
+
+          // Begin Placeholder Form
+
+        /   %form.form-horizontal{role: "form"}
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputEmail3"} Name
+        /       .col-sm-10
+        /         %input.form-control{placeholder: "Guest First and Last Name"}/
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputEmail3"} Company
+        /       .col-sm-10
+        /         %input.form-control{placeholder: "Guest Company"}/
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputEmail3"} Email
+        /       .col-sm-10
+        /         %input.form-control{placeholder: "Guest Email Address", type: "email"}/   
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputEmail3"} Mobile
+        /       .col-sm-10
+        /         %input.form-control{placeholder: "Guest Mobile Phone Number", type: "phone"}/   
+
+        /         // Add collection_select for choosing the reason they are here
+
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputEmail3"} Reason
+        /       .col-sm-10
+        /         %select
+        /           %option{value: "1"} Meeting
+        /           %option{value: "2"} Tour
+        /           %option{value: "3"} Event
+        /           %option{value: "4"} Other  
+        /         // Auto complete form would go active if it's for a meeting
+        /     .form-group
+        /       %label.col-sm-2.control-label{for: "inputPassword3"} Host
+        /       .col-sm-10
+        /         %input.form-control{placeholder: "Hosting Member"}/   
+        /       %br
+        /       %br
+        /       %br       
+          
+        / .modal-footer
+        /   %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+        /   %button.btn.btn-success{type: "button"} Register Guest
+      / /.modal-content
+    / /.modal-dialog
+  / /.modal
 
 
-// Visitor Check In Modal
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Manual Visitor Registration
-      .modal-body
-        
-        // Begin Form
-
-        %form.form-horizontal{role: "form"}
-          .form-group
-            %label.col-sm-2.control-label{for: "inputEmail3"} Name
-            .col-sm-10
-              %input.form-control{placeholder: "Guest First and Last Name"}/
-          .form-group
-            %label.col-sm-2.control-label{for: "inputEmail3"} Company
-            .col-sm-10
-              %input.form-control{placeholder: "Guest Company"}/
-          .form-group
-            %label.col-sm-2.control-label{for: "inputEmail3"} Email
-            .col-sm-10
-              %input.form-control{placeholder: "Guest Email Address", type: "email"}/   
-          .form-group
-            %label.col-sm-2.control-label{for: "inputEmail3"} Mobile
-            .col-sm-10
-              %input.form-control{placeholder: "Guest Mobile Phone Number", type: "phone"}/   
-
-              // Add collection_select for choosing the reason they are here
-
-          .form-group
-            %label.col-sm-2.control-label{for: "inputEmail3"} Reason
-            .col-sm-10
-              %select
-                %option{value: "1"} Meeting
-                %option{value: "2"} Tour
-                %option{value: "3"} Event
-                %option{value: "4"} Other  
-              // Auto complete form would go active if it's for a meeting
-          .form-group
-            %label.col-sm-2.control-label{for: "inputPassword3"} Host
-            .col-sm-10
-              %input.form-control{placeholder: "Hosting Member"}/   
-            %br
-            %br
-            %br       
-        =# render :partial => 'form_model'
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
-        %button.btn.btn-success{type: "button"} Register Guest
-    / /.modal-content
-  / /.modal-dialog
-/ /.modal
       
 
 

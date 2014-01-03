@@ -7,6 +7,7 @@ class GuestsController < ApplicationController
   before_filter :must_be_signed_in, :must_be_part_of_organization 
 
   def index
+
     @organization = Organization.find_by_id(params[:organization_id]) || Organization.find(current_user.organization.id)
     @organization_guests = Guest.where(organization_id: params[:organization_id])
     @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
@@ -37,12 +38,18 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.set_id
     @guest.employee_name = params[:employee_name]
-    if @guest.save
-      @guest.run_notification_service if @guest.employee_id
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
-    else
-      redirect_to organization_guest_path(@guest.organization_id, @guest.id)
+    
+    respond_to do |format|
+      if @guest.save
+        @guest.run_notification_service if @guest.employee_id
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {head :no_content}
+      else
+        format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
+        format.json {render json: @task.errors, status: :unprocessable_entity}
+      end
     end
+
   end
 
   def show

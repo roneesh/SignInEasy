@@ -53,6 +53,7 @@ $('.visitor-ui-form.a').ready(function(){
            $('#registerButton').prop('disabled', true);   
   });
 
+
 // Dashboard show/hide based on date
 
 
@@ -76,24 +77,27 @@ $('.visitor-ui-form.a').ready(function(){
     $('.months_guests').show();
   })
 
-  $('.nav-button-group').click(function(){
-      if($("value")=="todays_guests"){
-          $(".box").hide();
-          $(".todays_guests").show();
-      }
-      if($("value")=="yesterdays_guests"){
-          $(".box").hide();
-          $(".yesterdays_guests").show();
-      }
-      if($(this).attr("value")=="weeks_guests"){
-          $(".box").hide();
-          $(".weeks_guests").show();
-      }
-      if($(this).attr("value")=="months_guests"){
-          $(".box").hide();
-          $(".months_guests").show();
-      }
-  });
+
+  // Modal Form
+
+  $('.model-button-group').click(function(){
+    if($("value")=="meeting"){
+        $(".box").hide();
+        $(".todays_guests").show();
+    }
+    if($("value")=="tour"){
+        $(".box").hide();
+        $(".yesterdays_guests").show();
+    }
+    if($(this).attr("value")=="event"){
+        $(".box").hide();
+        $(".weeks_guests").show();
+    }
+    if($(this).attr("value")=="other"){
+        $(".box").hide();
+        $(".months_guests").show();
+    }
+});
 
 })
 
