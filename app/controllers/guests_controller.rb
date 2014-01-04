@@ -6,6 +6,12 @@ class GuestsController < ApplicationController
 
   before_filter :must_be_signed_in, :must_be_part_of_organization 
 
+  # Scoping the auto-complete to organizaiton_id
+  def get_autocomplete_items(parameters)
+    items = super(parameters)
+    items = items.where(organization_id: params[:organization_id])
+  end
+
   def index
 
     @organization = Organization.find_by_id(params[:organization_id]) || Organization.find(current_user.organization.id)
