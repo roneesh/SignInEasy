@@ -35,6 +35,7 @@
           
 
       .form-group
+        = f.hidden_field :employee_id
         = f.hidden_field :organization_id, value: @organization_id
         = f.hidden_field :reason, value: 'Meeting'      
 
