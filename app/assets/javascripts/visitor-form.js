@@ -4,7 +4,7 @@
 $('.visitor-ui-form.a').ready(function(){
 
   $('.meeting-btn').click(function(){
-    $('.btn-grid').fadeOut('fast')
+    $('.btn-grid').hide('fast')
     $('.form-meeting').fadeIn('fast');
   })
   
@@ -16,13 +16,13 @@ $('.visitor-ui-form.a').ready(function(){
   
 
   $('.tour-btn').click(function(){
-    $('.btn-grid').fadeOut('fast');
+    $('.btn-grid').hide('fast');
     $('.form-tour').fadeIn('fast');
   })
 
 
   $('.event-btn').click(function(){
-    $('.btn-grid').fadeOut('fast');
+    $('.btn-grid').hide('fast');
     $('.form-event').fadeIn('fast');
   })
 
@@ -33,7 +33,7 @@ $('.visitor-ui-form.a').ready(function(){
 
 
   $('.other-btn').click(function(){
-    $('.btn-grid').fadeOut('fast');
+    $('.btn-grid').hide('fast');
     $('.form-other').fadeIn('fast');
   })
 
