@@ -58,6 +58,7 @@ $('.visitor-ui-form.a').ready(function(){
     if (data.item.id) {
       $('#guest_employee_id').val(data.item.id);
       $('#registerButton').prop('disabled', false);
+      $('#notify').text("Your registering will notify: " + data.item.value);
       // $('#employee_autocomplete').(function() {
       //   console.log('Im being called from change!');
       //   $('#guest_employee_id').val("");
