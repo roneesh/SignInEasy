@@ -58,11 +58,11 @@ $('.visitor-ui-form.a').ready(function(){
     if (data.item.id) {
       $('#guest_employee_id').val(data.item.id);
       $('#registerButton').prop('disabled', false);
-      $('#employee_autocomplete').keydown(function() {
-        console.log('Im being called from change!');
-        $('#guest_employee_id').val("");
-        $('#registerButton').prop('disabled', true);
-      });
+      // $('#employee_autocomplete').(function() {
+      //   console.log('Im being called from change!');
+      //   $('#guest_employee_id').val("");
+      //   $('#registerButton').prop('disabled', true);
+      // });
       console.log(data.item);
     };
   });
