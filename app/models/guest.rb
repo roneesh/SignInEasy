@@ -8,7 +8,7 @@ class Guest < ActiveRecord::Base
   before_create :downcase_email_address
 
   after_create do 
-    if self.employee_id
+    if self.employee_id && self.reason == "Meeting"
       self.hosting_member = Employee.find(self.employee_id).name
       save
     end
