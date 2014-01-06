@@ -46,13 +46,31 @@ $('.visitor-ui-form.a').ready(function(){
   if($('#employee_autocomplete').val() ==  "") 
      $('#registerButton').prop('disabled', true);
 
-  $('#employee_autocomplete').keyup(function(){
-      if($('#employee_autocomplete').val() !=  "") 
-           $('#registerButton').prop('disabled', false);    
-      else
-           $('#registerButton').prop('disabled', true);   
+  // $('#employee_autocomplete').keyup(function(){
+  //     if($('#employee_autocomplete').val() !=  "") 
+  //          $('#registerButton').prop('disabled', false);    
+  //     else
+  //          $('#registerButton').prop('disabled', true);   
+  // });
+
+  $('#employee_autocomplete').bind('railsAutocomplete.select', function(event, data){
+  /* Do something here */
+    if (data.item.id) {
+      $('#guest_employee_id').val(data.item.id);
+      $('#registerButton').prop('disabled', false);
+      $('#notify').text("Your registering will notify: " + data.item.value);
+      // $('#employee_autocomplete').(function() {
+      //   console.log('Im being called from change!');
+      //   $('#guest_employee_id').val("");
+      //   $('#registerButton').prop('disabled', true);
+      // });
+      console.log(data.item);
+    };
   });
 
+  // $('#employee_autocomplete').change(function() {
+  //   console.log('Im being changed!');
+  // }); 
 
 // Dashboard show/hide based on date
 

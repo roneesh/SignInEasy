@@ -42,8 +42,8 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    @guest.set_id
-    @guest.employee_name = params[:employee_name]
+    # @guest.set_id
+    # @guest.employee_name = params[:employee_name]
     
     respond_to do |format|
       if @guest.save
@@ -77,7 +77,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :mobile_number, :company, :reason, :organization_id, :employee_name)
+    params.require(:guest).permit(:name, :email, :mobile_number, :company, :reason, :organization_id, :employee_name, :employee_id)
   end
 
 end
