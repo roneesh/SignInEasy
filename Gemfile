@@ -82,5 +82,6 @@ gem 'typhoeus'
 
 #Heroku
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 
