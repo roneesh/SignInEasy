@@ -11,11 +11,11 @@
   .form-group
     = f.label :email, class: "col-sm-3 control-label"
     .col-sm-9
-      = f.text_field :email , :class => 'form-control', :placeholder => "e.g. them@theircompany.com", :required => "", :type => "text"
+      = f.text_field :email , :class => 'form-control', :placeholder => "e.g. them@theircompany.com", :type => "text"
   .form-group
     = f.label :phone, class: "col-sm-3 control-label"
     .col-sm-9
-      = f.text_field :phone , :class => 'form-control', :placeholder => "e.g. 1112223333", :required => "", :type => "text"
+      = f.text_field :phone , :class => 'form-control', :placeholder => "e.g. 1112223333", :type => "text"
 
   = f.hidden_field :organization_id, value: current_user.organization.id 
   .form-group
