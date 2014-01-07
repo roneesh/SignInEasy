@@ -12,7 +12,7 @@ class EmployeesController < ApplicationController
 
   def index
 
-    @employees = Employee.where(organization_id: params[:organization_id]).page(params[:page]).per_page(100).order("company ASC")
+    @employees = Employee.where(organization_id: params[:organization_id]).page(params[:page]).per_page(100).order("company ASC, name ASC")
     @organization = Organization.find(params[:organization_id])
 
   end
