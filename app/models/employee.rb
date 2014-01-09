@@ -9,4 +9,8 @@ class Employee < ActiveRecord::Base
   validates :organization_id, presence: true
   #validates :phone, length: { is: 10 }
 
+  def autocomplete_display
+    "#{self.name} at #{self.company}" 
+  end
+
 end
