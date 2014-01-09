@@ -10,7 +10,7 @@ class Employee < ActiveRecord::Base
   #validates :phone, length: { is: 10 }
 
   def autocomplete_display
-    "#{self.name} @ #{self.company}" 
+    "#{self.name} at #{self.company}" 
   end
 
 end
