@@ -23,7 +23,7 @@
 
     .form-group
       =# f.label :email, "Email Address"
-      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Your Email Address (optional)'
+      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Your Email Address', :required => "true"
 
     .form-group
       = f.hidden_field :organization_id, value: @organization_id
