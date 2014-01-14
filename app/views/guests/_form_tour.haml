@@ -15,15 +15,15 @@
     
     .form-group
       =# f.label :name, "Name"
-      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Guest First and Last Name', :required => "true"
+      = f.text_field :name, :class => 'form-control input-lg', :placeholder => 'Your First and Last Name', :required => "true"
 
     .form-group
       =# f.label :company, "Company Name"
-      = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Guest Company Name (optional)'
+      = f.text_field :company, :class => 'form-control input-lg', :placeholder => 'Your Company Name (optional)'
 
     .form-group
       =# f.label :email, "Email Address"
-      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Guest Email Address', :required => "true"
+      = f.email_field :email, :class => 'form-control input-lg', :placeholder => 'Your Email Address', :required => "true"
 
     .form-group
       = f.hidden_field :organization_id, value: @organization_id
