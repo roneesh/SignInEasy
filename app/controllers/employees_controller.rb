@@ -12,7 +12,7 @@ class EmployeesController < ApplicationController
 
   def index
 
-    @employees = Employee.where(organization_id: params[:organization_id]).page(params[:page]).per_page(100).order("created_at DESC")
+    @employees = Employee.where(organization_id: params[:organization_id]).page(params[:page]).per_page(100).order("company ASC, name ASC")
     @organization = Organization.find(params[:organization_id])
 
   end
@@ -69,7 +69,7 @@ class EmployeesController < ApplicationController
 
   def import
 
-    CSV.foreach(params[:file].path, headers: true, skip_blanks: true) do |row|
+    CSV.foreach(params[:file].path, encoding:'utf-8', headers: true, skip_blanks: true) do |row|
       employee = Employee.find_by_name(row["name"]) || Employee.new
       employee.attributes = (row.to_hash).merge(organization_id: current_user.organization.id)
       puts employee.inspect
