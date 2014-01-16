@@ -77,3 +77,27 @@
     = link_to image_tag('arrow_left.png', :size => '35x35'), new_organization_guest_path(@organization_id)
 
 
+// Javascript Countdown to refresh page when idle.
+
+:javascript
+  var time = 0;
+  function timeIncrement() {
+    time++;
+    console.log(time); //comment this out in production
+    if (time > 120) { // reloads page every 120s
+      window.location.reload();
+    };
+  };
+  $(document).ready(function() {
+    setInterval("timeIncrement()",1000); // Runs this function every second
+    $(this).mousemove(function (e) {
+      time = 0;
+    });
+    $(this).keypress(function (e) {
+      time = 0;
+    });
+  });
+
+
+
+
