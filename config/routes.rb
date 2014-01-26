@@ -1,6 +1,7 @@
 SignInEasy::Application.routes.draw do
 
   get "static_pages/splash"
+  get "/index", to: 'static_pages#index'
   root :to => "clearance/sessions#new"
 
   get 'profile', to: 'guests#login_redirect', as: "profile"

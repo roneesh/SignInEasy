@@ -1,0 +1,470 @@
+%main#main.site-main
+  %section#carousel-1.carousel.slide.section-slide{"data-ride" => "carousel"}
+    .carousel-inner
+      .item.active{style: "background: url(assets/images/bg-1.jpg);"}
+        .container
+          %img{alt: "First slide", src: "http://placehold.it/640x340"}/
+      .item{style: "background: url(assets/images/bg-2.jpg);"}
+        .container
+          %img{alt: "First slide", src: "http://placehold.it/640x340"}/
+      .item{style: "background: url(assets/images/bg-3.jpg);"}
+        .container
+          %img{alt: "First slide", src: "http://placehold.it/640x340"}/
+    %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-1"}
+      %span.fa.fa-chevron-left
+    %a.right.carousel-control{"data-slide" => "next", href: "#carousel-1"}
+      %span.fa.fa-chevron-right
+  %section.section.section-center.cta
+    .container
+      %h2.section-title
+        %span Donec id elit non mi porta gravida at eget metus.
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      .main-action
+        %a.btn.btn-lg.btn-danger{href: "#"}> Request a Demo
+           
+        %a.btn.btn-lg.btn-success{href: "#"} Sign up
+  %section#features.section.section-center.section-hilite.section-features
+    .container
+      %h2.section-title
+        %span How it works?
+      .row
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+  %section#portfolio.section.section-portfolio
+    .container
+      %h2.section-title
+        %span Recent Works.
+      .row
+        .col-md-3.col-sm-6
+          %article.hentry.post.portfolio.simple-effect
+            .entry-thumbnail
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
+                %img{alt: "", src: "http://placehold.it/400x300"}/
+                %span.overlay
+                  %i.fa.fa-plus
+            %h4
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
+            %span.text-muted Application Design
+        .col-md-3.col-sm-6
+          %article.hentry.post.portfolio.simple-effect
+            .entry-thumbnail
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
+                %img{alt: "", src: "http://placehold.it/400x300"}/
+                %span.overlay
+                  %i.fa.fa-plus
+            %h4
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
+            %span.text-muted Web Design
+        .col-md-3.col-sm-6
+          %article.hentry.post.portfolio.simple-effect
+            .entry-thumbnail
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
+                %img{alt: "", src: "http://placehold.it/400x300"}/
+                %span.overlay
+                  %i.fa.fa-plus
+            %h4
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
+            %span.text-muted Icon Design
+        .col-md-3.col-sm-6
+          %article.hentry.post.portfolio.simple-effect
+            .entry-thumbnail
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
+                %img{alt: "", src: "http://placehold.it/400x300"}/
+                %span.overlay
+                  %i.fa.fa-plus
+            %h4
+              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
+            %span.text-muted UI Design
+  / Project Modal
+  #project-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "project-modal-label", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#project-modal-label.modal-title Project title
+        .modal-body
+          %article.single-project
+            .project-thumbnail
+              #project-thumbnail-carousel-1.carousel.slide{"data-ride" => "carousel"}
+                .carousel-inner
+                  .item.active
+                    %img{src: "http://placehold.it/800x600"}/
+                  .item
+                    %img{src: "http://placehold.it/800x600"}/
+                  .item
+                    %img{src: "http://placehold.it/800x600"}/
+                %ol.carousel-indicators
+                  %li.active{"data-slide-to" => "0", "data-target" => "#project-thumbnail-carousel-1"}
+                  %li{"data-slide-to" => "1", "data-target" => "#project-thumbnail-carousel-1"}
+                  %li{"data-slide-to" => "2", "data-target" => "#project-thumbnail-carousel-1"}
+                %a.left.carousel-control{"data-slide" => "prev", href: "#project-thumbnail-carousel-1"}
+                  %span.fa.fa-chevron-left
+                %a.right.carousel-control{"data-slide" => "next", href: "#project-thumbnail-carousel-1"}
+                  %span.fa.fa-chevron-right
+            .row
+              .col-md-4
+                %button.btn.btn-block.btn-primary{type: "button"} Launch Project
+                %ul.list-unstyled.project-info
+                  %li
+                    %strong Type
+                    %span.pull-right Web Design
+                  %li
+                    %strong Client
+                    %span.pull-right Google
+                  %li
+                    %strong Year
+                    %span.pull-right 2014
+              .col-md-8
+                %p Suspendisse varius nisl nunc. Aenean in dictum nibh. Nullam congue facilisis purus porta ullamcorper. Aenean in consequat sapien. Cras orci augue, ultricies at luctus congue, dapibus sed magna. Vivamus consequat commodo pharetra. Maecenas sed tincidunt mi, quis accumsan nisi. Praesent ac porttitor massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur in bibendum tellus, vitae imperdiet mauris.
+  %section#testimonials.section.section-center.section-hilite.section-testimonial
+    .container
+      %h2.section-title
+        %span What our clients say?
+      %i.fa.fa-quote-left.fa-3x
+      #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+        .carousel-inner
+          .item.active
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+          .item
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+          .item
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+          %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+          %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+  %section#pricing.section.section-center.section-pricing
+    .container
+      %h3.section-title
+        %span Pricing Table Made Easy
+      .pricing-table
+        .row
+          .col-md-3.col-sm-6
+            .panel.panel-default
+              %header.panel-heading
+                %h1 Bronze
+                .the-price
+                  $5
+                  %span.subscript / month
+              .panel-body
+                %table.table
+                  %tbody
+                    %tr
+                      %td 1 Account
+                    %tr.active
+                      %td 1 Project
+                    %tr
+                      %td 50K API Access
+                    %tr.active
+                      %td 50MB Storage
+                    %tr
+                      %td Custom Cloud Services
+                    %tr.active
+                      %td Weekly Reports
+              %footer.panel-footer
+                %a.btn.btn-default{href: "#"} Sign up now
+          .col-md-3.col-sm-6
+            .panel.panel-default
+              %header.panel-heading
+                %h1 Silver
+                .the-price
+                  $10
+                  %span.subscript / month
+              .panel-body
+                %table.table
+                  %tbody
+                    %tr
+                      %td 1 Account
+                    %tr.active
+                      %td 3 Project
+                    %tr
+                      %td 100K API Access
+                    %tr.active
+                      %td 100MB Storage
+                    %tr
+                      %td Custom Cloud Services
+                    %tr.active
+                      %td Weekly Reports
+              %footer.panel-footer
+                %a.btn.btn-default{href: "#"} Sign up now
+          .col-md-3.col-sm-6
+            .panel.panel-primary
+              %header.panel-heading
+                %h1 Gold
+                .the-price
+                  $20
+                  %span.subscript / month
+              .panel-body
+                %table.table
+                  %tbody
+                    %tr
+                      %td 2 Account
+                    %tr.active
+                      %td 5 Project
+                    %tr
+                      %td 100K API Access
+                    %tr.active
+                      %td 200MB Storage
+                    %tr
+                      %td Custom Cloud Services
+                    %tr.active
+                      %td Weekly Reports
+              %footer.panel-footer
+                %a.btn.btn-primary{href: "#"} Sign up now
+          .col-md-3.col-sm-6
+            .panel.panel-default
+              %header.panel-heading
+                %h1 Diamond
+                .the-price
+                  $35
+                  %span.subscript / month
+              .panel-body
+                %table.table
+                  %tbody
+                    %tr
+                      %td 5 Account
+                    %tr.active
+                      %td 20 Project
+                    %tr
+                      %td 300K API Access
+                    %tr.active
+                      %td 500MB Storage
+                    %tr
+                      %td Custom Cloud Services
+                    %tr.active
+                      %td Weekly Reports
+              %footer.panel-footer
+                %a.btn.btn-default{href: "#"} Sign up now
+  %section#team.section.section-center.section-hilite.section-team
+    .container
+      %h3.section-title
+        %span Our Funny Team
+      .row
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Rihanna
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Marry
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Ronaldo
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Jackie Lord
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 David Beckham
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 John Doe
+  %section#blog.section.section-blog
+    .container
+      %h2.section-title
+        %span From Our Blog
+      .row
+        .col-md-6
+          %article.hentry.post
+            %a.entry-thumbnail{href: "#"}
+              %img{alt: "", src: "http://placehold.it/165x165"}/
+              %span.overlay
+                %i.fa.fa-plus
+            %header.entry-header
+              %h2.entry-title
+                %a{href: "#"} Sample blog title
+              .entry-meta
+                By
+                %a{href: "#"} Jackie Lord
+                in
+                %a{href: "#"} Category
+            .entry-content
+              %p Pellentesque eleifend enim sit amet scelerisque convallis. Aenean eget metus non erat suscipit accumsan.
+              %a.more{href: "#"}
+                %span.btn.btn-primary Continue Reading
+        .col-md-6
+          %article.hentry.post
+            %a.entry-thumbnail{href: "#"}
+              %img{alt: "", src: "http://placehold.it/165x165"}/
+              %span.overlay
+                %i.fa.fa-plus
+            %header.entry-header
+              %h2.entry-title
+                %a{href: "#"} Sample blog title
+              .entry-meta
+                By
+                %a{href: "#"} Jackie Lord
+                in
+                %a{href: "#"} Category
+            .entry-content
+              %p Pellentesque eleifend enim sit amet scelerisque convallis. Duis sed tortor condimentum placeraterat.
+              %a.more{href: "#"}
+                %span.btn.btn-primary Continue Reading
+  %section#clients.section.section-hilite.section-our-clients
+    .container
+      %h2.section-title
+        %span Our Clients
+      .row
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+        .col-md-2.col-sm-4.col-xs-6
+          %a{href: "#"}
+            %img{alt: "", src: "http://placehold.it/165x80"}/
+  %section#contact.section.section-center.section-contact
+    .container
+      %h2.section-title
+        %span Contact Us
+      %p Want to say hello? Want to know more about us? Give us a call or drop us an email and we will get back to you as soon as we can.
+      .main-action
+        %form{role: "form"}
+          .row
+            .col-sm-6
+              .form-group
+                %label.sr-only Name
+                %input.form-control{placeholder: "Name", type: "text"}/
+              .form-group
+                %label.sr-only Email
+                %input.form-control{placeholder: "Email", type: "email"}/
+              .form-group
+                %label.sr-only Phone
+                %input.form-control{placeholder: "Phone", type: "email"}/
+            .col-sm-6
+              .form-group
+                %label.sr-only Message
+                %textarea.form-control{placeholder: "Message", rows: "6", type: "email"}
+          %button.btn.btn-default{type: "submit"} Send message
+  / %section#gmap.section.section-gmap
+  /   %iframe.gmap{frameborder: "0", marginheight: "0", marginwidth: "0", scrolling: "no", src: "https://maps.google.co.in/maps?f=q&source=s_q&hl=en&geocode=&q=new+york&aq=0&oq=new+yourk&sll=22.548872,72.944734&sspn=0.117318,0.209255&ie=UTF8&hq=&hnear=New+York,+United+States&t=m&z=10&iwloc=A&ll=40.714353,-74.005973&output=embed"}
+%footer#footer.site-footer
+  .container
+    #sidebar-footer-1
+      .row
+        %aside.widget.col-md-3.col-sm-6
+          %h5.widget-title About Us
+          %p
+            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptate rerum voluptates.
+            %a{href: "#"} Read more
+        %aside.widget.col-md-3.col-sm-6
+          %h5.widget-title Contact
+          .textwidget
+            .adr
+              .street-address 416 Water St.
+              = succeed "," do
+                %span.locality New York
+              = succeed "," do
+                %abbr.region{title: "New York"} NY
+              = succeed "," do
+                %span.postal-code 10002
+              %span.country-name U.S.A
+            %div
+              Phone:
+              %span.tel +1.123.456.7890
+            %div
+              Website:
+              %a.url{href: "http://www.revotheme.com"} http://www.revotheme.com
+        %aside.widget.col-md-3.col-sm-6
+          %h5.widget-title Need Help?
+          %p
+            Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptate rerum voluptates.
+            %a{href: "#"} Read more
+        %aside.widget.col-md-3.col-sm-6
+          %h5.widget-title Get in touch
+          .input-group
+            %input.form-control{placeholder: "Your Email", type: "text"}/
+            %span.input-group-btn
+              %button.btn.btn-danger{type: "button"}
+                %i.fa.fa-arrow-right
+          %ul.social-links
+            %li
+              %a{href: "#"}
+                %i.fa.fa-facebook
+            %li
+              %a{href: "#"}
+                %i.fa.fa-twitter
+            %li
+              %a{href: "#"}
+                %i.fa.fa-google-plus
+            %li
+              %a{href: "#"}
+                %i.fa.fa-pinterest
+    #sidebar-footer-2
+      .row
+        %aside.widget.col-sm-6
+          %h5.widget-title Latest Tweet
+          .tweet
+            It is better to be hated for what you are than to be loved for something you are not.
+            %br>/
+            – Andre Gide –
+        %aside.widget.widget_flickr.col-sm-6
+          %h5.widget-title Latest Photos
+          %a{href: "#"}
+            %img{src: "http://placehold.it/100x100"}/
+          %a{href: "#"}
+            %img{src: "http://placehold.it/100x100"}/
+          %a{href: "#"}
+            %img{src: "http://placehold.it/100x100"}/
+    .copyright
+      %p
+        © 2014 Company, Inc.
+        %br/
+        Theme: Start 1.0.4. Designed by
+        %a{href: "http://www.revotheme.com"} RevoTheme
+%script{src: "https://code.jquery.com/jquery-1.10.2.min.js"}
+%script{src: "assets/js/bootstrap-3.0.3.min.js"}
+%script{src: "assets/js/jquery.singlePageNav.min.js"}
+%script{src: "assets/js/main.js"}
