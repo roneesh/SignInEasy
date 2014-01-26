@@ -33,7 +33,6 @@
         %span.status#notify Start typing your host's name and select them from the available options
         = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control input-lg', :placeholder => 'Who are you here to see?', :required => "true"
 
-        
       .form-group
         = f.hidden_field :employee_id
         = f.hidden_field :organization_id, value: @organization_id
