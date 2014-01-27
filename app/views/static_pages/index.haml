@@ -1,4 +1,4 @@
-%main#main.site-main
+%main#main.site-main.site-main-splash
   %section#carousel-1.carousel.slide.section-slide{"data-ride" => "carousel"}
     .carousel-inner
       .item.active{style: "background: url(assets/bg-1.jpg);"}
@@ -16,13 +16,52 @@
       %span.fa.fa-chevron-right
   %section.section.section-center.cta
     .container
-      %h2.section-title
+      %h1.section-title
         %span Donec id elit non mi porta gravida at eget metus.
       %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
       .main-action
         %a.btn.btn-lg.btn-default{href: "#"} Request a Demo
            
         %a.btn.btn-lg.btn-success{href: "#"} Sign up
+
+
+
+
+  %section#portfolio.section.section-portfolio
+    .container
+      / %h2.section-title
+      /   %span Automated Messaging
+      / .row
+      %hr.featurette-divider/
+      .row.featurette
+        .col-md-7
+          %h2.featurette-heading
+            First featurette heading.
+            %span.text-muted It'll blow your mind.
+          %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+      %hr.featurette-divider/
+      .row.featurette
+        .col-md-5
+          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+        .col-md-7
+          %h2.featurette-heading
+            Oh yeah, it's that good.
+            %span.text-muted See for yourself.
+          %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      %hr.featurette-divider/
+      .row.featurette
+        .col-md-7
+          %h2.featurette-heading
+            And lastly, this one.
+            %span.text-muted Checkmate.
+          %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+      %hr.featurette-divider/
+      / /END THE FEATURETTES
+
   %section#features.section.section-center.section-hilite.section-features
     .container
       %h2.section-title
@@ -57,125 +96,9 @@
           .icon-wrap
             %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
-          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-  %section#portfolio.section.section-portfolio
-    .container
-      %h2.section-title
-        %span Recent Works.
-      .row
-        .col-md-3.col-sm-6
-          %article.hentry.post.portfolio.simple-effect
-            .entry-thumbnail
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
-                %img{alt: "", src: "http://placehold.it/400x300"}/
-                %span.overlay
-                  %i.fa.fa-plus
-            %h4
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
-            %span.text-muted Application Design
-        .col-md-3.col-sm-6
-          %article.hentry.post.portfolio.simple-effect
-            .entry-thumbnail
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
-                %img{alt: "", src: "http://placehold.it/400x300"}/
-                %span.overlay
-                  %i.fa.fa-plus
-            %h4
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
-            %span.text-muted Web Design
-        .col-md-3.col-sm-6
-          %article.hentry.post.portfolio.simple-effect
-            .entry-thumbnail
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
-                %img{alt: "", src: "http://placehold.it/400x300"}/
-                %span.overlay
-                  %i.fa.fa-plus
-            %h4
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
-            %span.text-muted Icon Design
-        .col-md-3.col-sm-6
-          %article.hentry.post.portfolio.simple-effect
-            .entry-thumbnail
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"}
-                %img{alt: "", src: "http://placehold.it/400x300"}/
-                %span.overlay
-                  %i.fa.fa-plus
-            %h4
-              %a{"data-target" => "#project-modal", "data-toggle" => "modal", href: "#"} Project Title
-            %span.text-muted UI Design
-  / Project Modal
-  #project-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "project-modal-label", role: "dialog", tabindex: "-1"}
-    .modal-dialog
-      .modal-content
-        .modal-header
-          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-          %h4#project-modal-label.modal-title Project title
-        .modal-body
-          %article.single-project
-            .project-thumbnail
-              #project-thumbnail-carousel-1.carousel.slide{"data-ride" => "carousel"}
-                .carousel-inner
-                  .item.active
-                    %img{src: "http://placehold.it/800x600"}/
-                  .item
-                    %img{src: "http://placehold.it/800x600"}/
-                  .item
-                    %img{src: "http://placehold.it/800x600"}/
-                %ol.carousel-indicators
-                  %li.active{"data-slide-to" => "0", "data-target" => "#project-thumbnail-carousel-1"}
-                  %li{"data-slide-to" => "1", "data-target" => "#project-thumbnail-carousel-1"}
-                  %li{"data-slide-to" => "2", "data-target" => "#project-thumbnail-carousel-1"}
-                %a.left.carousel-control{"data-slide" => "prev", href: "#project-thumbnail-carousel-1"}
-                  %span.fa.fa-chevron-left
-                %a.right.carousel-control{"data-slide" => "next", href: "#project-thumbnail-carousel-1"}
-                  %span.fa.fa-chevron-right
-            .row
-              .col-md-4
-                %button.btn.btn-block.btn-primary{type: "button"} Launch Project
-                %ul.list-unstyled.project-info
-                  %li
-                    %strong Type
-                    %span.pull-right Web Design
-                  %li
-                    %strong Client
-                    %span.pull-right Google
-                  %li
-                    %strong Year
-                    %span.pull-right 2014
-              .col-md-8
-                %p Suspendisse varius nisl nunc. Aenean in dictum nibh. Nullam congue facilisis purus porta ullamcorper. Aenean in consequat sapien. Cras orci augue, ultricies at luctus congue, dapibus sed magna. Vivamus consequat commodo pharetra. Maecenas sed tincidunt mi, quis accumsan nisi. Praesent ac porttitor massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur in bibendum tellus, vitae imperdiet mauris.
-  %section#testimonials.section.section-center.section-hilite.section-testimonial
-    .container
-      %h2.section-title
-        %span What our clients say?
-      %i.fa.fa-quote-left.fa-3x
-      #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-        .carousel-inner
-          .item.active
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-          .item
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-          .item
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-        %ol.carousel-indicators
-          %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
-          %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
-          %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.    
+
+
   %section#pricing.section.section-center.section-pricing
     .container
       %h3.section-title
@@ -278,70 +201,43 @@
                       %td Weekly Reports
               %footer.panel-footer
                 %a.btn.btn-default{href: "#"} Sign up now
-  %section#team.section.section-center.section-hilite.section-team
-    .container
-      %h3.section-title
-        %span The Team
-      .row
-        .col-md-2.col-sm-4.col-xs-0
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 Rihanna
-        .col-md-2.col-sm-2.col-xs-0   
-        .col-md-2.col-sm-4.col-xs-6
-          %img{src: "http://placehold.it/300x300"}/
-          %h5 Brian Martinek
-        / .col-md-2.col-sm-2.col-xs-0  
-        .col-md-2.col-sm-4.col-xs-6
-          %img{src: "http://placehold.it/300x300"}/
-          %h5 Roneesh Vashisht
-        .col-md-2.col-sm-2.col-xs-0
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 David Beckham
-        .col-md-2.col-sm-4.col-xs-6
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 John Doe
-  %section#blog.section.section-blog
+
+
+  %section#testimonials.section.section-hilite.section-center.section-testimonial
     .container
       %h2.section-title
-        %span From Our Blog
-      .row
-        .col-md-6
-          %article.hentry.post
-            %a.entry-thumbnail{href: "#"}
-              %img{alt: "", src: "http://placehold.it/165x165"}/
-              %span.overlay
-                %i.fa.fa-plus
-            %header.entry-header
-              %h2.entry-title
-                %a{href: "#"} Sample blog title
-              .entry-meta
-                By
-                %a{href: "#"} Jackie Lord
-                in
-                %a{href: "#"} Category
-            .entry-content
-              %p Pellentesque eleifend enim sit amet scelerisque convallis. Aenean eget metus non erat suscipit accumsan.
-              %a.more{href: "#"}
-                %span.btn.btn-primary Continue Reading
-        .col-md-6
-          %article.hentry.post
-            %a.entry-thumbnail{href: "#"}
-              %img{alt: "", src: "http://placehold.it/165x165"}/
-              %span.overlay
-                %i.fa.fa-plus
-            %header.entry-header
-              %h2.entry-title
-                %a{href: "#"} Sample blog title
-              .entry-meta
-                By
-                %a{href: "#"} Jackie Lord
-                in
-                %a{href: "#"} Category
-            .entry-content
-              %p Pellentesque eleifend enim sit amet scelerisque convallis. Duis sed tortor condimentum placeraterat.
-              %a.more{href: "#"}
-                %span.btn.btn-primary Continue Reading
-  %section#clients.section.section-hilite.section-our-clients
+        %span Don't just take our word for it
+      %i.fa.fa-quote-left.fa-3x
+      #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+        .carousel-inner
+          .item.active
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+          .item
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+          .item
+            %blockquote
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+              %small
+                Someone famous in
+                %cite{title: "Source Title"} Source Title
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+          %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+          %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+
+
+  %section#clients.section.section-our-clients
     .container
       %h2.section-title
         %span Our Clients
@@ -364,6 +260,74 @@
         .col-md-2.col-sm-4.col-xs-6
           %a{href: "#"}
             %img{alt: "", src: "http://placehold.it/165x80"}/
+            
+
+  %section#team.section.section-center.section-hilite.section-team
+    .container
+      %h3.section-title
+        %span The Team
+      .row
+        .col-md-2.col-sm-4.col-xs-0
+          / %img{src: "http://placehold.it/300x300"}/
+          / %h5 Rihanna
+        .col-md-2.col-sm-2.col-xs-0   
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Brian Martinek
+        / .col-md-2.col-sm-2.col-xs-0  
+        .col-md-2.col-sm-4.col-xs-6
+          %img{src: "http://placehold.it/300x300"}/
+          %h5 Roneesh Vashisht
+        .col-md-2.col-sm-2.col-xs-0
+          / %img{src: "http://placehold.it/300x300"}/
+          / %h5 David Beckham
+        .col-md-2.col-sm-4.col-xs-6
+          / %img{src: "http://placehold.it/300x300"}/
+          / %h5 John Doe
+  / %section#blog.section.section-blog
+  /   .container
+  /     %h2.section-title
+  /       %span From Our Blog
+  /     .row
+  /       .col-md-6
+  /         %article.hentry.post
+  /           %a.entry-thumbnail{href: "#"}
+  /             %img{alt: "", src: "http://placehold.it/165x165"}/
+  /             %span.overlay
+  /               %i.fa.fa-plus
+  /           %header.entry-header
+  /             %h2.entry-title
+  /               %a{href: "#"} Sample blog title
+  /             .entry-meta
+  /               By
+  /               %a{href: "#"} Jackie Lord
+  /               in
+  /               %a{href: "#"} Category
+  /           .entry-content
+  /             %p Pellentesque eleifend enim sit amet scelerisque convallis. Aenean eget metus non erat suscipit accumsan.
+  /             %a.more{href: "#"}
+  /               %span.btn.btn-primary Continue Reading
+  /       .col-md-6
+  /         %article.hentry.post
+  /           %a.entry-thumbnail{href: "#"}
+  /             %img{alt: "", src: "http://placehold.it/165x165"}/
+  /             %span.overlay
+  /               %i.fa.fa-plus
+  /           %header.entry-header
+  /             %h2.entry-title
+  /               %a{href: "#"} Sample blog title
+  /             .entry-meta
+  /               By
+  /               %a{href: "#"} Jackie Lord
+  /               in
+  /               %a{href: "#"} Category
+  /           .entry-content
+  /             %p Pellentesque eleifend enim sit amet scelerisque convallis. Duis sed tortor condimentum placeraterat.
+  /             %a.more{href: "#"}
+  /               %span.btn.btn-primary Continue Reading
+
+
+
   %section#contact.section.section-center.section-contact
     .container
       %h2.section-title
