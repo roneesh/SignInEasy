@@ -1,6 +1,6 @@
 %br
 .col-lg-10.col-lg-offset-1.center
-  %button.btn.btn-success{:type => "button", "data-target" => "#manual-guest-registration-model", "data-toggle" => "modal"} 
+  %button.btn.btn-success{:type => "button", "data-target" => "#manual-guest-registration-modal", "data-toggle" => "modal"} 
     %i.fa.fa-user
     Manual Guest Check In
 %br    
@@ -236,17 +236,17 @@
 %br 
 
   // Visitor Check In Modal
-  #manual-guest-registration-model.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "manual-guest-registration-model-label", role: "dialog", tabindex: "-1"}
+  #manual-guest-registration-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "manual-guest-registration-modal-label", role: "dialog", tabindex: "-1"}
     .modal-dialog
       .modal-content
         .modal-header
           %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-          %h4#manual-guest-registration-model-label.modal-title Manual Visitor Registration
+          %h4#manual-guest-registration-modal-label.modal-title Manual Visitor Registration
         .modal-body
           
           // Form For
 
-          = render :partial => 'form_model'
+          = render :partial => 'form_modal'
 
           // Begin Placeholder Form
 
@@ -293,11 +293,3 @@
       / /.modal-content
     / /.modal-dialog
   / /.modal
-
-
-      
-
-
-%br       
-
-

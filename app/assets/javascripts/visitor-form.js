@@ -98,7 +98,7 @@ $('.visitor-ui-form.a').ready(function(){
 
   // Modal Form
 
-  $('.model-button-group').click(function(){
+  $('.modal-button-group').click(function(){
     if($("value")=="meeting"){
         $(".box").hide();
         $(".todays_guests").show();
