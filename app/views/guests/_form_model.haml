@@ -1,6 +1,6 @@
 
-#manual-guest-registration-model{ :class => 'model' }
-  = form_for(Guest.new, :remote => 'true', :html => { "data-type" => :json}) do |f|
+.model#manual-guest-registration-model
+  = form_for(Guest.new, remote: true, :html => {:class => 'manual-guest-reg-modal'}) do |f|
     %ul.errors
 
     .form-group
