@@ -1,0 +1,52 @@
+
+.model#manual-guest-registration-model
+  = form_for(Guest.new, remote: true, :html => {:class => 'manual-guest-reg-modal'}) do |f|
+    %ul.errors
+
+    .form-group
+    
+      =# f.label :name, "Name"
+      %span.status Name
+      = f.text_field :name, :class => 'form-control', :placeholder => 'Guest First and Last Name', :required => "true"
+
+    .form-group
+      =# f.label :company, "Company Name"
+      %span.status Company
+      = f.text_field :company, :class => 'form-control', :placeholder => 'Guest Company Name (optional)'
+
+    .form-group
+      =# f.label :email, "Email Address"
+      %span.status Email
+      = f.email_field :email, :class => 'form-control', :placeholder => 'Guest Email Address (optional)'
+
+    .form-group
+      =# f.label :email, "Mobile Number"
+      %span.status Entering their mobile phone number will text them the guest wifi password 
+      = f.text_field :mobile_number, :class => 'form-control', :placeholder => 'Guest Mobile Phone Number (optional)'      
+
+    .form-group
+      %span.status Visit Reason
+      %br
+      =f.label :reason, "Meeting"
+      =f.radio_button :reason, "Meeting"
+      =f.label :reason, "Tour"
+      =f.radio_button :reason, "Tour"
+      =f.label :reason, "Event"
+      =f.radio_button :reason, "Event"
+      =f.label :reason, "Other"
+      =f.radio_button :reason, "Other"
+
+    %p  
+    .form-group 
+      =# f.label :employee_name, "Hosting Member"
+      %span.status Hosting Member:
+      = f.autocomplete_field :employee_name, autocomplete_employee_name_organization_guests_path, :id => 'employee_autocomplete', :class => 'form-control', :placeholder => 'Start Typing The Hosting Member Name (Autocomplete)'
+
+    .form-group
+      = f.hidden_field :employee_id
+      = f.hidden_field :organization_id, value: @organization_id
+           
+    .modal-footer  
+      %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+      = f.submit 'Register Guest', :class => 'btn btn-success', :id => 'manualRegisterButton' 
+     
