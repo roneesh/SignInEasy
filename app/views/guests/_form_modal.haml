@@ -1,10 +1,8 @@
-
 .model#manual-guest-registration-modal
   = form_for(Guest.new, remote: true, :html => {:class => 'manual-guest-reg-modal'}) do |f|
     %ul.errors
 
     .form-group
-    
       =# f.label :name, "Name"
       %span.status Name
       = f.text_field :name, :class => 'form-control', :placeholder => 'Guest First and Last Name', :required => "true"
@@ -36,7 +34,6 @@
       =f.label :reason, "Other"
       =f.radio_button :reason, "Other"
 
-    %p  
     .form-group 
       =# f.label :employee_name, "Hosting Member"
       %span.status Hosting Member:
@@ -49,4 +46,3 @@
     .modal-footer  
       %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
       = f.submit 'Register Guest', :class => 'btn btn-success', :id => 'manualRegisterButton' 
-     
