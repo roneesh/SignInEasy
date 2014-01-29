@@ -1,6 +1,4 @@
-
 // Guests new form/button UI
-
 $('.visitor-ui-form.a').ready(function(){
 
   $('.meeting-btn').click(function(){
@@ -8,18 +6,15 @@ $('.visitor-ui-form.a').ready(function(){
     $('.form-meeting').fadeIn('fast');
   })
   
-
   $('.drop-in-btn').click(function(){
     $('.btn-grid').fadeOut('fast');
     $('.form-dropin').fadeIn('fast');  
   })
   
-
   $('.tour-btn').click(function(){
     $('.btn-grid').hide('fast');
     $('.form-tour').fadeIn('fast');
   })
-
 
   $('.event-btn').click(function(){
     $('.btn-grid').hide('fast');
@@ -30,7 +25,6 @@ $('.visitor-ui-form.a').ready(function(){
     $('.btn-grid').fadeOut('fast');
     $('.form-information').fadeIn('fast');
   })
-
 
   $('.other-btn').click(function(){
     $('.btn-grid').hide('fast');
@@ -46,34 +40,24 @@ $('.visitor-ui-form.a').ready(function(){
   if($('#employee_autocomplete').val() ==  "") 
      $('#registerButton').prop('disabled', true);
 
-  // $('#employee_autocomplete').keyup(function(){
-  //     if($('#employee_autocomplete').val() !=  "") 
-  //          $('#registerButton').prop('disabled', false);    
-  //     else
-  //          $('#registerButton').prop('disabled', true);   
-  // });
-
   $('#employee_autocomplete').bind('railsAutocomplete.select', function(event, data){
-  /* Do something here */
     if (data.item.id) {
       $('#guest_employee_id').val(data.item.id);
       $('#registerButton').prop('disabled', false);
       $('#notify').text("Your registering will notify: " + data.item.value);
+      
+      // Attempt to change the UI behavior of the disabled btn
       // $('#employee_autocomplete').(function() {
       //   console.log('Im being called from change!');
       //   $('#guest_employee_id').val("");
       //   $('#registerButton').prop('disabled', true);
       // });
+      
       console.log(data.item);
     };
   });
 
-  // $('#employee_autocomplete').change(function() {
-  //   console.log('Im being changed!');
-  // }); 
-
 // Dashboard show/hide based on date
-
 
   $('#todays_guests').click(function(){
     $('.box').hide();
@@ -94,7 +78,6 @@ $('.visitor-ui-form.a').ready(function(){
     $('.box').hide();
     $('.months_guests').show();
   })
-
 
   // Modal Form
 
@@ -118,8 +101,3 @@ $('.visitor-ui-form.a').ready(function(){
 });
 
 })
-
-
-
-
-
