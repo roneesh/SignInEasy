@@ -26,7 +26,12 @@
           Please have the front-desk notify
           =@employee.name.titleize
           that you're here.
-    %h2 Please take a seat in the waiting area.
+    -if @guest.reason == "Tour"
+      %h2 Please take a seat in the waiting area before your tour starts.
+    -elsif @guest.reason == "Event"
+      %h2 Please take a seat in the waiting area before your event starts.
+    -elsif @guest.reason == "Other"
+      %h2 Please take a seat in the waiting area.
     %br
     =# link_to "or go now", new_organization_guest_path, id: "link"
 
