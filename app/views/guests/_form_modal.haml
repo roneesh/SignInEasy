@@ -41,7 +41,7 @@
 
     .form-group
       = f.hidden_field :employee_id
-      = f.hidden_field :organization_id, value: @organization_id
+      = f.hidden_field :organization_id, value: current_user.organization.id
            
     .modal-footer  
       %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel

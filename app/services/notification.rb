@@ -48,10 +48,10 @@ class Notification
       :html=>"<html><p>#{message_body}</p></html>",  
       :from_email=>"donotreply@signineasy.co"  
     }  
-    sending = m.messages.send message  
-    # puts sending
-    @email_status = sending[0]["status"]
-    # puts @email_status
+    # sending = m.messages.send message  
+    puts sending
+    # @email_status = sending[0]["status"]
+    puts @email_status
   end
 
   def send_text

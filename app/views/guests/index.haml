@@ -103,7 +103,8 @@
         %td 
           = guest.email
         %td
-          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+          -if guest.mobile_number
+            = number_to_phone(guest.mobile_number, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "None"
         %td
@@ -141,7 +142,8 @@
         %td 
           = guest.email
         %td
-          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+          -if guest.mobile_number
+            = number_to_phone(guest.mobile_number, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
@@ -179,7 +181,8 @@
         %td 
           = guest.email
         %td
-          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+          -if guest.mobile_number
+            = number_to_phone(guest.mobile_number, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
@@ -217,7 +220,8 @@
         %td 
           = guest.email
         %td
-          = number_to_phone(guest.mobile_number, raise: true, delimiter: ".")
+          -if guest.mobile_number
+            = number_to_phone(guest.mobile_number, delimiter: ".")
         %td
           = guest.hosting_member ? guest.hosting_member : "No Employee"
         %td
