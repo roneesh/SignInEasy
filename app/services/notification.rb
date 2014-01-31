@@ -34,18 +34,24 @@ class Notification
 
   def send_email
     m = Mandrill::API.new
-    message_body = "Your guest #{@guest.name} has arrived! Please come to the front desk to greet them."
+    message_body = "<p>Hi #{@employee.name.split.first.capitalize},</p>
+
+    <p>Your guest #{@guest.name} has arrived! Please come to the front desk to greet them.</p>
+
+    <p>1871 Staff</p>
+    <p></p>
+    <p>Want to receive a text message when your guests arrive? Click here: http://bit.ly/1fBUkm8</p>"
 
     message = {  
       :subject=> "1871 Notification: Your guest #{@guest.name} has arrived!",  
       :from_name=> "SignInEasy",  
-      :text=>message_body,  
+      #:text=>message_body,  
       :to=>[  
         {  
           :email=> @employee.email,  
           :name=> @employee.name 
       }],  
-      :html=>"<html><p>#{message_body}</p></html>",  
+      :html=>"<html>#{message_body}</html>",  
       :from_email=>"donotreply@signineasy.co"  
     }  
     sending = m.messages.send message  
