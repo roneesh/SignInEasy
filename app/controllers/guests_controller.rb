@@ -49,10 +49,12 @@ class GuestsController < ApplicationController
       if @guest.save
         @guest.run_notification_service if @guest.employee_id
         format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
-        format.json {head :no_content}
+        format.json {render json: @guest}
+        format.js { render layout: false }
       else
         format.html {redirect_to organization_guest_path(@guest.organization_id, @guest.id)}
-        format.json {render json: @task.errors, status: :unprocessable_entity}
+        format.json {render json: @guest.errors, status: :unprocessable_entity}
+        format.js {render json: @guest.errors}
       end
     end
 
