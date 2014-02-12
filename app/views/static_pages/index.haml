@@ -17,7 +17,7 @@
   %section.section.section-center.cta
     .container
       %h1.section-title
-        %span Donec id elit non mi porta gravida at eget metus.
+        %span Visitor Management for Modern Office Spaces
       %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
       .main-action
         %a.btn.btn-lg.btn-default{href: "#"} Request a Demo
@@ -25,6 +25,7 @@
         %a.btn.btn-lg.btn-success{href: "#"} Sign up
 
 
+  
 
 
   %section#portfolio.section.section-portfolio
@@ -40,11 +41,33 @@
             %span.text-muted It'll blow your mind.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
         .col-md-5
-          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+          .i.fa.fa-comments-o.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
       %hr.featurette-divider/
       .row.featurette
         .col-md-5
-          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+          .i.fa.fa-edit.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+        .col-md-7
+          %h2.featurette-heading
+            Oh yeah, it's that good.
+            %span.text-muted See for yourself.
+          %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      %hr.featurette-divider/
+      .row.featurette
+        .col-md-7
+          %h2.featurette-heading
+            First featurette heading.
+            %span.text-muted It'll blow your mind.
+          %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          .i.fa.fa-bar-chart-o.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+      %hr.featurette-divider/
+      .row.featurette
+        .col-md-5
+          .i.fa.fa-cloud.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
         .col-md-7
           %h2.featurette-heading
             Oh yeah, it's that good.
@@ -58,33 +81,38 @@
             %span.text-muted Checkmate.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
         .col-md-5
-          %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+          .i.fa.fa-exclamation-triangle.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
       %hr.featurette-divider/
       / /END THE FEATURETTES
 
   %section#features.section.section-center.section-hilite.section-features
     .container
       %h2.section-title
-        %span How it works?
+        %span SignInEasy at a glance
       .row
         .col-md-4.col-sm-6
           .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
+            .i.fa.fa-phone.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
         .col-md-4.col-sm-6
           .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
+            .i.fa.fa-comments.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
         .col-md-4.col-sm-6
           .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
+            .i.fa.fa-envelope.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
         .col-md-4.col-sm-6
           .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
+            .i.fa.fa-tablet.fa-rotate-90.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
         .col-md-4.col-sm-6
@@ -99,191 +127,168 @@
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.    
 
 
-  %section#pricing.section.section-center.section-pricing
-    .container
-      %h3.section-title
-        %span Pricing Table Made Easy
-      .pricing-table
-        .row
-          / .col-md-3.col-sm-6
-          /   .panel.panel-default
-          /     %header.panel-heading
-          /       %h1 Bronze
-          /       .the-price
-          /         $5
-          /         %span.subscript / month
-          /     .panel-body
-          /       %table.table
-          /         %tbody
-          /           %tr
-          /             %td 1 Account
-          /           %tr.active
-          /             %td 1 Project
-          /           %tr
-          /             %td 50K API Access
-          /           %tr.active
-          /             %td 50MB Storage
-          /           %tr
-          /             %td Custom Cloud Services
-          /           %tr.active
-          /             %td Weekly Reports
-          /     %footer.panel-footer
-          /       %a.btn.btn-default{href: "#"} Sign up now
-          .col-md-4.col-sm-6
-            .panel.panel-default
-              %header.panel-heading
-                %h1 Silver
-                .the-price
-                  $10
-                  %span.subscript / month
-              .panel-body
-                %table.table
-                  %tbody
-                    %tr
-                      %td 1 Account
-                    %tr.active
-                      %td 3 Project
-                    %tr
-                      %td 100K API Access
-                    %tr.active
-                      %td 100MB Storage
-                    %tr
-                      %td Custom Cloud Services
-                    %tr.active
-                      %td Weekly Reports
-              %footer.panel-footer
-                %a.btn.btn-default{href: "#"} Sign up now
-          .col-md-4.col-sm-6
-            .panel.panel-primary
-              %header.panel-heading
-                %h1 Gold
-                .the-price
-                  $20
-                  %span.subscript / month
-              .panel-body
-                %table.table
-                  %tbody
-                    %tr
-                      %td 2 Account
-                    %tr.active
-                      %td 5 Project
-                    %tr
-                      %td 100K API Access
-                    %tr.active
-                      %td 200MB Storage
-                    %tr
-                      %td Custom Cloud Services
-                    %tr.active
-                      %td Weekly Reports
-              %footer.panel-footer
-                %a.btn.btn-primary{href: "#"} Sign up now
-          .col-md-4.col-sm-6
-            .panel.panel-default
-              %header.panel-heading
-                %h1 Diamond
-                .the-price
-                  $35
-                  %span.subscript / month
-              .panel-body
-                %table.table
-                  %tbody
-                    %tr
-                      %td 5 Account
-                    %tr.active
-                      %td 20 Project
-                    %tr
-                      %td 300K API Access
-                    %tr.active
-                      %td 500MB Storage
-                    %tr
-                      %td Custom Cloud Services
-                    %tr.active
-                      %td Weekly Reports
-              %footer.panel-footer
-                %a.btn.btn-default{href: "#"} Sign up now
+  / %section#pricing.section.section-center.section-pricing
+  /   .container
+  /     %h3.section-title
+  /       %span Pricing Table Made Easy
+  /     .pricing-table
+  /       .row
+
+  /         .col-md-4.col-sm-6
+  /           .panel.panel-default
+  /             %header.panel-heading
+  /               %h1 Silver
+  /               .the-price
+  /                 $10
+  /                 %span.subscript / month
+  /             .panel-body
+  /               %table.table
+  /                 %tbody
+  /                   %tr
+  /                     %td 1 Account
+  /                   %tr.active
+  /                     %td 3 Project
+  /                   %tr
+  /                     %td 100K API Access
+  /                   %tr.active
+  /                     %td 100MB Storage
+  /                   %tr
+  /                     %td Custom Cloud Services
+  /                   %tr.active
+  /                     %td Weekly Reports
+  /             %footer.panel-footer
+  /               %a.btn.btn-default{href: "#"} Sign up now
+  /         .col-md-4.col-sm-6
+  /           .panel.panel-primary
+  /             %header.panel-heading
+  /               %h1 Gold
+  /               .the-price
+  /                 $20
+  /                 %span.subscript / month
+  /             .panel-body
+  /               %table.table
+  /                 %tbody
+  /                   %tr
+  /                     %td 2 Account
+  /                   %tr.active
+  /                     %td 5 Project
+  /                   %tr
+  /                     %td 100K API Access
+  /                   %tr.active
+  /                     %td 200MB Storage
+  /                   %tr
+  /                     %td Custom Cloud Services
+  /                   %tr.active
+  /                     %td Weekly Reports
+  /             %footer.panel-footer
+  /               %a.btn.btn-primary{href: "#"} Sign up now
+  /         .col-md-4.col-sm-6
+  /           .panel.panel-default
+  /             %header.panel-heading
+  /               %h1 Diamond
+  /               .the-price
+  /                 $35
+  /                 %span.subscript / month
+  /             .panel-body
+  /               %table.table
+  /                 %tbody
+  /                   %tr
+  /                     %td 5 Account
+  /                   %tr.active
+  /                     %td 20 Project
+  /                   %tr
+  /                     %td 300K API Access
+  /                   %tr.active
+  /                     %td 500MB Storage
+  /                   %tr
+  /                     %td Custom Cloud Services
+  /                   %tr.active
+  /                     %td Weekly Reports
+  /             %footer.panel-footer
+  /               %a.btn.btn-default{href: "#"} Sign up now
 
 
-  %section#testimonials.section.section-hilite.section-center.section-testimonial
-    .container
-      %h2.section-title
-        %span Don't just take our word for it
-      %i.fa.fa-quote-left.fa-3x
-      #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-        .carousel-inner
-          .item.active
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-          .item
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-          .item
-            %blockquote
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-              %small
-                Someone famous in
-                %cite{title: "Source Title"} Source Title
-        %ol.carousel-indicators
-          %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
-          %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
-          %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-            %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+  / %section#testimonials.section.section-hilite.section-center.section-testimonial
+  /   .container
+  /     %h2.section-title
+  /       %span Don't just take our word for it
+  /     %i.fa.fa-quote-left.fa-3x
+  /     #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+  /       .carousel-inner
+  /         .item.active
+  /           %blockquote
+  /             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  /             %small
+  /               Someone famous in
+  /               %cite{title: "Source Title"} Source Title
+  /         .item
+  /           %blockquote
+  /             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  /             %small
+  /               Someone famous in
+  /               %cite{title: "Source Title"} Source Title
+  /         .item
+  /           %blockquote
+  /             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  /             %small
+  /               Someone famous in
+  /               %cite{title: "Source Title"} Source Title
+  /       %ol.carousel-indicators
+  /         %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+  /           %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+  /         %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+  /           %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
+  /         %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+  /           %img.img-circle{alt: "", height: "64", src: "http://placehold.it/64x64", width: "64"}/
 
 
-  %section#clients.section.section-our-clients
-    .container
-      %h2.section-title
-        %span Our Clients
-      .row
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
-        .col-md-2.col-sm-4.col-xs-6
-          %a{href: "#"}
-            %img{alt: "", src: "http://placehold.it/165x80"}/
+  / %section#clients.section.section-our-clients
+  /   .container
+  /     %h2.section-title
+  /       %span Our Clients
+  /     .row
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %a{href: "#"}
+  /           %img{alt: "", src: "http://placehold.it/165x80"}/
             
 
-  %section#team.section.section-center.section-hilite.section-team
-    .container
-      %h3.section-title
-        %span The Team
-      .row
-        .col-md-2.col-sm-4.col-xs-0
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 Rihanna
-        .col-md-2.col-sm-2.col-xs-0   
-        .col-md-2.col-sm-4.col-xs-6
-          %img{src: "http://placehold.it/300x300"}/
-          %h5 Brian Martinek
-        / .col-md-2.col-sm-2.col-xs-0  
-        .col-md-2.col-sm-4.col-xs-6
-          %img{src: "http://placehold.it/300x300"}/
-          %h5 Roneesh Vashisht
-        .col-md-2.col-sm-2.col-xs-0
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 David Beckham
-        .col-md-2.col-sm-4.col-xs-6
-          / %img{src: "http://placehold.it/300x300"}/
-          / %h5 John Doe
+  / %section#team.section.section-center.section-hilite.section-team
+  /   .container
+  /     %h3.section-title
+  /       %span The Team
+  /     .row
+  /       .col-md-2.col-sm-4.col-xs-0
+  /         / %img{src: "http://placehold.it/300x300"}/
+  /         / %h5 Rihanna
+  /       .col-md-2.col-sm-2.col-xs-0   
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %img{src: "http://placehold.it/300x300"}/
+  /         %h5 Brian Martinek
+  /       / .col-md-2.col-sm-2.col-xs-0  
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         %img{src: "http://placehold.it/300x300"}/
+  /         %h5 Roneesh Vashisht
+  /       .col-md-2.col-sm-2.col-xs-0
+  /         / %img{src: "http://placehold.it/300x300"}/
+  /         / %h5 David Beckham
+  /       .col-md-2.col-sm-4.col-xs-6
+  /         / %img{src: "http://placehold.it/300x300"}/
+  /         / %h5 John Doe
   / %section#blog.section.section-blog
   /   .container
   /     %h2.section-title
@@ -331,8 +336,8 @@
   %section#contact.section.section-center.section-contact
     .container
       %h2.section-title
-        %span Contact Us
-      %p Want to say hello? Want to know more about us? Give us a call or drop us an email and we will get back to you as soon as we can.
+        %span Currently in Private Beta
+      %p Sign up now to get updates and the chance to be invited into test the beta version
       .main-action
         %form{role: "form"}
           .row

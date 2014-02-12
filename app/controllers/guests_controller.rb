@@ -16,7 +16,7 @@ class GuestsController < ApplicationController
 
     @organization = Organization.find_by_id(params[:organization_id]) || Organization.find(current_user.organization.id)
     @organization_guests = Guest.where(organization_id: params[:organization_id])
-    @guests = @organization_guests.page(params[:page]).per_page(100).order("created_at DESC")
+    @guests = @organization_guests.page(params[:page]).per_page(10000).order("created_at DESC")
     @todays_guests = @organization_guests.where("created_at > ? AND created_at < ?", Time.now.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
     @yesterdays_guests = @organization_guests.where("created_at > ? AND created_at < ?", (Time.now.in_time_zone - 1.day).beginning_of_day, Time.now.in_time_zone.beginning_of_day).order("created_at DESC")
     @weeks_guests = @organization_guests.where("created_at > ? AND created_at < ?", 7.days.ago.in_time_zone.beginning_of_day, Time.now.in_time_zone.end_of_day).order("created_at DESC")
