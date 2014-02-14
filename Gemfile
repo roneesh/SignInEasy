@@ -84,4 +84,8 @@ gem 'typhoeus'
 gem 'rails_12factor'
 gem 'newrelic_rpm'
 
+# Images
+gem 'rmagick'
+gem 'carrierwave'
+
 
