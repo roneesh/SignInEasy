@@ -4,6 +4,7 @@ class Organization < ActiveRecord::Base
   has_many :guests
   has_many :employees
   has_one :service_list
+  has_many :images, as: :imageable
 
   validates :name, presence: true
   validates :admin_id, presence: true
