@@ -8,13 +8,19 @@
  }
 
  .icon-xxl {
- 	font-size: 250px;
+ 	font-size: 270px;
  }
 
 .icon-xl {
- 	font-size: 170px;
+ 	font-size: 190px;
  }
 
  .icon-md {
  	font-size: 120px;
  }
+
+ .row-padding {
+ 	padding-top: 100px;
+ 	padding-bottom: 100px;
+ }
+

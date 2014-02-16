@@ -25,7 +25,36 @@
         %a.btn.btn-lg.btn-success{href: "#"} Sign up
 
 
-  
+  %section#features.section.section-center
+    .container
+      %h1.section-title
+        %span Dashboard
+      %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.  
+      .main-image
+        %img(src="/assets/dashboard-1871.png")
+
+  %section#features.section.section-center.section-hilite.section-features 
+    .container   
+
+      .row
+        .col-md-4.col-sm-6
+          .icon-wrap
+            .i.fa.fa-phone.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            .i.fa.fa-comments.icon-md
+            / %img{alt: "", src: "http://placehold.it/128x128"}/
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+        .col-md-4.col-sm-6
+          .icon-wrap
+            .i.fa.fa-envelope.icon-md
+          %h4 Subheading
+          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+
 
 
   %section#portfolio.section.section-portfolio
@@ -33,52 +62,57 @@
       / %h2.section-title
       /   %span Automated Messaging
       / .row
-      %hr.featurette-divider/
-      .row.featurette
+      / %hr.featurette-divider/
+      .row.featurette.row-padding
         .col-md-7
           %h2.featurette-heading
-            First featurette heading.
-            %span.text-muted It'll blow your mind.
+            Front desk iPad kiosk.
+            %br
+            %span.text-muted Say no to paper visitor logs.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
         .col-md-5
-          .i.fa.fa-comments-o.icon-xxl
+          .i.fa.fa-tablet.fa-rotate-90.icon-xxl
           / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
       %hr.featurette-divider/
-      .row.featurette
+      .row.featurette.row-padding
         .col-md-5
-          .i.fa.fa-edit.icon-xxl
+          .i.fa.fa-comments.icon-xxl
           / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
         .col-md-7
           %h2.featurette-heading
-            Oh yeah, it's that good.
-            %span.text-muted See for yourself.
+            Automated Messaging.
+            %br
+            %span.text-muted Text Message and Email.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
       %hr.featurette-divider/
-      .row.featurette
+      .row.featurette.row-padding
         .col-md-7
           %h2.featurette-heading
-            First featurette heading.
-            %span.text-muted It'll blow your mind.
+            Stored securely in the cloud.
+            %br
+            %span.text-muted Visitor records accessible from anywhere.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-        .col-md-5
-          .i.fa.fa-bar-chart-o.icon-xxl
-          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
-      %hr.featurette-divider/
-      .row.featurette
         .col-md-5
           .i.fa.fa-cloud.icon-xxl
           / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
+      %hr.featurette-divider/
+      .row.featurette.row-padding
+        .col-md-5
+          .i.fa.fa-bar-chart-o.icon-xxl
+          / %img.featurette-image.img-responsive{alt: "Generic placeholder image", src: "http://placehold.it/500x500"}/
         .col-md-7
           %h2.featurette-heading
-            Oh yeah, it's that good.
-            %span.text-muted See for yourself.
+            Data metrics.
+            %br
+            %span.text-muted Gain insights on visitor traffic you've never had.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
       %hr.featurette-divider/
-      .row.featurette
+      .row.featurette.row-padding
         .col-md-7
           %h2.featurette-heading
-            And lastly, this one.
-            %span.text-muted Checkmate.
+            Emergency messaging.
+            %br
+            %span.text-muted Send important, time sensitive messages instantly.
           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
         .col-md-5
           .i.fa.fa-exclamation-triangle.icon-xxl
@@ -109,22 +143,7 @@
             / %img{alt: "", src: "http://placehold.it/128x128"}/
           %h4 Subheading
           %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-        .col-md-4.col-sm-6
-          .icon-wrap
-            .i.fa.fa-tablet.fa-rotate-90.icon-md
-            / %img{alt: "", src: "http://placehold.it/128x128"}/
-          %h4 Subheading
-          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-        .col-md-4.col-sm-6
-          .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
-          %h4 Subheading
-          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-        .col-md-4.col-sm-6
-          .icon-wrap
-            %img{alt: "", src: "http://placehold.it/128x128"}/
-          %h4 Subheading
-          %p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.    
+  
 
 
   / %section#pricing.section.section-center.section-pricing
@@ -337,7 +356,7 @@
     .container
       %h2.section-title
         %span Currently in Private Beta
-      %p Sign up now to get updates and the chance to be invited into test the beta version
+      %p Sign up now to get updates and to be invited to the beta.
       .main-action
         %form{role: "form"}
           .row
