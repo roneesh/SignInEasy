@@ -44,7 +44,7 @@ $('.visitor-ui-form.a').ready(function(){
     if (data.item.id) {
       $('#guest_employee_id').val(data.item.id);
       $('#registerButton').prop('disabled', false);
-      $('#notify').text("Your registering will notify: " + data.item.value);
+      $('#notify').text("Registering will notify: " + data.item.value);
       
       // Attempt to change the UI behavior of the disabled btn
       // $('#employee_autocomplete').(function() {

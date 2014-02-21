@@ -22,10 +22,10 @@
       /   %button(type="submit" class="btn btn-primary btn-xxlg drop-in-btn")
       /     %i.fa.fa-user.icon-white
       /     Drop In    
-      %a
-      %button(type="submit" class="btn btn-default btn-xxlg tour-btn")
-        %i.fa.fa-location-arrow.icon-white
-        Tour
+      / %a
+      / %button(type="submit" class="btn btn-default btn-xxlg tour-btn")
+      /   %i.fa.fa-location-arrow.icon-white
+      /   Tour
       %a
       %button(type="submit" class="btn btn-default btn-xxlg event-btn")
         %i.fa.fa-group.icon-white
@@ -43,7 +43,7 @@
     %br
       %p Not finding the option you need? 
       %a
-      %button(type="submit" class="btn btn-default btn-sm other-btn")
+      %button(type="submit" class="btn btn-default btn other-btn")
         Click Here
 	
 
@@ -73,8 +73,8 @@
     =#image_tag("SignInEasyLogo-bottom.png")
   .visitor-ui-home-icon
     = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(@organization_id)
-  .visitor-ui-refresh
-    = link_to image_tag('arrow_left.png', :size => '35x35'), new_organization_guest_path(@organization_id)
+  / .visitor-ui-refresh
+  /   = link_to image_tag('arrow_left.png', :size => '35x35'), new_organization_guest_path(@organization_id)
 
 
 // Javascript Countdown to refresh page when idle.

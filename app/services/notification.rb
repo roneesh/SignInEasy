@@ -38,9 +38,7 @@ class Notification
 
     <p>Your guest #{@guest.name} has arrived! Please come to the front desk to greet them.</p>
 
-    <p>1871 Staff</p>
-    <p></p>
-    <p>Want to receive a text message when your guests arrive? Click here: http://bit.ly/1fBUkm8</p>"
+    <p>1871 Staff</p>"
 
     message = {  
       :subject=> "1871 Notification: Your guest #{@guest.name} has arrived!",  
