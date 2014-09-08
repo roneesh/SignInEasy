@@ -1,4 +1,8 @@
 class AdminController < ApplicationController
+  
+  before_filter :must_be_signed_in
+
+
   def index
     @objects = all_objects
   end
