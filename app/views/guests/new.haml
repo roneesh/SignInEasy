@@ -38,8 +38,7 @@
       /   %button(type="submit" class="btn btn-primary btn-xxlg other-btn")
       /  
       /    
-    %br
-    %br
+
     %br
       %p Not finding the option you need? 
       %a
@@ -50,29 +49,23 @@
 .form-ui.form-meeting.group
   = render :partial => 'form_meeting'
 
-.form-ui.form-dropin.group
-  = render :partial => 'form_dropin'
-
 .form-ui.form-event.group
   = render :partial => 'form_event'
 
-.form-ui.form-tour.group
-  = render :partial => 'form_tour'    
-
-.form-ui.form-information.group
-  = render :partial => 'form_information'
-
 .form-ui.form-other.group
   = render :partial => 'form_other'
+ 
 
-.form-ui.show-page-text.group
-  = render :partial => 'confirmation'   
-
-.row-fluid 
+.row-fluid
   .bottom-logo-container
-    =#image_tag("SignInEasyLogo-bottom.png")
-  .visitor-ui-home-icon
-    = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(@organization_id)
+    .h4
+      Powered by:
+    .br  
+    =image_tag("alertcaster-logo.png", :width => '250')
+    .h5
+      www.alertcaster.com
+  / .visitor-ui-home-icon
+  /   = link_to image_tag('settings-24-256.png', :size => '20x20'), organization_guests_path(@organization_id)
   / .visitor-ui-refresh
   /   = link_to image_tag('arrow_left.png', :size => '35x35'), new_organization_guest_path(@organization_id)
 
